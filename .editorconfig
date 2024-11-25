@@ -1,0 +1,29 @@
+# top-most EditorConfig file
+root = true
+
+# Default settings for all files
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# Markdown files
+[*.md]
+trim_trailing_whitespace = false
+max_line_length = off
+
+# JavaScript/TypeScript/JSON files
+[*.{js,jsx,ts,tsx,json}]
+indent_size = 2
+max_line_length = 100
+
+# CSS files
+[*.{css,scss,sass}]
+indent_size = 2
+
+# HTML files
+[*.{html,htm}]
+indent_size = 2
