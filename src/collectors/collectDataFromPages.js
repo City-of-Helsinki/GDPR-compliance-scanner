@@ -74,8 +74,7 @@ async function fetchDataFromPage(
         }
       // eslint-disable-next-line no-unused-vars
       } catch (error) {
-        // Ignore errors as not all requests will have security details
-        console.log('error', error);
+        // These errors are expected to happen when the page/request is no longer available, like when the actions call for a refresh or a new page
       }
 
       addDomainToFrame(frame, url, certificateInfo);
@@ -141,6 +140,13 @@ async function performAction(page, action) {
   } else if (type === 'scrollIntoView') {
     await page.evaluate((selector) => {
       document.querySelector(selector).scrollIntoView();
+    }, selector);
+  } else if (type === 'removeElement') {
+    await page.evaluate((selector) => {
+      const element = document.querySelector(selector);
+      if (element) {
+        element.remove();
+      }
     }, selector);
   }
 }

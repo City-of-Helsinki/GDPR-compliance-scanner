@@ -102,6 +102,10 @@ const config = {
       url: 'https://www.test.hel.ninja/fi/kaupunkiymparisto-ja-liikenne/kunnossapito/katujen-kunnossapito/katutyot',
       actions: [
         {
+          type: 'removeElement',
+          selector: '#block-surveys',
+        },
+        {
           type: 'scrollIntoView',
           selector: '.component__content.map',
         },
@@ -121,6 +125,10 @@ const config = {
       nameBase: 'palvelukartta.hel.fi',
       url: 'https://www.test.hel.ninja/fi/sosiaali-ja-terveyspalvelut/terveydenhoito/kuntoutus-ja-terapiat/jalkaterapia/munkkiniemen-jalkaterapia',
       actions: [
+        {
+          type: 'removeElement',
+          selector: '#block-surveys',
+        },
         {
           type: 'scrollIntoView',
           selector: '.component__content.map',
@@ -151,6 +159,10 @@ const config = {
       nameBase: '💬 Sotebot Hester Watson Genesys chat active',
       url: 'https://www.test.hel.ninja/fi/sosiaali-ja-terveyspalvelut/lasten-ja-perheiden-palvelut/aitiys-ja-lastenneuvolat',
       actions: [
+        {
+          type: 'removeElement',
+          selector: '#block-surveys',
+        },
         {
           type: 'click',
           selector: 'button:has-text("Sotebotti Hester")',
@@ -189,6 +201,10 @@ const config = {
       url: 'https://www.test.hel.ninja/fi/sosiaali-ja-terveyspalvelut/terveydenhoito/hammashoito',
       actions: [
         {
+          type: 'removeElement',
+          selector: '#block-surveys',
+        },
+        {
           type: 'click',
           selector: 'button:has-text("Hammashoidon chat")',
         },
@@ -223,6 +239,10 @@ const config = {
       url: 'https://www.test.hel.ninja/fi/',
       actions: [
         {
+          type: 'removeElement',
+          selector: '#block-surveys',
+        },
+        {
           type: 'click',
           selector: 'button:has-text("Kysy kaupungista!")',
         },
@@ -241,6 +261,10 @@ const config = {
       nameBase: 'Helfi settings (accordion)',
       url: 'https://www.test.hel.ninja/fi/sosiaali-ja-terveyspalvelut/digitaaliset-palvelut',
       actions: [
+        {
+          type: 'removeElement',
+          selector: '#block-surveys',
+        },
         {
           type: 'click',
           selector: 'button:has-text("Avaa kaikki")',
