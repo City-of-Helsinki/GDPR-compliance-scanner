@@ -1,6 +1,7 @@
 import { chromium } from 'playwright';
 import chalk from 'chalk';
 import { collectAllStorageFromPage } from './collectAllStorageFromPage.js';
+import { errorLogger } from '../utils/errorLogger.js';
 
 
 async function fetchDataFromPage(
@@ -12,8 +13,11 @@ async function fetchDataFromPage(
   skipNetworkIdle = false,
   waitForNetworkIdle = 5000,
 ) {
+  let context = null;
+  let page = null;
+
   try {
-    const context = await browser.newContext();
+    context = await browser.newContext();
 
     // Set cookies before loading the page if provided
     if (cookieData) {
@@ -21,7 +25,7 @@ async function fetchDataFromPage(
     }
 
     // Set up the page
-    const page = await context.newPage();
+    page = await context.newPage();
 
     // ---
     // Domains
@@ -85,8 +89,16 @@ async function fetchDataFromPage(
       frames: allFrameData,
     };
   } catch (error) {
-    console.error("Error fetching data from page:", error);
-    throw error;
+    throw error; // Re-throw to be handled by the caller
+  } finally {
+    // Ensure we clean up resources even if there's an error
+    if (context) {
+      try {
+        await context.close();
+      } catch (closeError) {
+        errorLogger.logError(`Error closing context for ${url}`, closeError);
+      }
+    }
   }
 }
 
@@ -134,7 +146,8 @@ async function runOnUrlsConcurrently(headlessMode, urls, timer) {
       timer.end(` - "${name}"`);
       return result;
     } catch (error) {
-      console.error(`Failed to fetch data for ${url}:`, error);
+      errorLogger.logError(`Error in fetchDataFromPage for "${name}" at ${url}`, error);
+      console.error(chalk.red(`Error fetching data from "${name}" at ${url}, see logs for more details.`));
       return null; // Return null to indicate failure for this specific URL
     }
   });

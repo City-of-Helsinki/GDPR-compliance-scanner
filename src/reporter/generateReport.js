@@ -25,6 +25,7 @@ function generateReport(
       nonCompliant: 0,
       warnings: 0,
       urls: urls.length,
+      failedUrls: urls.length - inventoryItems.length,
       timing:timing['Processing time'].formattedElapsed,
       siteSettingsFlat: siteSettingsFlat.length,
     },
