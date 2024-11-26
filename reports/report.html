@@ -515,6 +515,7 @@
         <tr>
           <th class="sortable" data-sort="domain">Domain</th>
           <th class="sortable" data-sort="hits">Hits</th>
+          <th class="sortable" data-sort="certificate">Certificate</th>
           <th class="sortable" data-sort="pages">Pages found on</th>
         </tr>
       </thead>
@@ -528,6 +529,13 @@
             {{/knownTrackingDomain}}
           </td>
           <td>{{hits}}</td>
+          <td class="muted" data-expiry-days="{{certificateValidity.daysUntilExpiry}}">
+            Expires: <span class="unmuted expiring__{{certificateValidity.isExpiring}} expired__{{certificateValidity.isExpired}}">{{certificateExpires}}</span>
+            (<span class="unmuted expiring__{{certificateValidity.isExpiring}} expired__{{certificateValidity.isExpired}}">{{certificateValidity.daysUntilExpiry}} days</span>),<br>
+            Issuer: <span class="unmuted">{{certificate.issuer}}</span><br>
+            Protocol: <span class="unmuted">{{certificate.protocol}}</span><br>
+            Subject: <span class="unmuted">{{certificate.subjectName}}</span>
+          </td>
           <td>
             <span class="details-label">
               <label>
@@ -538,7 +546,7 @@
           </td>
         </tr>
         <tr class="details">
-          <td colspan="3">
+          <td colspan="4">
             <div class="details-wrapper">
               <p>Inventory hitting this domain:</p>
               {{>inventoryTemplate}}
@@ -559,6 +567,7 @@
         <tr>
           <th class="sortable" data-sort="domain">Domain</th>
           <th class="sortable" data-sort="hits">Hits</th>
+          <th class="sortable" data-sort="certificate">Certificate</th>
           <th class="sortable" data-sort="pages">Pages found on</th>
         </tr>
       </thead>
@@ -572,6 +581,13 @@
             {{/knownTrackingDomain}}
           </td>
           <td>{{hits}}</td>
+          <td class="muted" data-expiry-days="{{certificateValidity.daysUntilExpiry}}">
+            Expires: <span class="unmuted expiring__{{certificateValidity.isExpiring}} expired__{{certificateValidity.isExpired}}">{{certificateExpires}}</span>
+            (<span class="unmuted expiring__{{certificateValidity.isExpiring}} expired__{{certificateValidity.isExpired}}">{{certificateValidity.daysUntilExpiry}} days</span>),<br>
+            Issuer: <span class="unmuted">{{certificate.issuer}}</span><br>
+            Protocol: <span class="unmuted">{{certificate.protocol}}</span><br>
+            Subject: <span class="unmuted">{{certificate.subjectName}}</span>
+          </td>
           <td>
             <span class="details-label">
               <label>
@@ -582,7 +598,7 @@
           </td>
         </tr>
         <tr class="details">
-          <td colspan="3">
+          <td colspan="4">
             <div class="details-wrapper">
               <p>Inventory hitting this domain:</p>
               {{>inventoryTemplate}}
@@ -859,12 +875,22 @@
                 ];
                 const knownTrackingDomain = rootDomain.length > 1 && (trackingDomains.includes(rootDomain) || customTrackingDomains.includes(frameDomain.domain));
 
+
+                let certificateExpires = "-";
+                let certificateValidity = "-";
+                if(frameDomain.certificate && frameDomain.certificate.validTo){
+                  certificateExpires = formatDate({timeStamp: frameDomain.certificate.validTo * 1000});
+                  certificateValidity = checkCertificateExpiry(frameDomain.certificate.validTo);
+                }
                 existingDomain = {
                   domain: frameDomain.domain,
                   hits: 0,
                   calledFromMainDomain: frameDomain.calledFromMainDomain,
                   inventoryItems: [],
                   knownTrackingDomain,
+                  certificate: frameDomain.certificate,
+                  certificateExpires,
+                  certificateValidity,
                 };
                 frameDomainsArray.push(existingDomain);
               }

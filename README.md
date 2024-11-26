@@ -30,7 +30,7 @@ Configure scanning parameters in config/config.js. Key settings include:
 
 Example URL configuration:
 
-```JSON
+```JS
 {
   nameBase: 'Frontpage',
   url: 'https://www.hel.fi/fi/',

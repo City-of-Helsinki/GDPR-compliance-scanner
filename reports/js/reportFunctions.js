@@ -152,6 +152,11 @@ function initSortableTables() {
 
               return newDir === 'asc' ? aNum - bNum : bNum - aNum;
             }
+            if (sortKey === 'certificate') {
+              const aExpiryDays = parseInt(aCell.getAttribute('data-expiry-days'));
+              const bExpiryDays = parseInt(bCell.getAttribute('data-expiry-days'));
+              return newDir === 'asc' ? aExpiryDays - bExpiryDays : bExpiryDays - aExpiryDays;
+            }
             if (sortKey === 'compliant-count') {
               // Extract both numbers from "X / Y" format
               const aMatch = aCell?.textContent.match(/(\d+)\s*\/\s*(\d+)/);
@@ -198,4 +203,16 @@ function initSortableTables() {
       });
     });
   });
+}
+
+function checkCertificateExpiry(validTo) {
+  const now = Date.now();
+  const expiryDate = new Date(validTo * 1000); // Convert to milliseconds
+  const daysUntilExpiry = Math.floor((expiryDate - now) / (1000 * 60 * 60 * 24));
+
+  return {
+    daysUntilExpiry,
+    isExpiring: daysUntilExpiry <= 30, // Warning for certificates expiring within 30 days
+    isExpired: daysUntilExpiry <= 0
+  };
 }

@@ -39,7 +39,8 @@ async function collectAllStorageFromPage(context, page, frameDomains) {
         frameDomainArr = Object.keys(frameDomain).map((domain) => {
           return {
             domain,
-            hits: frameDomain[domain],
+            hits: frameDomain[domain].count,
+            certificate: frameDomain[domain].certificate,
           };
         });
       }

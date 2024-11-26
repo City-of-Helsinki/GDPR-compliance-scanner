@@ -390,3 +390,11 @@ table.minimal {
     border: none;
   }
 }
+
+.expiring__true {
+  color: orange;
+}
+
+.expired__true {
+  color: red;
+}

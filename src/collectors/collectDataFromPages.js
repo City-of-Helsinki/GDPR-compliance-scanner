@@ -34,27 +34,52 @@ async function fetchDataFromPage(
     const frameDomains = new Map();
 
     // Function to add domain and count requests to the frame
-    function addDomainToFrame(frame, url) {
+    function addDomainToFrame(frame, url, certificateInfo) {
       const domain = new URL(url).hostname;
       if (!frameDomains.has(frame)) {
         frameDomains.set(frame, {});
       }
       const domainCounts = frameDomains.get(frame);
       if (!domainCounts[domain]) {
-        domainCounts[domain] = 0;
+        domainCounts[domain] = {
+          count: 0,
+          certificate: certificateInfo,
+        };
       }
-      domainCounts[domain] += 1;
+      domainCounts[domain].count += 1;
     }
 
     // Listen to all requests and log domains per frame
-    page.on('request', (request) => {
+    page.on('request', async(request) => {
       const frame = request.frame();
       const url = request.url();
-      addDomainToFrame(frame, url);
+      let certificateInfo = null;
+
+      try {
+        const securityDetails = await request.headerValue('sec-ch-ua');
+        if (!!securityDetails) {
+          const response = await request.response();
+          if (!!response) {
+            const securityInfo = await response.securityDetails();
+            if (!!securityInfo) {
+              certificateInfo = {
+                subjectName: securityInfo.subjectName,
+                validFrom: securityInfo.validFrom,
+                validTo: securityInfo.validTo,
+                issuer: securityInfo.issuer,
+                protocol: securityInfo.protocol,
+              };
+            }
+          }
+        }
+      // eslint-disable-next-line no-unused-vars
+      } catch (error) {
+        // Ignore errors as not all requests will have security details
+        console.log('error', error);
+      }
+
+      addDomainToFrame(frame, url, certificateInfo);
     });
-    // ---
-
-
 
     // Go to the URL and wait for the page to fully load
     await page.goto(url, { waitUntil: 'load' });
