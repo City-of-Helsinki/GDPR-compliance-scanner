@@ -1,8 +1,10 @@
 /**
- * Collects cookie data from a given frame.
- * @param {BrowserContext} context - A Playwright browser context object.
- * @param {Frame} frame - A Playwright frame object.
- * @returns {Promise<Object>} - A promise that resolves to an object containing cookies data.
+ * Collects cookie data from a given frame
+ * @param {import('playwright').BrowserContext} context - Playwright browser context
+ * @param {import('playwright').Frame} frame - Playwright frame to collect data from
+ * @param {number} frameTimestamp - Timestamp when frame was accessed
+ * @returns {Promise<Array<Object>>} Array of cookie objects with frameTimestamp added
+ * @throws {Error} If cookie collection fails
  */
 async function collectCookies(context, frame, frameTimestamp) {
   try {
@@ -14,9 +16,8 @@ async function collectCookies(context, frame, frameTimestamp) {
     return cookies;
   } catch (error) {
     console.error(`Error collecting cookies from frame (${frame.url()}):`, error);
-    return null; // Returning null in case of error to indicate failure in collection
+    return null;
   }
 }
-
 
 export { collectCookies };

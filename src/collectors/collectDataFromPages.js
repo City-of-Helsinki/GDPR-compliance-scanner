@@ -3,7 +3,18 @@ import chalk from 'chalk';
 import { collectAllStorageFromPage } from './collectAllStorageFromPage.js';
 import { errorLogger } from '../utils/errorLogger.js';
 
-
+/**
+ * Fetches and collects data from a single webpage
+ * @param {Browser} browser - Playwright browser instance
+ * @param {string} url - URL to fetch data from
+ * @param {Array<Object>} [actions=[]] - Array of actions to perform on the page
+ * @param {Object} [cookieData=null] - Cookie data to set before loading the page
+ * @param {boolean} [pauseForDebug=false] - Whether to pause for debugging
+ * @param {boolean} [skipNetworkIdle=false] - Whether to skip waiting for network idle
+ * @param {number} [waitForNetworkIdle=5000] - Time to wait for network idle in ms
+ * @returns {Promise<Object>} Page data including frames and storage information
+ * @throws {Error} If page data collection fails
+ */
 async function fetchDataFromPage(
   browser,
   url,
@@ -126,7 +137,16 @@ async function fetchDataFromPage(
   }
 }
 
-// Helper function to perform custom actions
+/**
+ * Performs a specific action on a page
+ * @param {Page} page - Playwright page object
+ * @param {Object} action - Action to perform
+ * @param {string} action.type - Type of action ('click', 'type', 'waitForNetworkIdle', etc.)
+ * @param {string} [action.selector] - CSS selector for element to act on
+ * @param {string} [action.text] - Text to type (for type action)
+ * @param {number} [action.timeout] - Timeout for waitForNetworkIdle action
+ * @returns {Promise<void>}
+ */
 async function performAction(page, action) {
   const { type, selector, text } = action;
   if (type === 'click') {
@@ -151,6 +171,13 @@ async function performAction(page, action) {
   }
 }
 
+/**
+ * Runs data collection on multiple URLs concurrently with specified headless mode
+ * @param {boolean} headlessMode - Whether to run browser in headless mode
+ * @param {Array<Object>} urls - Array of URL configurations to process
+ * @param {Object} timer - Timer instance for performance tracking
+ * @returns {Promise<Array<Object>>} Array of collected data from each URL
+ */
 async function runOnUrlsConcurrently(headlessMode, urls, timer) {
 
   // Launch the browser (set headless to false for debugging)
@@ -192,7 +219,20 @@ async function runOnUrlsConcurrently(headlessMode, urls, timer) {
   return results.filter(result => result !== null);
 }
 
-// Run on a list of URLs concurrently
+/**
+ * Collects data from multiple pages, running both headless and non-headless modes
+ * @param {Array<Object>} urls - Array of URL configurations to process
+ * @param {Object} urls[].name - Name identifier for the URL
+ * @param {Array} urls[].groups - Groups associated with the URL
+ * @param {string} urls[].url - The URL to scan
+ * @param {Array} [urls[].actions] - Actions to perform on the page
+ * @param {Object} [urls[].cookies] - Cookies to set before loading
+ * @param {boolean} [urls[].pause] - Whether to pause for debugging
+ * @param {boolean} [urls[].skipNetworkIdle] - Whether to skip network idle wait
+ * @param {number} [urls[].waitForNetworkIdle] - Time to wait for network idle
+ * @param {Object} timer - Timer instance for performance tracking
+ * @returns {Promise<Array<Object>>} Collected data from all pages
+ */
 async function collectDataFromPages(urls, timer) {
 
   const headResults = await runOnUrlsConcurrently(false, urls, timer);

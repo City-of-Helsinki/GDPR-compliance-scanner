@@ -1,7 +1,11 @@
 /**
- * Collects indexedDB data from a given frame.
- * @param {Frame} frame - A Playwright frame object.
- * @returns {Promise<Array>} - A promise that resolves to an array of indexedDB entries.
+ * Collects indexedDB data from a given frame
+ * @param {import('playwright').BrowserContext} context - Playwright browser context
+ * @param {import('playwright').Frame} frame - Playwright frame to collect data from
+ * @returns {Promise<Array<{key: string, value: string}>>} Array of indexedDB entries where:
+ *   - key: Database name and store name (e.g., "dbName/storeName")
+ *   - value: String describing number of items (e.g., "5 items")
+ * @throws {Error} If indexedDB collection fails
  */
 async function collectIndexedDB(context, frame) {
   try {
@@ -36,7 +40,7 @@ async function collectIndexedDB(context, frame) {
     return indexedDBData;
   } catch (error) {
     console.error(`Error collecting indexedDB from frame (${frame.url()}):`, error);
-    return []; // Return empty array in case of error to be consistent with other collectors
+    return [];
   }
 }
 

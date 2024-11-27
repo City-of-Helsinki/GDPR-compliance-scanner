@@ -1,6 +1,14 @@
 import fs from 'fs';
 import path from 'path';
 
+/**
+ * Fetches a list of known tracking domains from blocklistproject.github.io
+ * and saves them to a local file
+ * @param {Object} timer - Timer instance for performance tracking
+ * @returns {Promise<string[]>} Array of tracking domain names
+ *   Returns empty array if fetch fails
+ * @throws {Error} If directory creation or file writing fails
+ */
 export async function fetchTrackingDomains(timer) {
   timer.start('Fetching tracking domains');
   let trackingDomains = [];

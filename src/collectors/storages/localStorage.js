@@ -1,7 +1,10 @@
 /**
- * Collects localStorage data from a given frame.
- * @param {Frame} frame - A Playwright frame object.
- * @returns {Promise<Object>} - A promise that resolves to an object containing key-value pairs of the localStorage data.
+ * Collects localStorage data from a given frame
+ * @param {import('playwright').BrowserContext} context - Playwright browser context
+ * @param {import('playwright').Frame} frame - Playwright frame to collect data from
+ * @returns {Promise<Array<{key: string, value: string}>>} Array of localStorage entries
+ *   containing key-value pairs from the storage
+ * @throws {Error} If localStorage collection fails
  */
 async function collectLocalStorage(context, frame) {
   try {
@@ -18,7 +21,7 @@ async function collectLocalStorage(context, frame) {
     return localStorageData;
   } catch (error) {
     console.error(`Error collecting localStorage from frame (${frame.url()}):`, error);
-    return null; // Returning null in case of error to indicate failure in collection
+    return null;
   }
 }
 

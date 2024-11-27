@@ -5,10 +5,20 @@ import { collectIndexedDB } from './storages/indexedDB.js';
 import { collectCacheStorage } from './storages/cacheStorage.js';
 
 /**
- * Collects data from all frames in a given page.
- * @param {BrowserContext} context - A Playwright browser context object.
- * @param {Page} page - A Playwright page object.
- * @returns {Promise<Object>} - A promise that resolves to an array of objects, each representing the data for a specific frame.
+ * Collects all storage data from every frame in a given page
+ * @param {import('playwright').BrowserContext} context - Playwright browser context
+ * @param {import('playwright').Page} page - Playwright page to collect data from
+ * @param {Map<Frame, Object>} frameDomains - Map of frames to their domain information
+ * @returns {Promise<Array<Object>>} Array of frame data objects containing:
+ *   - frameUrl: URL of the frame
+ *   - cookies: Array of cookie objects
+ *   - localStorage: Array of localStorage entries
+ *   - sessionStorage: Array of sessionStorage entries
+ *   - indexedDB: Array of indexedDB entries
+ *   - cacheStorage: Array of cacheStorage entries
+ *   - frameDomains: Array of domain objects with hits and certificates
+ *   - frameTimestamp: Unix timestamp when frame was accessed
+ * @throws {Error} If data collection fails
  */
 async function collectAllStorageFromPage(context, page, frameDomains) {
   try {
@@ -34,7 +44,7 @@ async function collectAllStorageFromPage(context, page, frameDomains) {
       const frameDomain = frameDomains.get(pageFrame);
 
       let frameDomainArr = [];
-      // convert frameDomain object {'example.com': 1} to an array with objects like {domain: 'example.com', hits: 1}
+      // Convert frameDomain object to array of domain objects
       if(frameDomain) {
         frameDomainArr = Object.keys(frameDomain).map((domain) => {
           return {
@@ -56,8 +66,6 @@ async function collectAllStorageFromPage(context, page, frameDomains) {
         frameTimestamp,
       });
     }
-
-    // console.log(`Collected data from ${frames.length} frames on page (${page.url()})`,allStorageData);
 
     return allStorageData;
   } catch (error) {

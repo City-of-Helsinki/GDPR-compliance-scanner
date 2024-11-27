@@ -1,4 +1,7 @@
-
+/**
+ * Predefined variant groups for cookie consent
+ * @type {Object.<string, Array<string>>}
+ */
 const VARIANTS = {
   none: [],
   required: [],
@@ -6,6 +9,13 @@ const VARIANTS = {
   all: [],
 };
 
+/**
+ * Generates a cookie object for the given groups and expiration
+ * @param {Object} groupHashes - Hash values for each consent group
+ * @param {Array<string>} groups - Array of group identifiers to include in cookie
+ * @param {number} expires - Cookie expiration timestamp
+ * @returns {Object} Cookie object with consent configuration
+ */
 function generateCookie(groupHashes, groups, expires) {
   const value = {
     groups: {},
@@ -31,13 +41,27 @@ function generateCookie(groupHashes, groups, expires) {
     "sameSite": "Strict"
   };
 
-  // console.log(JSON.stringify(cookie, null, 2));
-
   return cookie;
 }
 
+/**
+ * Generates a list of URLs to scan with different cookie consent configurations
+ * @param {Array<Object>} configUrls - Array of URL configurations to process
+ * @param {Object} groupHashes - Hash values for each consent group
+ * @param {Array<Object>} groupSettings - Settings for different cookie groups
+ * @param {number} expires - Cookie expiration timestamp
+ * @returns {Array<Object>} Array of URL configurations with:
+ *   - name: String identifier for the scan
+ *   - url: URL to scan
+ *   - skipNetworkIdle: Whether to skip network idle wait
+ *   - waitForNetworkIdle: Time to wait for network idle
+ *   - actions: Array of actions to perform
+ *   - cookies: Array of cookie configurations
+ *   - groups: Array of group identifiers
+ *   - headless: Whether to run in headless mode
+ *   - pause: Whether to pause for debugging
+ */
 function getUrlsToScan(configUrls, groupHashes, groupSettings, expires) {
-
   // Populate the VARIANTS object with groupIds
   for(const groupSetting of groupSettings) {
     if (groupSetting.required) {

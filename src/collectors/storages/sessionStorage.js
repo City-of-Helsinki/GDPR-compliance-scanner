@@ -1,7 +1,10 @@
 /**
- * Collects sessionStorage data from a given frame.
- * @param {Frame} frame - A Playwright frame object.
- * @returns {Promise<Object>} - A promise that resolves to an object containing key-value pairs of the sessionStorage data.
+ * Collects sessionStorage data from a given frame
+ * @param {import('playwright').BrowserContext} context - Playwright browser context
+ * @param {import('playwright').Frame} frame - Playwright frame to collect data from
+ * @returns {Promise<Array<{key: string, value: string}>>} Array of sessionStorage entries
+ *   containing key-value pairs from the storage
+ * @throws {Error} If sessionStorage collection fails
  */
 async function collectSessionStorage(context, frame) {
   try {
@@ -18,7 +21,7 @@ async function collectSessionStorage(context, frame) {
     return sessionStorageData;
   } catch (error) {
     console.error(`Error collecting sessionStorage from frame (${frame.url()}):`, error);
-    return null; // Returning null in case of error to indicate failure in collection
+    return null;
   }
 }
 
