@@ -26,7 +26,7 @@ export async function collectGroupSettings(url) {
 
     return { groupSettings, siteSettings };
   } catch (error) {
-    console.error('Error fetching consent:', error);
+    console.error(`Error fetching consent from url "${url}":`, error);
     throw error;
   }
 }
