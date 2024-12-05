@@ -94,9 +94,18 @@ async function fetchDataFromPage(
     // Go to the URL and wait for the page to fully load
     await page.goto(url, { waitUntil: 'load' });
 
-    if(!skipNetworkIdle) {
-      // Wait for network to be idle after loading
-      await page.waitForLoadState('networkidle');
+    if (!skipNetworkIdle) {
+      // Wait for network idle with a 15 second timeout
+      try {
+        await Promise.race([
+          page.waitForLoadState('networkidle'),
+          new Promise(resolve => setTimeout(resolve, 15000))
+        ]);
+      // eslint-disable-next-line no-unused-vars
+      } catch (error) {
+        // If timeout occurs, continue execution
+      }
+
     } else {
       // Wait for a little while to make sure network is idle
       await new Promise(resolve => setTimeout(resolve, waitForNetworkIdle));

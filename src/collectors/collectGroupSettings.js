@@ -16,7 +16,7 @@ function stripGroup(group, required) {
     cookies: group.cookies.map(cookie => ({
       name: cookie.name,
       host: cookie.host,
-      type: cookie.type,
+      storageType: cookie.storageType,
       expiration: typeof cookie.expiration === 'object' ? cookie.expiration.en : cookie.expiration,
     })),
   };

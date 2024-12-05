@@ -35,7 +35,7 @@ function getStorageItemSettings(groupSettings) {
 
 /**
  * Checks compliance of a single storage item against site settings
- * @param {number} type - Storage type identifier (1=cookie, 2=localStorage, etc)
+ * @param {number} storageType - Storage type identifier (1=cookie, 2=localStorage, etc)
  * @param {Object} item - The storage item to check
  * @param {string} itemId - Identifier for the storage item (name for cookies, key for others)
  * @param {Array} groups - Groups that this item belongs to
@@ -48,7 +48,7 @@ function getStorageItemSettings(groupSettings) {
  * @returns {Object} Compliance check results including matching settings
  */
 function checkItemCompliance(
-  type,
+  storageType,
   item,
   itemId,
   groups,
@@ -71,7 +71,7 @@ function checkItemCompliance(
   });
 
   matches = matches.filter(match => {
-    return match.type === type;
+    return match.storageType === storageType;
   });
 
   let fixedUrl = url;
@@ -83,7 +83,7 @@ function checkItemCompliance(
     const escapedSettingHost = match.host.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&').replace('\\*', '.*');
     match.hostMatches = new RegExp(`^(https?://)?${escapedSettingHost}.*$`).test(fixedUrl);
 
-    if (type === 1) {
+    if (storageType === 1) {
       item.expirationText = getCookieExpirationText(item.frameTimestamp, item.expires);
       match.expiresMatches = item.expirationText === match.expiration;
     } else {
@@ -100,7 +100,7 @@ function checkItemCompliance(
   }
 
   const compliance = {
-    type,
+    storageType,
     itemId,
     item,
     groups,
@@ -165,11 +165,11 @@ function checkCompliance(
         inventoryItems[inventoryItem].frames[frame].compliant = true;
 
         const storageTypes = {
-          cookies: { type: TYPES.cookie, getKey: item => item.name },
-          localStorage: { type: TYPES.localStorage, getKey: item => item.key },
-          sessionStorage: { type: TYPES.sessionStorage, getKey: item => item.key },
-          indexedDB: { type: TYPES.indexedDB, getKey: item => item.key },
-          cacheStorage: { type: TYPES.cacheStorage, getKey: item => item.key }
+          cookies: { storageType: TYPES.cookie, getKey: item => item.name },
+          localStorage: { storageType: TYPES.localStorage, getKey: item => item.key },
+          sessionStorage: { storageType: TYPES.sessionStorage, getKey: item => item.key },
+          indexedDB: { storageType: TYPES.indexedDB, getKey: item => item.key },
+          cacheStorage: { storageType: TYPES.cacheStorage, getKey: item => item.key }
         };
 
         for (const [storageKey, storage] of Object.entries({
@@ -179,11 +179,11 @@ function checkCompliance(
           indexedDB,
           cacheStorage
         })) {
-          const { type, getKey } = storageTypes[storageKey];
+          const { storageType, getKey } = storageTypes[storageKey];
 
           for (const item in storage) {
             const compliance = checkItemCompliance(
-              type,
+              storageType,
               storage[item],
               getKey(storage[item]),
               groups,

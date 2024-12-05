@@ -14,9 +14,10 @@ const VARIANTS = {
  * @param {Object} groupHashes - Hash values for each consent group
  * @param {Array<string>} groups - Array of group identifiers to include in cookie
  * @param {number} expires - Cookie expiration timestamp
+ * @param {string} domain - Cookie domain
  * @returns {Object} Cookie object with consent configuration
  */
-function generateCookie(groupHashes, groups, expires) {
+function generateCookie(groupHashes, groups, expires, domain) {
   const value = {
     groups: {},
   };
@@ -33,7 +34,7 @@ function generateCookie(groupHashes, groups, expires) {
   const cookie = {
     "name": "helfi-cookie-consents",
     "value": encodeURIComponent(JSON.stringify(value)),
-    "domain": "www.test.hel.ninja",
+    "domain": domain,
     "path": "/",
     "expires": expires,
     "httpOnly": false,
@@ -75,17 +76,18 @@ function getUrlsToScan(configUrls, groupHashes, groupSettings, expires) {
   const urlsToScan = [];
 
   for (const configUrl of configUrls) {
+    const domain = new URL(configUrl.url).hostname;
     if (configUrl.variants) {
       for (const variant of configUrl.variants) {
         const cookies = [];
         const groups = [];
         if (typeof variant === 'string') {
           if(VARIANTS[variant]) {
-            cookies.push(generateCookie(groupHashes, VARIANTS[variant], expires));
+            cookies.push(generateCookie(groupHashes, VARIANTS[variant], expires, domain));
             groups.push(...VARIANTS[variant]);
           }
         } else {
-          cookies.push(generateCookie(groupHashes, variant, expires));
+          cookies.push(generateCookie(groupHashes, variant, expires, domain));
           for (const group of variant) {
             groups.push(group);
           }

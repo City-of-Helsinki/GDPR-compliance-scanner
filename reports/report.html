@@ -444,7 +444,7 @@
                     <td><span class="centered compliant_{{compliant}}"> {{compliant}}</span></td>
                     <td>
                       {{#complianceData.matchingSettings}}
-                      <p>{{groupId}}: <span class="type__{{type}}">{{name}}</span>
+                      <p>{{groupId}}: <span class="type__{{storageType}}">{{name}}</span>
                         (<span class="hostMatches__{{hostMatches}}">{{host}}</span>,
                         <span class="expiresMatches__{{expiresMatches}}">{{expiration}}</span>)</p>
                       {{/complianceData.matchingSettings}}
@@ -938,8 +938,8 @@
       processedData.foundItems.forEach(compliance => {
         let name, domain, existingCompliance;
         let isCookie = false;
-        const type = compliance.type;
-        if (compliance.type === 1) {
+        const storageType = compliance.storageType;
+        if (compliance.storageType === 1) {
           name = compliance.itemId;
           domain = compliance.item.domain;
           isCookie = true;
@@ -949,7 +949,7 @@
           domain = new URL(compliance.frameUrl).hostname;
           compliance.item.expiresText = '-';
         }
-        existingCompliance = foundItemsUnique.find(c => c.name === name && c.domain === domain && c.type === type);
+        existingCompliance = foundItemsUnique.find(c => c.name === name && c.domain === domain && c.storageType === storageType);
 
         compliance.framePath = new URL(compliance.frameUrl).pathname;
 
@@ -965,8 +965,8 @@
           existingCompliance.allCompliant = existingCompliance.allCompliant && allCompliant;
         } else {
           foundItemsUnique.push({
-            type,
-            typeString: TYPES[type],
+            storageType,
+            typeString: TYPES[storageType],
             name,
             domain,
             complianceCount,
@@ -1001,7 +1001,7 @@
 
       const cookieProcessor = (group) => {
         group.cookies.forEach(siteSettingsCookie => {
-          siteSettingsCookie.typeString = TYPES[siteSettingsCookie.type];
+          siteSettingsCookie.typeString = TYPES[siteSettingsCookie.storageType];
           siteSettingsCookie.foundItemsUnique = JSON.parse(JSON.stringify(processedData.foundItemsUnique)).filter(compliance => {
             let nameMatch = false;
             let typeMatch = false;
@@ -1026,7 +1026,7 @@
             if(nameMatches){
               nameMatch = true;
             }
-            if(compliance.type === siteSettingsCookie.type){
+            if(compliance.storageType === siteSettingsCookie.storageType){
               typeMatch = true;
             }
             return nameMatch && typeMatch;

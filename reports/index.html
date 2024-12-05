@@ -68,7 +68,7 @@
 
 
       // Fetch the report history from history.json and print it out using mustache.js
-      fetch('./json/history.json')
+      fetch(`./json/history.json?_=${Date.now()}`)
         .then(response => response.json())
         .then(data => {
 

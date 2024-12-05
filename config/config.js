@@ -3,14 +3,14 @@ const nodebug = { headless: true, pause: false }
 const debug = { headless: false, pause: true };
 
 const config = {
-  mainUrl: 'https://www.test.hel.ninja/fi/',
-  apiUrl: 'https://www.test.hel.ninja/en/api/cookie-banner'+'?cacheBuster='+Date.now(),
+  mainUrl: 'https://www.hel.fi/fi/',
+  apiUrl: 'https://www.hel.fi/en/api/cookie-banner'+'?cacheBuster='+Date.now(),
   settingsDomainSubstitution: 'https://www.hel.fi/fi/',
   urls: [
     {
       only: false,
       nameBase: 'Frontpage',
-      url: 'https://www.test.hel.ninja/fi/',
+      url: 'https://www.hel.fi/fi/',
       actions: [],
       variants: [
         'none',
@@ -21,8 +21,98 @@ const config = {
     },
     {
       only: false,
+      nameBase: 'Rekry',
+      url: 'https://www.hel.fi/fi/avoimet-tyopaikat',
+      actions: [],
+      variants: [
+        'required',
+        'all',
+      ],
+      ...nodebug,
+    },
+    {
+      only: false,
+      nameBase: 'Sote',
+      url: 'https://www.hel.fi/fi/sosiaali-ja-terveyspalvelut',
+      actions: [],
+      variants: [
+        'required',
+        'all',
+      ],
+      ...nodebug,
+    },
+    {
+      only: false,
+      nameBase: 'Kasko',
+      url: 'https://www.hel.fi/fi/kasvatus-ja-koulutus',
+      actions: [],
+      variants: [
+        'required',
+        'all',
+      ],
+      ...nodebug,
+    },
+    {
+      only: false,
+      nameBase: 'Asuminen',
+      url: 'https://www.hel.fi/fi/asuminen',
+      actions: [],
+      variants: [
+        'required',
+        'all',
+      ],
+      ...nodebug,
+    },
+    {
+      only: false,
+      nameBase: 'Kymp',
+      url: 'https://www.hel.fi/fi/kaupunkiymparisto-ja-liikenne',
+      actions: [],
+      variants: [
+        'required',
+        'all',
+      ],
+      ...nodebug,
+    },
+    {
+      only: false,
+      nameBase: 'KuVa',
+      url: 'https://www.hel.fi/fi/kulttuuri-ja-vapaa-aika',
+      actions: [],
+      variants: [
+        'required',
+        'all',
+      ],
+      ...nodebug,
+    },
+    {
+      only: false,
+      nameBase: 'Elo',
+      url: 'https://www.hel.fi/fi/yritykset-ja-tyo',
+      actions: [],
+      variants: [
+        'required',
+        'all',
+      ],
+      ...nodebug,
+    },
+    {
+      only: false,
+      nameBase: 'Strategia',
+      url: 'https://www.hel.fi/fi/paatoksenteko-ja-hallinto',
+      actions: [],
+      variants: [
+        'required',
+        'all',
+      ],
+      ...nodebug,
+    },
+
+
+    {
+      only: false,
       nameBase: 'Siteimprove (Rekry)',
-      url: 'https://www.test.hel.ninja/fi/avoimet-tyopaikat',
+      url: 'https://www.hel.fi/fi/avoimet-tyopaikat',
       actions: [],
       variants: [
         'required',
@@ -33,7 +123,7 @@ const config = {
     {
       only: false,
       nameBase: 'Helsinkikanava',
-      url: 'https://www.test.hel.ninja/fi/sosiaali-ja-terveyspalvelut/senioripalvelut/kotihoito/liikkumissopimus',
+      url: 'https://www.hel.fi/fi/sosiaali-ja-terveyspalvelut/senioripalvelut/kotihoito/liikkumissopimus',
       actions: [],
       variants: [
         'required',
@@ -43,7 +133,7 @@ const config = {
     {
       only: false,
       nameBase: 'Helsinkikanava',
-      url: 'https://www.test.hel.ninja/fi/sosiaali-ja-terveyspalvelut/senioripalvelut/kotihoito/liikkumissopimus',
+      url: 'https://www.hel.fi/fi/sosiaali-ja-terveyspalvelut/senioripalvelut/kotihoito/liikkumissopimus',
       actions: [],
       variants: [
         ['essential', 'admin', 'preferences', 'statistics'], // all but chat
@@ -53,7 +143,7 @@ const config = {
     {
       only: false,
       nameBase: 'Youtube',
-      url: 'https://www.test.hel.ninja/fi/sosiaali-ja-terveyspalvelut/toihin-meille/toissa-meilla/laakari-tomas-lundqvist-nakee-laaketieteen-koko-kentan',
+      url: 'https://www.hel.fi/fi/sosiaali-ja-terveyspalvelut/toihin-meille/toissa-meilla/laakari-tomas-lundqvist-nakee-laaketieteen-koko-kentan',
       actions: [],
       variants: [
         'required',
@@ -64,7 +154,7 @@ const config = {
     {
       only: false,
       nameBase: 'ReactAndShare',
-      url: 'https://www.test.hel.ninja/fi/sosiaali-ja-terveyspalvelut',
+      url: 'https://www.hel.fi/fi/sosiaali-ja-terveyspalvelut',
       actions: [],
       variants: [
         'required',
@@ -75,7 +165,7 @@ const config = {
     {
       only: false,
       nameBase: 'PowerBI',
-      url: 'https://www.test.hel.ninja/fi/sosiaali-ja-terveyspalvelut/asiakkaan-tiedot-ja-oikeudet/odotusajat-ja-asiakaskokemus',
+      url: 'https://www.hel.fi/fi/sosiaali-ja-terveyspalvelut/asiakkaan-tiedot-ja-oikeudet/odotusajat-ja-asiakaskokemus',
       actions: [],
       variants: [
         'required',
@@ -86,7 +176,7 @@ const config = {
     {
       only: false,
       nameBase: 'Cycling Routes',
-      url: 'https://www.test.hel.ninja/fi/kaupunkiymparisto-ja-liikenne/pyoraily/pyorareitit',
+      url: 'https://www.hel.fi/fi/kaupunkiymparisto-ja-liikenne/pyoraily/pyorareitit',
       skipNetworkIdle: true,
       waitForNetworkIdle: 5000,
       actions: [],
@@ -99,7 +189,7 @@ const config = {
     {
       only: false,
       nameBase: 'kartta.hel.fi',
-      url: 'https://www.test.hel.ninja/fi/kaupunkiymparisto-ja-liikenne/kunnossapito/katujen-kunnossapito/katutyot',
+      url: 'https://www.hel.fi/fi/kaupunkiymparisto-ja-liikenne/kunnossapito/katujen-kunnossapito/katutyot',
       actions: [
         {
           type: 'removeElement',
@@ -123,7 +213,7 @@ const config = {
     {
       only: false,
       nameBase: 'palvelukartta.hel.fi',
-      url: 'https://www.test.hel.ninja/fi/sosiaali-ja-terveyspalvelut/terveydenhoito/kuntoutus-ja-terapiat/jalkaterapia/munkkiniemen-jalkaterapia',
+      url: 'https://www.hel.fi/fi/sosiaali-ja-terveyspalvelut/terveydenhoito/kuntoutus-ja-terapiat/jalkaterapia/munkkiniemen-jalkaterapia',
       actions: [
         {
           type: 'removeElement',
@@ -147,7 +237,7 @@ const config = {
     {
       only: false,
       nameBase: '💬 Sotebot Hester Watson Genesys chat inactive',
-      url: 'https://www.test.hel.ninja/fi/sosiaali-ja-terveyspalvelut/lasten-ja-perheiden-palvelut/aitiys-ja-lastenneuvolat',
+      url: 'https://www.hel.fi/fi/sosiaali-ja-terveyspalvelut/lasten-ja-perheiden-palvelut/aitiys-ja-lastenneuvolat',
       actions: [],
       variants: [
         'required',
@@ -157,7 +247,7 @@ const config = {
     {
       only: false,
       nameBase: '💬 Sotebot Hester Watson Genesys chat active',
-      url: 'https://www.test.hel.ninja/fi/sosiaali-ja-terveyspalvelut/lasten-ja-perheiden-palvelut/aitiys-ja-lastenneuvolat',
+      url: 'https://www.hel.fi/fi/sosiaali-ja-terveyspalvelut/lasten-ja-perheiden-palvelut/aitiys-ja-lastenneuvolat',
       actions: [
         {
           type: 'removeElement',
@@ -176,7 +266,7 @@ const config = {
     {
       only: false,
       nameBase: '💬 Suun terveyden Genesys chat',
-      url: 'https://www.test.hel.ninja/fi/sosiaali-ja-terveyspalvelut/terveydenhoito/hammashoito',
+      url: 'https://www.hel.fi/fi/sosiaali-ja-terveyspalvelut/terveydenhoito/hammashoito',
       actions: [],
       variants: [
         'required',
@@ -187,7 +277,7 @@ const config = {
     {
       only: false,
       nameBase: '💬 Helsinki info ACE chat',
-      url: 'https://www.test.hel.ninja/fi/',
+      url: 'https://www.hel.fi/fi/',
       actions: [],
       variants: [
         'required',
@@ -198,7 +288,7 @@ const config = {
     {
       only: false,
       nameBase: '💬 Suun terveyden Genesys chat',
-      url: 'https://www.test.hel.ninja/fi/sosiaali-ja-terveyspalvelut/terveydenhoito/hammashoito',
+      url: 'https://www.hel.fi/fi/sosiaali-ja-terveyspalvelut/terveydenhoito/hammashoito',
       actions: [
         {
           type: 'removeElement',
@@ -233,33 +323,33 @@ const config = {
       ],
       ...nodebug,
     },
-    {
-      only: false,
-      nameBase: '💬 Helsinki info ACE chat',
-      url: 'https://www.test.hel.ninja/fi/',
-      actions: [
-        {
-          type: 'removeElement',
-          selector: '#block-surveys',
-        },
-        {
-          type: 'click',
-          selector: 'button:has-text("Kysy kaupungista!")',
-        },
-        {
-          type: 'waitForNetworkIdle',
-          timeout: 5000,
-        },
-      ],
-      variants: [
-        'none',
-      ],
-      ...nodebug,
-    },
+    // {
+    //   only: false,
+    //   nameBase: '💬 Helsinki info ACE chat',
+    //   url: 'https://www.hel.fi/fi/',
+    //   actions: [
+    //     {
+    //       type: 'removeElement',
+    //       selector: '#block-surveys',
+    //     },
+    //     {
+    //       type: 'click',
+    //       selector: 'button:has-text("Kysy kaupungista!")',
+    //     },
+    //     {
+    //       type: 'waitForNetworkIdle',
+    //       timeout: 5000,
+    //     },
+    //   ],
+    //   variants: [
+    //     'none',
+    //   ],
+    //   ...nodebug,
+    // },
     {
       only: false,
       nameBase: 'Helfi settings (accordion)',
-      url: 'https://www.test.hel.ninja/fi/sosiaali-ja-terveyspalvelut/digitaaliset-palvelut',
+      url: 'https://www.hel.fi/fi/sosiaali-ja-terveyspalvelut/digitaaliset-palvelut',
       actions: [
         {
           type: 'removeElement',
