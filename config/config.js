@@ -236,7 +236,7 @@ const config = {
     },
     {
       only: false,
-      nameBase: '💬 Sotebot Hester Watson Genesys chat inactive',
+      nameBase: '💬 Sotebot Hester Watson chat inactive',
       url: 'https://www.hel.fi/fi/sosiaali-ja-terveyspalvelut/lasten-ja-perheiden-palvelut/aitiys-ja-lastenneuvolat',
       actions: [],
       variants: [
@@ -246,7 +246,7 @@ const config = {
     },
     {
       only: false,
-      nameBase: '💬 Sotebot Hester Watson Genesys chat active',
+      nameBase: '💬 Sotebot Hester Watson chat active',
       url: 'https://www.hel.fi/fi/sosiaali-ja-terveyspalvelut/lasten-ja-perheiden-palvelut/aitiys-ja-lastenneuvolat',
       actions: [
         {
@@ -255,21 +255,10 @@ const config = {
         },
         {
           type: 'click',
-          selector: 'button:has-text("Sotebotti Hester")',
+          selector: 'button:has-text("Chat")',
         },
       ],
       variants: [
-        ['chat'],
-      ],
-      ...nodebug,
-    },
-    {
-      only: false,
-      nameBase: '💬 Suun terveyden Genesys chat',
-      url: 'https://www.hel.fi/fi/sosiaali-ja-terveyspalvelut/terveydenhoito/hammashoito',
-      actions: [],
-      variants: [
-        'required',
         ['chat'],
       ],
       ...nodebug,
@@ -282,44 +271,6 @@ const config = {
       variants: [
         'required',
         ['chat'],
-      ],
-      ...nodebug,
-    },
-    {
-      only: false,
-      nameBase: '💬 Suun terveyden Genesys chat',
-      url: 'https://www.hel.fi/fi/sosiaali-ja-terveyspalvelut/terveydenhoito/hammashoito',
-      actions: [
-        {
-          type: 'removeElement',
-          selector: '#block-surveys',
-        },
-        {
-          type: 'click',
-          selector: 'button:has-text("Hammashoidon chat")',
-        },
-        {
-          type: 'waitForNetworkIdle',
-          timeout: 5000,
-        },
-        {
-          type: 'refresh',
-        },
-        {
-          type: 'waitForNetworkIdle',
-          timeout: 5000,
-        },
-        {
-          type: 'click',
-          selector: 'button:has-text("Hammashoidon chat")',
-        },
-        {
-          type: 'waitForNetworkIdle',
-          timeout: 5000,
-        },
-      ],
-      variants: [
-        'none',
       ],
       ...nodebug,
     },
