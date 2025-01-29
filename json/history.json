@@ -1,16 +1,16 @@
 [
   {
-    "timeStamp": "2025-01-29T08:54:43.207Z",
+    "timeStamp": "2025-01-29T09:12:00.392Z",
     "summary": {
-      "total": 126,
-      "compliant": 126,
+      "total": 153,
+      "compliant": 153,
       "nonCompliant": 0,
       "warnings": 0,
-      "urls": 42,
-      "failedUrls": 4,
-      "timing": "48.140s",
+      "urls": 39,
+      "failedUrls": 0,
+      "timing": "17.676s",
       "siteSettingsFlat": 76
     },
-    "filename": "report-2025-01-29T08:54:43.207Z.json"
+    "filename": "report-2025-01-29T09:12:00.392Z.json"
   }
 ]
