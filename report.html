@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GDPR Compliance Scanner</title>
+  <meta name="color-scheme" content="light dark" />
+  <script type="module"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.2.0/mustache.min.js"
+    integrity="sha384-9upMxX4rShCFaXmhPbMHtOF91mm4T+HZx+SdqC7vQsyPeTwqQbRsmA8BY3GjaK+L"
+    crossorigin="anonymous"></script>
+  <script type="module" src="./js/getCookieExpirationText.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"
+    integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/reportFunctions.js"></script>
+  <link rel="prefetch" href="https://blocklistproject.github.io/Lists/alt-version/tracking-nl.txt" as="fetch">
+</head>
+<body>
+  <main>
+  <h1>Loading report</h1>
+  <a href="/">All reports</a>
+
+  <div id="report"></div>
+  <!--
+  MARK: Template
+  -->
+  <script type="text/html" id="reportTemplate">
+    <div class="stats">
+      <canvas id="myChart" width="200" height="100"></canvas>
+      <div class="summary">
+        <p>{{summary.urls}} <span class="secondary">URLs checked from <a href="{{config.mainUrl}}" class="unmuted">{{config.mainUrl}}</a></span></p>
+        <p>{{foundItemsUnique.length}} <span class="secondary">items found (cookies, localStorage, etc.)</span></p>
+        <p>✅ {{summary.compliant}} <span class="secondary">compliant items</span></p>
+        <p>❌ {{summary.nonCompliant}} <span class="secondary">non-compliant items</span></p>
+        <p><span class="secondary">Checked against</span> {{summary.siteSettingsCount}} <span class="secondary">"Site Settings" rules</span></p>
+        <p><span class="secondary">Generting report took</span> {{summary.timing}}</p>
+      </div>
+    </div>
+
+    <div class="tab-controls">
+
+      <input type="radio" id="tab-pages" name="tabs" value="inventory" checked>
+      <label for="tab-pages">Pages</label>
+
+      <input type="radio" id="tab-found-items" name="tabs" value="found-items">
+      <label for="tab-found-items">Found Items</label>
+
+      <input type="radio" id="tab-domains" name="tabs" value="domains">
+      <label for="tab-domains">Domains</label>
+
+      <input type="radio" id="tab-settings" name="tabs" value="settings">
+      <label for="tab-settings">Site Settings</label>
+
+      <input type="radio" id="tab-config" name="tabs" value="config">
+      <label for="tab-config">Scanner Configuration</label>
+
+      <input type="radio" id="tab-all" name="tabs" value="all">
+      <label for="tab-all">All</label>
+    </div>
+
+    <div class="inventory tab-content">
+      <h2>Inventory of checked pages and their frames</h2>
+      <p class="muted">There were <span class="unmuted">{{urls.length}}</span> pages checked based on the <label class="link" for="tab-config">configuration</label> used varying cookie settings and actions.</p>
+      <p class="muted">Of the above, <span class="unmuted">{{summary.totalCompliant}}</span> pages were fully ✅ compliant while <span class="unmuted">{{summary.totalNonCompliant}}</span> pages contained at least one ❌ non-compliant item.</p>
+      <p class="muted">All the checked pages loaded a total of <span class="unmuted">{{summary.totalFrames}}</span> frames that connected to <span class="unmuted">{{frameDomains.length}}</span> different domains.</p>
+      {{>inventoryTemplate}}
+    </div>
+
+    <div class="found-items tab-content">
+      <h2>Compliances of found items</h2>
+      <p class="muted">The following table shows all <span class="unmuted">{{foundItemsUnique.length}}</span> unique items (by name and type) found that were checked against the <label class="link" for="tab-settings">Site Settings</label> rules.</p>
+      <table class="minimal">
+        <tr class="centered">
+          <td>{{summary.totalCookies}}</td>
+          <td>{{summary.totalLocalStorage}}</td>
+          <td>{{summary.totalSessionStorage}}</td>
+          <td>{{summary.totalIndexedDB}}</td>
+          <td>{{summary.totalCacheStorage}}</td>
+        </tr>
+        <tr class="muted">
+          <td><span class="type__cookie">cookies</span></td>
+          <td><span class="type__localStorage">localStorage items</span></td>
+          <td><span class="type__sessionStorage">sessionStorage items</span></td>
+          <td><span class="type__indexedDB">IndexedDB items</span></td>
+          <td><span class="type__cacheStorage">cacheStorage items</span></td>
+        </tr>
+      </table>
+      <p class="muted">It is highly likely that not all items are found with automated scanning. The Playwright browser is not supported for example in Helsinkikanava videos and some cookies could be seen in a regular browser when scanner found none.</p>
+      {{>complianceTemplate}}
+    </div>
+
+    <div class="frameDomains tab-content">
+      <h2>Domains contacted by frames in inventory</h2>
+      <p class="muted">The following tables shows all <span class="unmuted">{{frameDomains.length}}</span> domains contacted during the scan.</p>
+      <p class="muted">Remember to consider that <span class="unmuted">GDPR regulated</span> tracking can happen without cookies just by connecting to a domain that tracks the visitors IP-address.</p>
+      <p class="muted">Known tracking domains are highlighted with ⚠️-icon based on <a href="https://github.com/blocklistproject/Lists">BlocklistProject's tracking-nl.txt</a> downloaded at {{trackingDomainsTimestamp}}. The list has been extended with some additional domains that are known to be used for tracking.</p>
+
+      <h3>Domains contacted by frames withing the main domain.</h3>
+      <p class="muted">These <span class="unmuted">{{frameDomainsInternal.length}}</span> domains have access to set cookies for the main domain {{config.mainUrl}}.</p>
+      <p class="muted">Also note that every connection is another security risk when evaluating this list (for example, if scripts are loaded to main domain from these domains).</p>
+      <p class="muted">For example if this first list contains tracking domains like fonts.googleapis.com, then there <a href="https://www.cookieyes.com/documentation/google-fonts-and-gdpr/">may be a violation of GDPR</a>.</p>
+      {{>frameDomainsInternalTemplate}}
+
+      <h3>Domains contacted by frames outside the main domain.</h3>
+      <p class="muted">These <span class="unmuted">{{frameDomainsExternal.length}}</span> domains can not set cookies for the main domain, but they can still track the visitor.</p>
+      {{>frameDomainsExternalTemplate}}
+    </div>
+
+    <div class="siteSettings tab-content">
+      <h2>Site Settings</h2>
+      <p class="muted">
+        These <span class="unmuted">{{summary.siteSettingsCount}} settings</span> divided in
+        <span class="unmuted">{{siteSettings.requiredGroups.length}} required</span> and
+        <span class="unmuted">{{siteSettings.optionalGroups.length}} optional</span> groups were downloaded at {{timeStampFormatted}} from the
+        <a href="{{apiUrl}}">siteSettings API address</a> given in the <label class="link" for="tab-config">configuration</label>.
+      </p>
+      <p class="muted">
+        The settings are used for checking compliance of found items against the rules.
+        This scanner checks the item name and type (cookie, localStorage, etc.) and matches them against the rules considering these two as compliant if they match.
+        It highlights mismatching domains and expiry dates with <span class="hostMatches__false">red color</span> and with <span class="hostMatches__true">green color</span> if they match.
+      </p>
+      <p class="muted">
+        Scan found <span class="unmuted">{{summary.siteSettingsZeroMatches}}</span> settings without a single matching item.
+        {{#summary.siteSettingsZeroMatches}}
+        This might mean that these settings are no longer needed, but the scanner does not see all cookies as it does not interact with the content like users do.
+        {{/summary.siteSettingsZeroMatches}}
+        {{^summary.siteSettingsZeroMatches}}
+        This means that all the siteSettings rules were in use and probably needed by the site.
+        {{/summary.siteSettingsZeroMatches}}
+      </p>
+      {{>siteSettingsTemplate}}
+    </div>
+
+    <div class="config tab-content">
+      <h2>Scanner Configuration</h2>
+      <p class="muted">These settings were used for this scan. A change in settings explains why found urls or items may differ between scans.</p>
+      <p class="muted">Main URL: <a href="{{config.mainUrl}}" class="unmuted">{{config.mainUrl}}</a> is used for fetching cookie group hashes.</p>
+      <p class="muted">API URL: <a href="{{config.apiUrl}}" class="unmuted">{{config.apiUrl}}</a> is used for fetching cookie siteSettings.</p>
+      <p class="muted">Settings domain substitution: <a href="{{config.settingsDomainSubstitution}}" class="unmuted">{{config.settingsDomainSubstitution}}</a> is used when checking compliance (on a test server).</p>
+      <p class="muted">
+        In variants column, each bullet point generates a new URL to scan using those cookie settings.
+        Text "<span class="unmuted">none</span>" means that no cookies were set for that variant.
+        Text "<span class="unmuted">required</span>" means that the required groups were used in the cookie of that variant.
+        Text "<span class="unmuted">all</span>" means that all groups were used.
+        Text that contains a <span class="unmuted">list separated by commas</span> are literal group names that were used in that cookie variant.
+      </p>
+      <p class="muted">
+        Headless means that the browser was not visible during the scan.
+      </p>
+      <p class="muted">
+        Pause means if the scan was paused for interaction when scanning for debugging or other reasons. This may cause some items to be missed or appear compared to a normal unpaused scan.
+      </p>
+      <p class="muted">
+        Actions describe clicks and other interactions that were done during the scan to open chats or interact with the page to generate cookies for scanning.
+      </p>
+      <p class="muted">
+        Skip column shows if the "wait for network idle" was skipped for that variant due to some feature on page causing the browser to keep loading content. Instead a timer is used to wait for the page to be ready defined in milliseconds.
+      </p>
+      {{>configTemplate}}
+      <br>
+      <h4>Group hashes</h4>
+      <p class="muted">These hashes were retrieved from <span class="unmuted">{{config.mainUrl}}</span> by accepting all cookies and are used in generating the cookies for urls to be scanned.</p>
+      {{>groupHashesTemplate}}
+    </div>
+  </script>
+
+  <!--
+  MARK: inventory
+  -->
+  <script type="text/html" id="inventoryTemplate" class="template">
+    <table class="sortable-table">
+      <thead>
+        <tr>
+          <th class="sortable" data-sort="compliant">Fully Compliant</th>
+          <th class="sortable" data-sort="name">Page</th>
+          <th class="sortable" data-sort="url">URL</th>
+          <th class="sortable" data-sort="frames">Frames</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#inventoryItems}}
+        <tr>
+          <td class="centered"><span class="compliant_{{allCompliant}}"> {{allCompliant}}</span></td>
+          <td>{{namePage}}{{#nameSecondary}}<span class="secondary">{{nameSecondary}}</span>{{/nameSecondary}}</td>
+          <td><a href="{{url}}">{{url}}</a></td>
+          <td>
+            <span class="details-label">
+              <label>
+                <input type="checkbox" class="details-toggle"/>
+                {{frameCount}}
+              </label>
+            </span>
+
+          </td>
+        </tr>
+        <tr class="details">
+          <td colspan="5">
+            <div class="details-wrapper">
+              <p>
+                Cookie groups:
+                {{#groups}}<code class="group">{{.}}</code>{{/groups}}
+                {{^groups}}None{{/groups}}
+              </p>
+              <table class="sortable-table">
+                <thead>
+                  <tr>
+                    <th class="sortable" data-sort="frameUrl">Frame URL</th>
+                    <th class="sortable" data-sort="compliant">Fully Compliant</th>
+                    <th class="sortable" data-sort="itemCount">Found Items</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#frames}}
+                  <tr>
+                    <td><a href="{{frameUrl}}" class="wrap">{{frameUrl}}</a></td>
+                    <td class="centered">
+                      <span class="compliant_{{compliant}}"> {{compliant}}</span>
+                    </td>
+                    <td>
+                      <span class="details-label">
+                      <label>
+                        <input type="checkbox" class="details-toggle"/>
+                        {{#itemCount}}
+                        {{itemCount}} items
+                        {{/itemCount}}
+                        {{^itemCount}}
+                        None
+                        {{/itemCount}}
+                      </label>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr class="details">
+                    <td colspan="3">
+                      <div class="details-wrapper">
+                        {{#cookies.length}}
+                        <h3>Cookies ({{cookies.length}})</h3>
+                        <table class="sortable-table">
+                          <thead>
+                            <tr>
+                              <th class="sortable" data-sort="status">Compliant</th>
+                              <th class="sortable" data-sort="name">Name</th>
+                              <th class="sortable" data-sort="domain">Domain</th>
+                              <th class="sortable" data-sort="path">Path</th>
+                              <th class="sortable" data-sort="expires">Expires</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {{#cookies}}
+                            <tr>
+                              <td class="centered"><span class="compliant_{{compliance.compliant}}"></span></td>
+                              <td title="{{value}}">{{name}}</td>
+                              <td>{{domain}}</td>
+                              <td>{{path}}</td>
+                              <td class="centered expiresMatches__{{expiresMatches}}">{{expiresText}}</td>
+                            </tr>
+                            {{/cookies}}
+                          </tbody>
+                        </table>
+                        {{/cookies.length}}
+                        {{#localStorage.length}}
+                        <h3>Local Storage ({{localStorage.length}})</h3>
+                        <table class="sortable-table">
+                          <thead>
+                            <tr>
+                              <th class="sortable" data-sort="status">Compliant</th>
+                              <th class="sortable" data-sort="key">Key</th>
+                              <th class="sortable" data-sort="value">Value</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {{#localStorage}}
+                            <tr>
+                              <td class="centered"><span class="compliant_{{compliance.compliant}}"></span></td>
+                              <td>{{key}}</td>
+                              <td class="wrap"><div class="scrollable">{{value}}</div></td>
+                            </tr>
+                            {{/localStorage}}
+                          </tbody>
+                        </table>
+                        {{/localStorage.length}}
+                        {{#sessionStorage.length}}
+                        <h3>Session Storage ({{sessionStorage.length}})</h3>
+                        <table class="sortable-table">
+                          <thead>
+                            <tr>
+                              <th class="sortable" data-sort="status">Compliant</th>
+                              <th class="sortable" data-sort="key">Key</th>
+                              <th class="sortable" data-sort="value">Value</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {{#sessionStorage}}
+                            <tr>
+                              <td class="centered"><span class="compliant_{{compliance.compliant}}"></span></td>
+                              <td>{{key}}</td>
+                              <td class="wrap"><div class="scrollable">{{value}}</div></td>
+                            </tr>
+                            {{/sessionStorage}}
+                          </tbody>
+                        </table>
+                        {{/sessionStorage.length}}
+                        {{#indexedDB.length}}
+                        <h3>IndexedDB ({{indexedDB.length}})</h3>
+                        <table class="sortable-table">
+                          <thead>
+                            <tr>
+                              <th class="sortable" data-sort="status">Compliant</th>
+                              <th class="sortable" data-sort="key">Key</th>
+                              <th class="sortable" data-sort="value">Value</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {{#indexedDB}}
+                            <tr>
+                              <td class="centered"><span class="compliant_{{compliance.compliant}}"></span></td>
+                              <td>{{key}}</td>
+                              <td class="wrap"><div class="scrollable">{{value}}</div></td>
+                            </tr>
+                            {{/indexedDB}}
+                          </tbody>
+                        </table>
+                        {{/indexedDB.length}}
+                        {{#cacheStorage.length}}
+                        <h3>Cache Storage ({{cacheStorage.length}})</h3>
+                        <table class="sortable-table">
+                          <thead>
+                            <tr>
+                              <th class="sortable" data-sort="status">Compliant</th>
+                              <th class="sortable" data-sort="key">Key</th>
+                              <th class="wrap">Value</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {{#cacheStorage}}
+                            <tr>
+                              <td class="centered"><span class="compliant_{{compliance.compliant}}"></span></td>
+                              <td>{{key}}</td>
+                              <td class="wrap"><div class="scrollable">{{value}}</div></td>
+                            </tr>
+                            {{/cacheStorage}}
+                          </tbody>
+                        </table>
+                        {{/cacheStorage.length}}
+                        {{#frameDomains.length}}
+                        <h3>Domains contacted by this frame ({{frameDomains.length}})</h3>
+                        <table class="sortable-table">
+                          <thead>
+                            <tr>
+                              <th class="sortable" data-sort="domain">Domain</th>
+                              <th class="sortable" data-sort="hits">Hits</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {{#frameDomains}}
+                            <tr>
+                              <td>{{domain}}</td>
+                              <td>{{hits}}</td>
+                            </tr>
+                            {{/frameDomains}}
+                          </tbody>
+                        </table>
+                        {{/frameDomains.length}}
+                      </div>
+                    </td>
+                  </tr>
+                  {{/frames}}
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+        {{/inventoryItems}}
+      </tbody>
+    </table>
+  </script>
+
+  <!--
+  MARK: found-items
+  -->
+  <script type="text/html" id="complianceTemplate" class="template">
+    <table class="sortable-table">
+      <thead>
+        <tr>
+          <th class="sortable" data-sort="type">Type</th>
+          <th class="sortable" data-sort="name">Name</th>
+          <th class="sortable" data-sort="domain">Domain</th>
+          <th class="sortable" data-sort="expires">Expires</th>
+          <th class="sortable" data-sort="compliant-count">Compliant</th>
+          <th class="sortable" data-sort="pages">Pages found on</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#foundItemsUnique}}
+        <tr>
+          <td><span class="type__{{typeString}}">{{typeString}}</span></td>
+          <td><code>{{name}}</code></td>
+          <td><span class="hostMatches__{{hostMatches}}">{{domain}}</span></td>
+          <td class="centered expiresMatches__{{expiresMatches}}">{{expiresText}}</td>
+          <td>
+            <span class="compliant_{{allCompliant}}">
+              {{complianceCount}} / {{instances.length}}
+            </span>
+          </td>
+          <td>
+            <span class="details-label">
+              <label>
+                <input type="checkbox" class="details-toggle"/>
+                {{#instances.length}}{{instances.length}} Pages{{/instances.length}}
+              </label>
+            </span>
+          </td>
+        </tr>
+        <tr class="details">
+          <td colspan="6">
+            <div class="details-wrapper">
+              <table class="sortable-table">
+                <thead>
+                  <tr>
+                    <th class="sortable" data-sort="instance">Instance</th>
+                    <th class="sortable" data-sort="frame">Frame</th>
+                    <th class="sortable" data-sort="compliant">Compliant</th>
+                    <th class="sortable" data-sort="matchingSettings">Matching Settings</th>
+                    {{#isCookie}}
+                    <th class="sortable" data-sort="path">Path</th>
+                    <th class="sortable" data-sort="expires">Expires</th>
+                    <th class="sortable" data-sort="httpOnly">Http Only</th>
+                    <th class="sortable" data-sort="secure">Secure</th>
+                    <th class="sortable" data-sort="sameSite">Same Site</th>
+                    {{/isCookie}}
+                    {{^isCookie}}
+                    <th class="sortable" data-sort="value">Value</th>
+                    {{/isCookie}}
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#instances}}
+                  <tr>
+                    <td><span title="{{name}}">{{namePage}}{{#nameSecondary}}<span class="secondary">{{nameSecondary}}</span>{{/nameSecondary}}</span></td>
+                    <td><span class="ellipsis"><a href="{{frameUrl}}" title="{{frameUrl}}">{{framePath}}</a></span></td>
+                    <td><span class="centered compliant_{{compliant}}"> {{compliant}}</span></td>
+                    <td>
+                      {{#complianceData.matchingSettings}}
+                      <p>{{groupId}}: <span class="type__{{storageType}}">{{name}}</span>
+                        (<span class="hostMatches__{{hostMatches}}">{{host}}</span>,
+                        <span class="expiresMatches__{{expiresMatches}}">{{expiration}}</span>)</p>
+                      {{/complianceData.matchingSettings}}
+                      {{^complianceData.matchingSettings}}
+                      ❌ None
+                      {{/complianceData.matchingSettings}}
+                    </td>
+                    {{#isCookie}}
+                    <td>{{item.path}}</td>
+                    <td class="centered expiresMatches__{{expiresMatches}}">{{item.expiresText}}</td>
+                    <td>{{item.httpOnly}}</td>
+                    <td>{{item.secure}}</td>
+                    <td>{{item.sameSite}}</td>
+                    {{/isCookie}}
+                    {{^isCookie}}
+                    <td class="wrap"><div class="scrollable">{{item.value}}</div></td>
+                    {{/isCookie}}
+                  </tr>
+                  {{/instances}}
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+        {{/foundItemsUnique}}
+      </tbody>
+    </table>
+  </script>
+
+  <!--
+  MARK: frameDomains
+  -->
+  <script type="text/html" id="frameDomainsTemplate" class="template">
+    <table class="sortable-table">
+      <thead>
+        <tr>
+          <th class="sortable" data-sort="domain">Domain</th>
+          <th class="sortable" data-sort="hits">Hits</th>
+          <th class="sortable" data-sort="pages">Pages found on</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#frameDomains}}
+        <tr>
+          <td><a href="https://{{domain}}" target="_blank">{{domain}}</a></td>
+          <td>{{hits}}</td>
+          <td>
+            <span class="details-label">
+              <label>
+                <input type="checkbox" class="details-toggle"/>
+                {{inventoryItems.length}} Pages
+              </label>
+            </span>
+          </td>
+        </tr>
+        <tr class="details">
+          <td colspan="3">
+            <div class="details-wrapper">
+              <p>Inventory hitting this domain:</p>
+              {{>inventoryTemplate}}
+          </td>
+        </tr>
+        {{/frameDomains}}
+      </tbody>
+    </table>
+  </script>
+
+  <!--
+  MARK: frameDomainsInternal
+  -->
+  <script type="text/html" id="frameDomainsInternalTemplate" class="template">
+    <table class="sortable-table">
+      <thead>
+        <tr>
+          <th class="sortable" data-sort="domain">Domain</th>
+          <th class="sortable" data-sort="hits">Hits</th>
+          <th class="sortable" data-sort="certificate">Certificate</th>
+          <th class="sortable" data-sort="pages">Pages found on</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#frameDomainsInternal}}
+        <tr>
+          <td>
+            <a href="https://{{domain}}" target="_blank">{{domain}}</a>
+            {{#knownTrackingDomain}}
+              <span class="muted"> ⚠️ Known tracking domain</span>
+            {{/knownTrackingDomain}}
+          </td>
+          <td>{{hits}}</td>
+          <td class="muted" data-expiry-days="{{certificateValidity.daysUntilExpiry}}">
+            Expires: <span class="unmuted expiring__{{certificateValidity.isExpiring}} expired__{{certificateValidity.isExpired}}">{{certificateExpires}}</span>
+            (<span class="unmuted expiring__{{certificateValidity.isExpiring}} expired__{{certificateValidity.isExpired}}">{{certificateValidity.daysUntilExpiry}} days</span>),<br>
+            Issuer: <span class="unmuted">{{certificate.issuer}}</span><br>
+            Protocol: <span class="unmuted">{{certificate.protocol}}</span><br>
+            Subject: <span class="unmuted">{{certificate.subjectName}}</span>
+          </td>
+          <td>
+            <span class="details-label">
+              <label>
+                <input type="checkbox" class="details-toggle"/>
+                {{inventoryItems.length}} Pages
+              </label>
+            </span>
+          </td>
+        </tr>
+        <tr class="details">
+          <td colspan="4">
+            <div class="details-wrapper">
+              <p>Inventory hitting this domain:</p>
+              {{>inventoryTemplate}}
+            </div>
+          </td>
+        </tr>
+        {{/frameDomainsInternal}}
+      </tbody>
+    </table>
+  </script>
+
+  <!--
+  MARK: frameDomainsExternal
+  -->
+  <script type="text/html" id="frameDomainsExternalTemplate" class="template">
+    <table class="sortable-table">
+      <thead>
+        <tr>
+          <th class="sortable" data-sort="domain">Domain</th>
+          <th class="sortable" data-sort="hits">Hits</th>
+          <th class="sortable" data-sort="certificate">Certificate</th>
+          <th class="sortable" data-sort="pages">Pages found on</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#frameDomainsExternal}}
+        <tr>
+          <td>
+            <a href="https://{{domain}}" target="_blank">{{domain}}</a>
+            {{#knownTrackingDomain}}
+              <span class="muted"> ⚠️ Known tracking domain</span>
+            {{/knownTrackingDomain}}
+          </td>
+          <td>{{hits}}</td>
+          <td class="muted" data-expiry-days="{{certificateValidity.daysUntilExpiry}}">
+            Expires: <span class="unmuted expiring__{{certificateValidity.isExpiring}} expired__{{certificateValidity.isExpired}}">{{certificateExpires}}</span>
+            (<span class="unmuted expiring__{{certificateValidity.isExpiring}} expired__{{certificateValidity.isExpired}}">{{certificateValidity.daysUntilExpiry}} days</span>),<br>
+            Issuer: <span class="unmuted">{{certificate.issuer}}</span><br>
+            Protocol: <span class="unmuted">{{certificate.protocol}}</span><br>
+            Subject: <span class="unmuted">{{certificate.subjectName}}</span>
+          </td>
+          <td>
+            <span class="details-label">
+              <label>
+                <input type="checkbox" class="details-toggle"/>
+                {{inventoryItems.length}} Pages
+              </label>
+            </span>
+          </td>
+        </tr>
+        <tr class="details">
+          <td colspan="4">
+            <div class="details-wrapper">
+              <p>Inventory hitting this domain:</p>
+              {{>inventoryTemplate}}
+            </div>
+          </td>
+        </tr>
+        {{/frameDomainsExternal}}
+      </tbody>
+    </table>
+  </script>
+
+  <!--
+  MARK: siteSettings
+  -->
+  <script type="text/html" id="siteSettingsTemplate" class="template">
+    <table class="sortable-table">
+      <thead>
+        <tr>
+          <th class="sortable" data-sort="required">Required</th>
+          <th class="sortable" data-sort="group">Group</th>
+          <th class="sortable" data-sort="description">Group description</th>
+          <th class="sortable" data-sort="cookies">Cookies</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#siteSettings.requiredGroups}}
+        <tr>
+          <td class="centered">Yes</td>
+          <td>{{groupId}}</td>
+          <td>{{title.en}}</td>
+          <td>
+            <span class="details-label">
+            <label>
+              <input type="checkbox" class="details-toggle" />
+              {{cookies.length}} cookie settings
+            </label>
+            </span>
+          </td>
+        </tr>
+        <tr class="details">
+          <td colspan="4">
+            <div class="details-wrapper">
+              <p>{{description.en}}</p>
+              {{>siteSettingsCookiesTemplate}}
+            </div>
+          </td>
+        </tr>
+        {{/siteSettings.requiredGroups}}
+        {{#siteSettings.optionalGroups}}
+        <tr>
+          <td class="centered">No</td>
+          <td>{{groupId}}</td>
+          <td>{{title.en}}</td>
+          <td>
+            <span class="details-label">
+            <label>
+              <input type="checkbox" class="details-toggle" />
+              {{cookies.length}} cookie settings
+            </label>
+            </span>
+          </td>
+        </tr>
+        <tr class="details">
+          <td colspan="4">
+            <div class="details-wrapper">
+              <p>{{description.en}}</p>
+              {{>siteSettingsCookiesTemplate}}
+            </div>
+          </td>
+        </tr>
+        {{/siteSettings.optionalGroups}}
+      </tbody>
+    </table>
+  </script>
+
+  <!--
+  MARK: groupHashes
+  -->
+  <script type="text/html" id="groupHashesTemplate" class="template">
+    <table class="sortable-table">
+      <thead>
+        <tr>
+          <th class="sortable" data-sort="name">Name</th>
+          <th class="sortable" data-sort="hash">Hash</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+        {{#groupHashes}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{hash}}</td>
+        </tr>
+        {{/groupHashes}}
+      </tbody>
+    </table>
+  </script>
+
+  <!--
+  MARK: siteSettingsCookies
+  -->
+  <script type="text/html" id="siteSettingsCookiesTemplate" class="template">
+    <table class="sortable-table">
+      <thead>
+        <tr>
+          <th class="sortable" data-sort="type">Type</th>
+          <th class="sortable" data-sort="name">Name</th>
+          <th class="sortable" data-sort="domain">Domain</th>
+          <th class="sortable" data-sort="description">Description</th>
+          <th class="sortable" data-sort="expires">Expires</th>
+          <th class="sortable" data-sort="matches">Matches</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#cookies}}
+        <tr>
+          <td><span class="type__{{typeString}}">{{typeString}}</span></td>
+          <td>{{name}}</td>
+          <td><span class="hostMatches__{{hostMatches}}">{{host}}</span></td>
+          <td>{{description.en}}</td>
+          <td class="centered">{{expiration.en}}{{^expiration.en}}{{expiration}}{{/expiration.en}}</td>
+          <td>
+            <span class="details-label">
+            {{#matchingCompliancesCount}}
+            <label>
+              <input type="checkbox" class="details-toggle" />
+              {{matchingCompliancesCount}} Matches
+            </label>
+            {{/matchingCompliancesCount}}
+            {{^matchingCompliancesCount}}
+            ❌ None
+            {{/matchingCompliancesCount}}
+            </span>
+          </td>
+        </tr>
+        <tr class="details">
+          <td colspan="6">
+            <div class="details-wrapper">
+              <p>Found items:</p>
+              {{#foundItemsUnique}}
+              {{>complianceTemplate}}
+              {{/foundItemsUnique}}
+            </div>
+          </td>
+        </tr>
+        {{/cookies}}
+      </tbody>
+    </table>
+  </script>
+
+  <!--
+  MARK: config
+  -->
+  <script type="text/html" id="configTemplate" class="template">
+    <table class="sortable-table">
+      <thead>
+        <tr>
+          <th class="sortable" data-sort="setting">Setting</th>
+          <th class="sortable" data-sort="value">Value</th>
+          <th class="sortable" data-sort="variants">Variants</th>
+          <th class="sortable" data-sort="headless">Headless</th>
+          <th class="sortable" data-sort="pause">Pause</th>
+          <th class="sortable" data-sort="actions">Actions</th>
+          <th class="sortable" data-sort="skip">Skip</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#config.urls}}
+        <tr>
+          <td>{{nameBase}}</td>
+          <td class="wrap"><a href="{{url}}">{{url}}</a></td>
+          <td class="wrap">
+            {{#variants}}
+            • {{.}}<br>
+            {{/variants}}
+          </td>
+          <td>{{headless}}</td>
+          <td>{{pause}}</td>
+          <td class="wrap">
+            {{#actions}}
+            • {{type}} {{selector}}<br>
+            {{/actions}}
+            {{^actions}}
+            None
+            {{/actions}}
+          </td>
+          <td>{{skipNetworkIdle}} {{waitForNetworkIdle}}</td>
+        </tr>
+        {{/config.urls}}
+      </tbody>
+    </table>
+  </script>
+
+  <!--
+  MARK: JS
+  -->
+  <script type="module">
+    //insert chart.js code for creating a donut chart from Compliant and non-compliant data
+
+    import mustache from  "https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.2.0/mustache.min.js";
+    import getCookieExpirationText from "./js/getCookieExpirationText.js";
+
+    const TYPES = {
+      1: "cookie",
+      2: "localStorage",
+      3: "sessionStorage",
+      4: "indexedDB",
+      5: "cacheStorage",
+    }
+
+    function preprocessData(data, trackingDomains){
+      const processedData = data;
+
+      // ******************************************************
+      // Inventory of checked URLs and their frames
+      // inventoryItems
+      // ******************************************************
+
+      const mainDomain = new URL(processedData.config.mainUrl).hostname;
+
+      // Add the frame count formatter function and process names for inventoryItems
+      processedData.inventoryItems = processedData.inventoryItems.map(storage => {
+        // Split the name
+        const nameParts = storage.name.split(/\b(with\b.*)/);
+        storage.frames.map(frame => {
+          frame.itemCount = frame.cookies.length + frame.localStorage.length + frame.sessionStorage.length + frame.indexedDB.length + frame.cacheStorage.length;
+          frame.cookies.forEach(cookie => {
+            cookie.expiresText = getCookieExpirationText(cookie.frameTimestamp, cookie.expires);
+          });
+
+          const frameUrlDomain = new URL(frame.frameUrl).hostname;
+
+          frame.frameDomains.forEach(frameDomain => {
+            frameDomain.calledFromMainDomain = frameUrlDomain === mainDomain;
+          });
+
+          return frame;
+        });
+        return {
+          ...storage,
+          namePage: nameParts[0],
+          nameSecondary: nameParts.length > 1 ? nameParts[1].split(',').join(', ') : '',
+          frameCount: () => {
+            const count = storage.frames.length;
+            return `${count} ${count === 1 ? 'Frame' : 'Frames'}`;
+          },
+        };
+      });
+      processedData.summary.totalNonCompliant = processedData.inventoryItems.filter(storage => storage.allCompliant === false).length;
+      processedData.summary.totalCompliant = processedData.inventoryItems.filter(storage => storage.allCompliant === true).length;
+      processedData.summary.totalFrames = processedData.inventoryItems.reduce((acc, storage) => acc + storage.frames.length, 0);
+
+
+      // ******************************************************
+      // Domains contacted by frames
+      // AllFrameDomains
+      // ******************************************************
+
+      processedData.frameDomains = [];
+      processedData.frameDomainsInternal = [];
+      processedData.frameDomainsExternal = [];
+      processedData.inventoryItems.map(storage => {
+        storage.frames.map(frame => {
+          frame.frameDomains.map(frameDomain => {
+            function addDomain(frameDomain, frameDomainsArray){
+              // Find existing domain entry or create new one
+              let existingDomain = frameDomainsArray.find(d => d.domain === frameDomain.domain);
+
+              if (!existingDomain) {
+                const rootDomain = frameDomain.domain.split('.').slice(-2).join('.');
+                const customTrackingDomains = [
+                  'fonts.googleapis.com',
+                  'fonts.gstatic.com',
+                  'webanalytics.digiaiiris.com',
+                ];
+                const knownTrackingDomain = rootDomain.length > 1 && (trackingDomains.includes(rootDomain) || customTrackingDomains.includes(frameDomain.domain));
+
+
+                let certificateExpires = "-";
+                let certificateValidity = "-";
+                if(frameDomain.certificate && frameDomain.certificate.validTo){
+                  certificateExpires = formatDate({timeStamp: frameDomain.certificate.validTo * 1000});
+                  certificateValidity = checkCertificateExpiry(frameDomain.certificate.validTo);
+                }
+                existingDomain = {
+                  domain: frameDomain.domain,
+                  hits: 0,
+                  calledFromMainDomain: frameDomain.calledFromMainDomain,
+                  inventoryItems: [],
+                  knownTrackingDomain,
+                  certificate: frameDomain.certificate,
+                  certificateExpires,
+                  certificateValidity,
+                };
+                frameDomainsArray.push(existingDomain);
+              }
+
+              // Add hits
+              existingDomain.hits += frameDomain.hits;
+
+              // Add storage reference if not already present
+              if (!existingDomain.inventoryItems.includes(storage)) {
+                existingDomain.inventoryItems.push(storage);
+              }
+            }
+
+            addDomain(frameDomain, processedData.frameDomains);
+            if(frameDomain.calledFromMainDomain){
+              addDomain(frameDomain, processedData.frameDomainsInternal);
+            } else {
+              addDomain(frameDomain, processedData.frameDomainsExternal);
+            }
+          });
+        });
+      });
+
+      // Sort frameDomains by hits, then by domain
+      processedData.frameDomains.sort((a, b) => b.hits - a.hits || a.domain.localeCompare(b.domain));
+      processedData.frameDomainsInternal.sort((a, b) => b.hits - a.hits || a.domain.localeCompare(b.domain));
+      processedData.frameDomainsExternal.sort((a, b) => b.hits - a.hits || a.domain.localeCompare(b.domain));
+
+      processedData.timeStampFormatted = formatDate(data);
+
+
+      // ******************************************************
+      // Compliances of found items
+      // found-items
+      // ******************************************************
+
+      let foundItemsUnique = [];
+
+      processedData.foundItems.forEach(compliance => {
+        let name, domain, existingCompliance;
+        let isCookie = false;
+        const storageType = compliance.storageType;
+        if (compliance.storageType === 1) {
+          name = compliance.itemId;
+          domain = compliance.item.domain;
+          isCookie = true;
+          compliance.item.expiresText = getCookieExpirationText(compliance.item.frameTimestamp, compliance.item.expires);
+        } else {
+          name = compliance.item.key;
+          domain = new URL(compliance.frameUrl).hostname;
+          compliance.item.expiresText = '-';
+        }
+        existingCompliance = foundItemsUnique.find(c => c.name === name && c.domain === domain && c.storageType === storageType);
+
+        compliance.framePath = new URL(compliance.frameUrl).pathname;
+
+        const complianceCount = compliance.compliant ? 1 : 0;
+        let allCompliant = false;
+        if(complianceCount > 0){
+          allCompliant = true;
+        }
+
+        if (existingCompliance){
+          existingCompliance.instances.push(compliance);
+          existingCompliance.complianceCount += complianceCount;
+          existingCompliance.allCompliant = existingCompliance.allCompliant && allCompliant;
+        } else {
+          foundItemsUnique.push({
+            storageType,
+            typeString: TYPES[storageType],
+            name,
+            domain,
+            complianceCount,
+            allCompliant,
+            isCookie,
+            expiresText: compliance.item.expiresText,
+            instances: [compliance],
+          });
+        }
+      });
+
+      processedData.foundItemsUnique = foundItemsUnique.map(compliance => ({
+        ...compliance,
+        instances: compliance.instances.map(instance => ({
+          namePage: instance.name.split(/\b(with\b.*)/)[0],
+          nameSecondary: instance.name.split(/\b(with\b.*)/).length > 1 ? instance.name.split(/\b(with\b.*)/)[1].split(',').join(', ') : '',
+          ...instance,
+          isSingular: compliance.instances.length === 1
+        }))
+      }));
+
+      processedData.summary.totalCookies = processedData.foundItemsUnique.filter(compliance => compliance.typeString === 'cookie').length;
+      processedData.summary.totalLocalStorage = processedData.foundItemsUnique.filter(compliance => compliance.typeString === 'localStorage').length;
+      processedData.summary.totalSessionStorage = processedData.foundItemsUnique.filter(compliance => compliance.typeString === 'sessionStorage').length;
+      processedData.summary.totalIndexedDB = processedData.foundItemsUnique.filter(compliance => compliance.typeString === 'indexedDB').length;
+      processedData.summary.totalCacheStorage = processedData.foundItemsUnique.filter(compliance => compliance.typeString === 'cacheStorage').length;
+
+      // ******************************************************
+      // Site Settings
+      // siteSettings
+      // ******************************************************
+
+      const cookieProcessor = (group) => {
+        group.cookies.forEach(siteSettingsCookie => {
+          siteSettingsCookie.typeString = TYPES[siteSettingsCookie.storageType];
+          siteSettingsCookie.foundItemsUnique = JSON.parse(JSON.stringify(processedData.foundItemsUnique)).filter(compliance => {
+            let nameMatch = false;
+            let typeMatch = false;
+
+            const siteSettingsCookieRegex = siteSettingsCookie.name.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&').replace('\\*', '.*');
+            const nameMatches = new RegExp(`^${siteSettingsCookieRegex}$`).test(compliance.name);
+
+            // console.log('mainUrl', processedData.config.mainUrl);
+            // console.log('settingsDomainSubstitution', processedData.config.settingsDomainSubstitution);
+            // console.log(processedData);
+            const mainDomain = new URL(processedData.config.mainUrl).hostname;
+            const settingsDomainSubstitution = new URL(processedData.config.settingsDomainSubstitution).hostname;
+            const fixedComplianceDomain = compliance.domain.replace(mainDomain, settingsDomainSubstitution);;
+            const fixedsiteSettingsCookieHost = siteSettingsCookie.host.replace(mainDomain, settingsDomainSubstitution);
+
+            const escapedComplianceDomain = fixedsiteSettingsCookieHost.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&').replace('\\*', '.*');
+            compliance.hostMatches = new RegExp(`^(https?://)?${escapedComplianceDomain}.*$`).test(fixedComplianceDomain);
+
+            const siteSettingsExpiration = siteSettingsCookie.expiration.en ? siteSettingsCookie.expiration.en : siteSettingsCookie.expiration;
+            compliance.expiresMatches = compliance.expiresText === siteSettingsExpiration;
+
+            if(nameMatches){
+              nameMatch = true;
+            }
+            if(compliance.storageType === siteSettingsCookie.storageType){
+              typeMatch = true;
+            }
+            return nameMatch && typeMatch;
+          });
+          siteSettingsCookie.matchingCompliancesCount = siteSettingsCookie.foundItemsUnique.length;
+        });
+      }
+      processedData.siteSettings.requiredGroups.forEach(group => {
+        cookieProcessor(group);
+      });
+      processedData.siteSettings.optionalGroups.forEach(group => {
+        cookieProcessor(group);
+      });
+
+      processedData.summary.siteSettingsZeroMatches = processedData.siteSettings.requiredGroups.reduce((total, group) => {
+        return total + group.cookies.filter(cookie => cookie.matchingCompliancesCount === 0).length;
+      }, 0);
+      processedData.summary.siteSettingsZeroMatches += processedData.siteSettings.optionalGroups.reduce((total, group) => {
+        return total + group.cookies.filter(cookie => cookie.matchingCompliancesCount === 0).length;
+      }, 0);
+
+
+
+      // ******************************************************
+      // Group hashes
+      // groupHashes
+      // ******************************************************
+
+      // Convert groupHashes object to array format
+      processedData.groupHashes = Object.entries(processedData.groupHashes).map(([key, value]) => ({
+        name: key,
+        hash: value.checksum,
+      }));
+
+      console.log(processedData);
+
+      return processedData;
+    }
+
+    // Wait for the page to load before running the script
+    await document.addEventListener('DOMContentLoaded', async () => {
+
+      let trackingDomains = [];
+      let trackingDomainsTimestamp = '';
+      // Fetch the list of known tracking domains
+      async function fetchTrackingDomains() {
+        try {
+          const response = await fetch('json/knownTrackers.json');
+          const data = await response.json();
+          trackingDomains = data.domains;
+          trackingDomainsTimestamp = formatDate(data);
+        } catch (error) {
+          console.error('Error fetching tracking domains:', error);
+        }
+      }
+      await fetchTrackingDomains();
+
+      // fetch the report json from the url parameter ?report=filename
+      const urlParams = new URLSearchParams(window.location.search);
+      const reportFilename = "/json/"+urlParams.get('report');
+
+      fetch(reportFilename)
+        .then(response => response.json())
+        .then(data => {
+          const processedData = preprocessData(data, trackingDomains);
+          processedData.trackingDomainsTimestamp = trackingDomainsTimestamp;
+          document.querySelector('title').textContent = `GDPR Compliance Scanner Report for ${processedData.timeStampFormatted}`;
+          document.querySelector('h1').textContent = `GDPR Compliance Scanner Report for ${processedData.timeStampFormatted}`;
+
+
+          const template = document.getElementById('reportTemplate').innerHTML;
+          const templates = Array.from(document.querySelectorAll('.template')).reduce((acc, template) => {
+            acc[template.id] = template.innerHTML;
+            return acc;
+          }, {});
+          const rendered = mustache.render(template, processedData, templates);
+          document.getElementById('report').innerHTML = rendered;
+
+
+          createDonutChart(processedData);
+
+          // Initialize sortable tables
+          initSortableTables();
+        })
+        .catch(error => console.error('Error loading report:', error));
+    });
+
+  </script>
+
+</main>
+</body>
+</html>

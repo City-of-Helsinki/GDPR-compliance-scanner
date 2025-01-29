@@ -1,0 +1,16 @@
+[
+  {
+    "timeStamp": "2025-01-29T07:45:00.619Z",
+    "summary": {
+      "total": 254,
+      "compliant": 254,
+      "nonCompliant": 0,
+      "warnings": 0,
+      "urls": 42,
+      "failedUrls": -38,
+      "timing": "1m 27.58s",
+      "siteSettingsFlat": 76
+    },
+    "filename": "report-2025-01-29T07:45:00.619Z.json"
+  }
+]

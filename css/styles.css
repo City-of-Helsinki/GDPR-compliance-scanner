@@ -1,0 +1,400 @@
+html {
+  font-family: sans-serif;
+  scrollbar-gutter: stable;
+}
+
+main {
+  max-width: 1080px;
+  margin-inline: auto;
+  padding: 1rem;
+  margin-bottom: 50vh;
+}
+
+.stats {
+  display: flex;
+  align-items: bottom;
+}
+
+div.summary {
+  margin-top: auto;
+  height: fit-content;
+}
+
+
+.summary p {
+  margin-block: 0.5em;
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+.summary td {
+  text-align: center;
+}
+
+/* Tables */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+table td,
+table th {
+  padding: 0.5em;
+}
+
+table td {
+  border: 1px solid;
+  border-color: light-dark(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
+}
+
+tr:first-child > td:first-child {
+  border-top-left-radius: 0.5em;
+}
+
+tr:first-child > td:last-child {
+  border-top-right-radius: 0.5em;
+}
+
+tr:last-child > td:first-child,
+tr:has(.details-toggle:not(:checked)):has( + tr:last-child.details) > td:first-child {
+  border-bottom-left-radius: 0.5em;
+}
+
+tr:last-child > td:last-child,
+tr:has(.details-toggle:not(:checked)):has( + tr:last-child.details) > td:last-child  {
+  border-bottom-right-radius: 0.5em;
+}
+
+
+/* Text elements */
+.value {
+  display: inline;
+  white-space: break-word;
+}
+
+.ellipsis {
+  display: inline-block;
+  max-inline-size: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+h4 {
+  margin-block-start: 0.5em;
+  margin-block-end: 0;
+}
+
+.centered {
+  text-align: center;
+}
+
+/* Compliance indicators */
+.compliant_true::before {
+  content: "✅";
+}
+
+.compliant_false::before {
+  content: "❌";
+}
+
+.knownTrackingDomain__true {
+  color: light-dark(#666, #999);
+}
+
+.knownTrackingDomain__false{
+  display: none;
+}
+/* Code elements */
+code {
+  background-color: light-dark(#f4f4f4, #333);
+  padding-block: 0.1em;
+  padding-inline: 0.2em;
+  border-radius: 0.2em;
+}
+
+/* Storage type icons */
+[class^="type__"]::before {
+  white-space: nowrap;
+}
+
+.hostMatches__false,
+.expiresMatches__false {
+  color: red;
+}
+
+.hostMatches__true,
+.expiresMatches__true {
+  color: green;
+}
+
+.type__cookie,
+.type__1 {
+    &::before {
+    content: "🍪 ";
+}
+}
+
+.type__localStorage,
+.type__2 {
+  &::before {
+    content: "🏠 ";
+  }
+}
+
+.type__sessionStorage,
+.type__3 {
+  &::before {
+    content: "⏳ ";
+  }
+}
+
+.type__indexedDB,
+.type__4 {
+  &::before {
+    content: "📚 ";
+  }
+}
+
+.type__cacheStorage,
+.type__4 {
+  &::before {
+   content: "📦 ";
+}
+}
+
+/* Details and Summary */
+details {
+  display: inline-block;
+}
+
+summary {
+  cursor: pointer;
+  background-color: light-dark(#f4f4f4, #333);
+}
+
+.group:has(+ .group) {
+  margin-inline-end: 0.5em;
+}
+
+/* Hidden elements */
+.urls {
+  display: none;
+}
+
+#myChart {
+  max-height: 200px;
+  max-width: 400px
+}
+.details td {
+  transition: padding 0.3s ease-in-out, border-block-width 0.3s ease-in-out;
+}
+
+tr:not(:has(.details-toggle:checked)) + tr.details > td {
+  padding-block: 0;
+  border-block-width: 0;
+}
+
+.details-wrapper {
+  interpolate-size: allow-keywords;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out, visibility 0s 0.3s ease-in-out;
+}
+
+tr:has(.details-toggle:checked) + tr.details > td > .details-wrapper {
+  height: auto;
+  visibility: visible;
+  padding-block-end: 2em;
+  transition: height 0.3s ease-in-out, visibility 0s 0s ease-in-out;
+}
+
+/* Prevent wrapping in checkbox cell */
+.details-label {
+  white-space: nowrap;
+}
+
+/* Style the checkbox and label */
+.details-toggle {
+  margin-inline-end: 0.5em;
+}
+
+.details-toggle + label {
+  cursor: pointer;
+}
+
+table {
+  width: 98%;
+  margin-inline: auto;
+}
+
+.wrap {
+  overflow-wrap: anywhere;
+}
+
+h2 {
+  margin-block-start: 2em;
+  margin-block-end: 0.5em;
+}
+
+.timing {
+  text-align: right;
+}
+
+.secondary {
+  color: light-dark(#666, #999);
+  font-size: 0.9em;
+}
+
+
+th.sortable {
+  cursor: pointer;
+  position: relative;
+  padding-right: 20px;
+}
+
+th.sortable::after {
+  content: '⇅';
+  position: absolute;
+  right: 4px;
+  opacity: 0.3;
+  font-size: 0.8em;
+  display: inline-block;
+  width: 1em;
+  text-align: center;
+  line-height: 1.2rem;
+}
+
+th.sortable:hover::after,
+th.sortable.sort-asc::after,
+th.sortable.sort-desc::after {
+  opacity: 1;
+}
+
+th.sortable.sort-asc::after {
+  content: '↑';
+}
+
+th.sortable.sort-desc::after {
+  content: '↓';
+}
+
+.scrollable {
+  max-height: 20lh;
+  overflow-y: auto;
+}
+
+
+/* Tab Controls */
+.tab-controls {
+  margin-block: 3em;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab-controls input[type="radio"] {
+  display: none;
+}
+
+.tab-controls label {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  margin-bottom: -1px;
+}
+
+.tab-controls label:hover {
+  background: #f0f0f0;
+}
+
+.tab-controls input[type="radio"]:checked + label {
+  border-color: #ccc;
+  background: #fff;
+  border-bottom-color: #fff;
+}
+
+/* Tab Content */
+.tab-content{
+  display: none;
+}
+
+#report{
+  overflow: hidden;
+}
+
+.tab-controls:has(#tab-all:checked) ~ .tab-content,
+.tab-controls:has(#tab-pages:checked) ~ .inventory,
+.tab-controls:has(#tab-found-items:checked) ~ .found-items,
+.tab-controls:has(#tab-domains:checked) ~ .frameDomains,
+.tab-controls:has(#tab-settings:checked) ~ .siteSettings,
+.tab-controls:has(#tab-config:checked) ~ .config {
+  display: block;
+}
+
+/* Optional: Add spacing between sections when showing all */
+.tab-controls:has(#tab-all:checked) ~ div {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab-controls:has(#tab-all:checked) ~ div:last-child {
+  border-bottom: none;
+}
+
+.tab-content > :first-child {
+  margin-block-start: 0;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .tab-controls {
+    border-color: #444;
+  }
+  .tab-controls label:hover {
+    background: #2a2a2a;
+    box-shadow: inset 0 0 0 1px #444;
+  }
+
+  .tab-controls input[type="radio"]:checked + label {
+    background: linear-gradient(to bottom, #1a1a1a, #121212);
+    border-color: #444;
+    border-bottom-color: #1a1a1a;
+    box-shadow: none;
+  }
+}
+
+.muted {
+  color: light-dark(#666, #999);
+}
+
+.unmuted {
+  color: light-dark(#000, #fff);
+}
+
+.link,
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+table.minimal {
+  width: fit-content;
+  margin-block: 1rem;
+  & td {
+    padding: 0.1em 0.5em;
+    border: none;
+  }
+}
+
+.expiring__true {
+  color: orange;
+}
+
+.expired__true {
+  color: red;
+}
