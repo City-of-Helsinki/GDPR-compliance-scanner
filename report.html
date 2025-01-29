@@ -1086,7 +1086,7 @@
 
       // fetch the report json from the url parameter ?report=filename
       const urlParams = new URLSearchParams(window.location.search);
-      const reportFilename = "/json/"+urlParams.get('report');
+      const reportFilename = "./json/"+urlParams.get('report');
 
       fetch(reportFilename)
         .then(response => response.json())
