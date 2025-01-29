@@ -15,6 +15,11 @@ The website should use HDS Cookie Banner
 
 ## Installation
 
+
+```bash
+nvm use
+```
+
 ```bash
 npm install
 ```
