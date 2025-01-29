@@ -1,0 +1,24 @@
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '5 4 * * *'
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup
+        run: |
+          npm install
+          npx playwright install
+
+      - name: Run scanner
+        run: npm start
+
+      - name: Deploy results
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          publish_dir: ./reports
+          github_token: ${{ secrets.GITHUB_TOKEN }}
