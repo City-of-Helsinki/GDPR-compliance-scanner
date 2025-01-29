@@ -15,7 +15,7 @@ jobs:
           npx playwright install
 
       - name: Run scanner
-        run: npm start
+        run: xvfb-run npm start
 
       - name: Deploy results
         uses: peaceiris/actions-gh-pages@v4
