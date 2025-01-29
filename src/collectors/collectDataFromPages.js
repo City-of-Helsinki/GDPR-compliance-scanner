@@ -244,7 +244,7 @@ async function runOnUrlsConcurrently(headlessMode, urls, timer) {
  */
 async function collectDataFromPages(urls, timer) {
 
-  const headResults = await runOnUrlsConcurrently(false, urls, timer);
+  const headResults = await runOnUrlsConcurrently(true, urls, timer);
   const headlessResults = await runOnUrlsConcurrently(true, urls, timer);
 
   const results = [...headResults, ...headlessResults];
