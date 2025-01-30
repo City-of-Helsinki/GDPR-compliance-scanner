@@ -15,13 +15,8 @@ The website should use HDS Cookie Banner
 
 ## Installation
 
-
 ```bash
-nvm use
-```
-
-```bash
-npm install
+make install
 ```
 
 ## Configuration
@@ -52,19 +47,18 @@ Example URL configuration:
 
 ## Usage
 
-1. Start the scanner:
-
+1. Start the service:
 ```bash
-npm start
+make up
 ```
 
-2. View reports by starting the local server:
+2. Start the scanner:
 
 ```bash
-npm run serve
+make run
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser
+3. View reports by opening [https://helfi-gdpr-scanner.docker.so/](https://helfi-gdpr-scanner.docker.so/) in your browser
 
 ## Report features
 
