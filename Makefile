@@ -2,7 +2,7 @@ PHONY :=
 
 PHONY += shell
 shell:
-	docker compose exec app bash
+	@docker compose exec app bash
 
 PHONY += install
 install: up
@@ -10,7 +10,7 @@ install: up
 
 PHONY += up
 up:
-	docker compose up -d
+	docker compose up --pull always -d
 
 PHONY += stop
 stop:
