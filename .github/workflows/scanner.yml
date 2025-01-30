@@ -24,7 +24,7 @@ jobs:
         run: npm install
 
       - name: Copy previous reports
-        run: cp reports/json/* app/reports
+        run: cp -r reports/json app/reports
 
       - name: Run scanner
         working-directory: app
