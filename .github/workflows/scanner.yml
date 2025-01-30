@@ -10,20 +10,28 @@ jobs:
       image: mcr.microsoft.com/playwright:v1.50.0-noble
     steps:
       - uses: actions/checkout@v4
-
-      - name: Setup
-        run: npm install
+        with:
+          ref: gh-pages
+          path: reports
+          sparse-checkout: json
 
       - uses: actions/checkout@v4
         with:
-          ref: gh-pages
-          sparse-checkout: reports
+          path: app
+
+      - name: Setup
+        working-directory: app
+        run: npm install
+
+      - name: Copy previous reports
+        run: cp reports/json/* app/reports
 
       - name: Run scanner
+        working-directory: app
         run: xvfb-run npm start
 
       - name: Deploy results
         uses: peaceiris/actions-gh-pages@v4
         with:
-          publish_dir: ./reports
+          publish_dir: ./app/reports
           github_token: ${{ secrets.GITHUB_TOKEN }}
