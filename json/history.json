@@ -12,5 +12,19 @@
       "siteSettingsFlat": 76
     },
     "filename": "report-2025-01-30T08:58:19.486Z.json"
+  },
+  {
+    "timeStamp": "2025-01-30T09:01:38.222Z",
+    "summary": {
+      "total": 121,
+      "compliant": 121,
+      "nonCompliant": 0,
+      "warnings": 0,
+      "urls": 39,
+      "failedUrls": 0,
+      "timing": "17.158s",
+      "siteSettingsFlat": 76
+    },
+    "filename": "report-2025-01-30T09:01:38.222Z.json"
   }
 ]
