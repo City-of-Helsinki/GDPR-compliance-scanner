@@ -6,13 +6,13 @@ on:
 jobs:
   scan:
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.50.0-noble
     steps:
       - uses: actions/checkout@v4
 
       - name: Setup
-        run: |
-          npm install
-          npx playwright install
+        run: npm install
 
       - name: Run scanner
         run: xvfb-run npm start
