@@ -1,0 +1,33 @@
+services:
+  app:
+    container_name: "helfi-gdpr-scanner-node"
+    image: mcr.microsoft.com/playwright:v1.50.0-noble
+    ipc: host
+    entrypoint: tail -f /dev/null
+    working_dir: /app
+    volumes:
+      - .:/app:delegated
+    networks:
+      - internal
+  nginx:
+    container_name: "helfi-gdpr-scanner-nginx"
+    image: nginx:alpine
+    volumes:
+      - ./docker/nginx.conf:/etc/nginx/nginx.conf
+      - ./reports:/usr/share/nginx/html:delegated
+    networks:
+      - stonehenge-network
+      - internal
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.nginx.entrypoints=https"
+      - "traefik.http.routers.nginx.rule=Host(`helfi-gdpr-scanner.docker.so`)"
+      - "traefik.http.services.nginx.loadbalancer.server.port=8080"
+      - "traefik.http.routers.nginx.tls=true"
+      - "traefik.docker.network=stonehenge-network"
+
+networks:
+  internal:
+    external: false
+  stonehenge-network:
+    external: true

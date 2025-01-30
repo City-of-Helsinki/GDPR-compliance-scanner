@@ -6,19 +6,32 @@ on:
 jobs:
   scan:
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.50.0-noble
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: reports
+          sparse-checkout: json
+
+      - uses: actions/checkout@v4
+        with:
+          path: app
 
       - name: Setup
-        run: |
-          npm install
-          npx playwright install
+        working-directory: app
+        run: npm install
+
+      - name: Copy previous reports
+        run: cp -r reports/json app/reports
 
       - name: Run scanner
-        run: npm start
+        working-directory: app
+        run: xvfb-run npm start
 
       - name: Deploy results
         uses: peaceiris/actions-gh-pages@v4
         with:
-          publish_dir: ./reports
+          publish_dir: ./app/reports
           github_token: ${{ secrets.GITHUB_TOKEN }}
