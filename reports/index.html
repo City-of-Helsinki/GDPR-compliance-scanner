@@ -26,10 +26,10 @@
   </head>
   <body>
     <main>
-      <h1>GDPR Compliance Scanner Reports</h1>
+      <h1>GDPR Compliance Scanner Reports 📊</h1>
       
       <!-- Container for the repeated content -->
-      <div id="folders-container"></div>
+      <div id="reports"></div>
 
       <script type="text/html" id="history-template">
         {{#history.length}}
@@ -71,27 +71,48 @@
             .then(response => response.json())
             .then(data => {
               data?.folders.forEach(folder => {
-                // Create a new container for each folder's data
-                const folderContainer = document.createElement('div');
-                folderContainer.classList.add('folder-container');
+                // Create a new container for each sites's data
+                const reportContainer = document.createElement('div');
+                reportContainer.classList.add('report-container', 'expanded');
+
+                const headingContainer = document.createElement('div');
+                headingContainer.classList.add('heading-container');
+                reportContainer.appendChild(headingContainer);
+                                
+                // Add a new h2 element for each site
+                const siteNameHeading = document.createElement('h2');
+                siteNameHeading.classList.add('site-name');
+                siteNameHeading.textContent = `Report History: ${folder}`;
+                headingContainer.appendChild(siteNameHeading);
+
+                const toggleButton = document.createElement('button');
+                toggleButton.classList.add('toggle-button');
+                toggleButton.textContent = '🔽';
+                headingContainer.appendChild(toggleButton);
+
+                const reportContent = document.createElement('div');
+                reportContent.classList.add('report-content');
+                reportContainer.appendChild(reportContent);
+
+                // Toggle functionality for report content
+                toggleButton.addEventListener('click', () => {
+                  reportContent.classList.toggle('hidden');
+                  reportContainer.classList.toggle('expanded');
+                  toggleButton.textContent = reportContent.classList.contains('hidden') ? '🔼' : '🔽';
+                });
                 
                 // Add a canvas for each folder
                 const canvas = document.createElement('canvas');
                 canvas.id = `myLineChart-${folder}`;
+                canvas.classList.add('line-chart');
                 canvas.width = 400;
                 canvas.height = 100;
-                folderContainer.appendChild(canvas);
+                reportContent.appendChild(canvas);
                 
                 // Add a history section for each folder
                 const historyDiv = document.createElement('div');
                 historyDiv.id = `history-${folder}`;
-                folderContainer.appendChild(historyDiv);
-                
-                // Add a new h2 element for each folder (instead of modifying the global one)
-                const siteNameHeading = document.createElement('h2');
-                siteNameHeading.classList.add('site-name');
-                siteNameHeading.textContent = `Report History: ${folder}`;
-                folderContainer.insertBefore(siteNameHeading, historyDiv);
+                reportContent.appendChild(historyDiv);
 
                 // Fetch the report history from history.json for each folder and render it using Mustache.js
                 fetch(`./json/${folder}/history.json?_=${Date.now()}`)
@@ -109,17 +130,36 @@
                       }).replace(/klo /, '');
                     };
                     data.forEach(item => { item.timeStampFormatted = formatDate(item); });
+                    data.sort((a, b) => new Date(b.timeStamp) - new Date(a.timeStamp));
 
-                    // Include the folder name in the data object for Mustache
-                    const templateData = {
-                      history: data,
-                      folder: folder
+                    const historyDiv = document.getElementById(`history-${folder}`);
+                    let displayedCount = 10;
+
+                    const renderHistory = () => {
+                      const templateData = {
+                        history: data.slice(0, displayedCount),
+                        folder: folder
+                      };
+                      const template = document.getElementById('history-template').innerHTML;
+                      historyDiv.innerHTML = mustache.render(template, templateData);
                     };
 
-                    // Render the history table using Mustache.js
-                    const template = document.getElementById('history-template').innerHTML;
-                    const rendered = mustache.render(template, templateData);
-                    historyDiv.innerHTML = rendered;
+                    renderHistory();
+
+                    if (data.length > 10) {
+                      const loadMoreButton = document.createElement('button');
+                      loadMoreButton.textContent = 'Load More';
+                      loadMoreButton.classList.add('load-more-button');
+                      historyDiv.appendChild(loadMoreButton);
+                      
+                      loadMoreButton.addEventListener('click', () => {
+                        displayedCount += 10;
+                        renderHistory();
+                        if (displayedCount >= data.length) {
+                          loadMoreButton.remove();
+                        }
+                      });
+                    }
 
                     // Prepare data for the line chart
                     let labels;
@@ -197,7 +237,7 @@
                   .catch(error => console.error('Error loading history:', error));
 
                 // Append the folder container to the main container
-                document.getElementById('folders-container').appendChild(folderContainer);
+                document.getElementById('reports').appendChild(reportContainer);
               });
             });
         });

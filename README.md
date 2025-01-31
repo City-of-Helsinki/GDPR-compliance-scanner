@@ -21,8 +21,9 @@ make install
 
 ## Configuration
 
-Configure scanning parameters in config/config.js. Key settings include:
+Configure scanning parameters in config/site-name-config.js. Key settings include:
 
+* `name`: Name of the site, use small letters and no spaces. This will be used for report file and folder names.
 * `mainUrl`: Main website URL to scan
 * `apiUrl`: API endpoint for cookie banner settings
 * `settingsDomainSubstitution`: Domain substitution for testing
@@ -44,6 +45,10 @@ Example URL configuration:
   pause: false
 }
 ```
+
+### Adding a new configuration file
+
+You can add any site that has hds cookie banner in use under the config folder. Name the file as ```site-name-config.js``` and add relevant configurations to the file.
 
 ## Usage
 
@@ -75,7 +80,8 @@ The generated reports include:
 
 * `/config` - Configuration files
 * `/reports` - Generated HTML reports and assets
-  * `/json` - Report data in JSON format
+  * `/json` - Folder for all json reports
+    * `/site_name` - Report data in JSON format
 * `/src` - Source code
   * `/collectors` - Data collection modules
   * `/compliance` - Compliance checking logic
