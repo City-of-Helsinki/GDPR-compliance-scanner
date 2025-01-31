@@ -32,7 +32,7 @@
       <canvas id="myChart" width="200" height="100"></canvas>
       <div class="summary">
         <p>{{summary.urls}} <span class="secondary">URLs checked from <a href="{{config.mainUrl}}" class="unmuted">{{config.mainUrl}}</a></span></p>
-        <p>{{foundItemsUnique.length}} <span class="secondary">items found (cookies, localStorage, etc.)</span></p>
+        <p>{{foundItemsUnique?.length}} <span class="secondary">items found (cookies, localStorage, etc.)</span></p>
         <p>✅ {{summary.compliant}} <span class="secondary">compliant items</span></p>
         <p>❌ {{summary.nonCompliant}} <span class="secondary">non-compliant items</span></p>
         <p><span class="secondary">Checked against</span> {{summary.siteSettingsCount}} <span class="secondary">"Site Settings" rules</span></p>
@@ -63,15 +63,15 @@
 
     <div class="inventory tab-content">
       <h2>Inventory of checked pages and their frames</h2>
-      <p class="muted">There were <span class="unmuted">{{urls.length}}</span> pages checked based on the <label class="link" for="tab-config">configuration</label> used varying cookie settings and actions.</p>
+      <p class="muted">There were <span class="unmuted">{{urls?.length}}</span> pages checked based on the <label class="link" for="tab-config">configuration</label> used varying cookie settings and actions.</p>
       <p class="muted">Of the above, <span class="unmuted">{{summary.totalCompliant}}</span> pages were fully ✅ compliant while <span class="unmuted">{{summary.totalNonCompliant}}</span> pages contained at least one ❌ non-compliant item.</p>
-      <p class="muted">All the checked pages loaded a total of <span class="unmuted">{{summary.totalFrames}}</span> frames that connected to <span class="unmuted">{{frameDomains.length}}</span> different domains.</p>
+      <p class="muted">All the checked pages loaded a total of <span class="unmuted">{{summary.totalFrames}}</span> frames that connected to <span class="unmuted">{{frameDomains?.length}}</span> different domains.</p>
       {{>inventoryTemplate}}
     </div>
 
     <div class="found-items tab-content">
       <h2>Compliances of found items</h2>
-      <p class="muted">The following table shows all <span class="unmuted">{{foundItemsUnique.length}}</span> unique items (by name and type) found that were checked against the <label class="link" for="tab-settings">Site Settings</label> rules.</p>
+      <p class="muted">The following table shows all <span class="unmuted">{{foundItemsUnique?.length}}</span> unique items (by name and type) found that were checked against the <label class="link" for="tab-settings">Site Settings</label> rules.</p>
       <table class="minimal">
         <tr class="centered">
           <td>{{summary.totalCookies}}</td>
@@ -94,18 +94,18 @@
 
     <div class="frameDomains tab-content">
       <h2>Domains contacted by frames in inventory</h2>
-      <p class="muted">The following tables shows all <span class="unmuted">{{frameDomains.length}}</span> domains contacted during the scan.</p>
+      <p class="muted">The following tables shows all <span class="unmuted">{{frameDomains?.length}}</span> domains contacted during the scan.</p>
       <p class="muted">Remember to consider that <span class="unmuted">GDPR regulated</span> tracking can happen without cookies just by connecting to a domain that tracks the visitors IP-address.</p>
       <p class="muted">Known tracking domains are highlighted with ⚠️-icon based on <a href="https://github.com/blocklistproject/Lists">BlocklistProject's tracking-nl.txt</a> downloaded at {{trackingDomainsTimestamp}}. The list has been extended with some additional domains that are known to be used for tracking.</p>
 
       <h3>Domains contacted by frames withing the main domain.</h3>
-      <p class="muted">These <span class="unmuted">{{frameDomainsInternal.length}}</span> domains have access to set cookies for the main domain {{config.mainUrl}}.</p>
+      <p class="muted">These <span class="unmuted">{{frameDomainsInternal?.length}}</span> domains have access to set cookies for the main domain {{config.mainUrl}}.</p>
       <p class="muted">Also note that every connection is another security risk when evaluating this list (for example, if scripts are loaded to main domain from these domains).</p>
       <p class="muted">For example if this first list contains tracking domains like fonts.googleapis.com, then there <a href="https://www.cookieyes.com/documentation/google-fonts-and-gdpr/">may be a violation of GDPR</a>.</p>
       {{>frameDomainsInternalTemplate}}
 
       <h3>Domains contacted by frames outside the main domain.</h3>
-      <p class="muted">These <span class="unmuted">{{frameDomainsExternal.length}}</span> domains can not set cookies for the main domain, but they can still track the visitor.</p>
+      <p class="muted">These <span class="unmuted">{{frameDomainsExternal?.length}}</span> domains can not set cookies for the main domain, but they can still track the visitor.</p>
       {{>frameDomainsExternalTemplate}}
     </div>
 
@@ -113,8 +113,8 @@
       <h2>Site Settings</h2>
       <p class="muted">
         These <span class="unmuted">{{summary.siteSettingsCount}} settings</span> divided in
-        <span class="unmuted">{{siteSettings.requiredGroups.length}} required</span> and
-        <span class="unmuted">{{siteSettings.optionalGroups.length}} optional</span> groups were downloaded at {{timeStampFormatted}} from the
+        <span class="unmuted">{{siteSettings.requiredGroups?.length}} required</span> and
+        <span class="unmuted">{{siteSettings.optionalGroups?.length}} optional</span> groups were downloaded at {{timeStampFormatted}} from the
         <a href="{{apiUrl}}">siteSettings API address</a> given in the <label class="link" for="tab-config">configuration</label>.
       </p>
       <p class="muted">
@@ -236,8 +236,8 @@
                   <tr class="details">
                     <td colspan="3">
                       <div class="details-wrapper">
-                        {{#cookies.length}}
-                        <h3>Cookies ({{cookies.length}})</h3>
+                        {{#cookies?.length}}
+                        <h3>Cookies ({{cookies?.length}})</h3>
                         <table class="sortable-table">
                           <thead>
                             <tr>
@@ -260,9 +260,9 @@
                             {{/cookies}}
                           </tbody>
                         </table>
-                        {{/cookies.length}}
-                        {{#localStorage.length}}
-                        <h3>Local Storage ({{localStorage.length}})</h3>
+                        {{/cookies?.length}}
+                        {{#localStorage?.length}}
+                        <h3>Local Storage ({{localStorage?.length}})</h3>
                         <table class="sortable-table">
                           <thead>
                             <tr>
@@ -281,9 +281,9 @@
                             {{/localStorage}}
                           </tbody>
                         </table>
-                        {{/localStorage.length}}
-                        {{#sessionStorage.length}}
-                        <h3>Session Storage ({{sessionStorage.length}})</h3>
+                        {{/localStorage?.length}}
+                        {{#sessionStorage?.length}}
+                        <h3>Session Storage ({{sessionStorage?.length}})</h3>
                         <table class="sortable-table">
                           <thead>
                             <tr>
@@ -302,9 +302,9 @@
                             {{/sessionStorage}}
                           </tbody>
                         </table>
-                        {{/sessionStorage.length}}
-                        {{#indexedDB.length}}
-                        <h3>IndexedDB ({{indexedDB.length}})</h3>
+                        {{/sessionStorage?.length}}
+                        {{#indexedDB?.length}}
+                        <h3>IndexedDB ({{indexedDB?.length}})</h3>
                         <table class="sortable-table">
                           <thead>
                             <tr>
@@ -323,9 +323,9 @@
                             {{/indexedDB}}
                           </tbody>
                         </table>
-                        {{/indexedDB.length}}
-                        {{#cacheStorage.length}}
-                        <h3>Cache Storage ({{cacheStorage.length}})</h3>
+                        {{/indexedDB?.length}}
+                        {{#cacheStorage?.length}}
+                        <h3>Cache Storage ({{cacheStorage?.length}})</h3>
                         <table class="sortable-table">
                           <thead>
                             <tr>
@@ -344,9 +344,9 @@
                             {{/cacheStorage}}
                           </tbody>
                         </table>
-                        {{/cacheStorage.length}}
-                        {{#frameDomains.length}}
-                        <h3>Domains contacted by this frame ({{frameDomains.length}})</h3>
+                        {{/cacheStorage?.length}}
+                        {{#frameDomains?.length}}
+                        <h3>Domains contacted by this frame ({{frameDomains?.length}})</h3>
                         <table class="sortable-table">
                           <thead>
                             <tr>
@@ -363,7 +363,7 @@
                             {{/frameDomains}}
                           </tbody>
                         </table>
-                        {{/frameDomains.length}}
+                        {{/frameDomains?.length}}
                       </div>
                     </td>
                   </tr>
@@ -402,14 +402,14 @@
           <td class="centered expiresMatches__{{expiresMatches}}">{{expiresText}}</td>
           <td>
             <span class="compliant_{{allCompliant}}">
-              {{complianceCount}} / {{instances.length}}
+              {{complianceCount}} / {{instances?.length}}
             </span>
           </td>
           <td>
             <span class="details-label">
               <label>
                 <input type="checkbox" class="details-toggle"/>
-                {{#instances.length}}{{instances.length}} Pages{{/instances.length}}
+                {{#instances?.length}}{{instances?.length}} Pages{{/instances?.length}}
               </label>
             </span>
           </td>
@@ -495,7 +495,7 @@
             <span class="details-label">
               <label>
                 <input type="checkbox" class="details-toggle"/>
-                {{inventoryItems.length}} Pages
+                {{inventoryItems?.length}} Pages
               </label>
             </span>
           </td>
@@ -546,7 +546,7 @@
             <span class="details-label">
               <label>
                 <input type="checkbox" class="details-toggle"/>
-                {{inventoryItems.length}} Pages
+                {{inventoryItems?.length}} Pages
               </label>
             </span>
           </td>
@@ -598,7 +598,7 @@
             <span class="details-label">
               <label>
                 <input type="checkbox" class="details-toggle"/>
-                {{inventoryItems.length}} Pages
+                {{inventoryItems?.length}} Pages
               </label>
             </span>
           </td>
@@ -639,7 +639,7 @@
             <span class="details-label">
             <label>
               <input type="checkbox" class="details-toggle" />
-              {{cookies.length}} cookie settings
+              {{cookies?.length}} cookie settings
             </label>
             </span>
           </td>
@@ -662,7 +662,7 @@
             <span class="details-label">
             <label>
               <input type="checkbox" class="details-toggle" />
-              {{cookies.length}} cookie settings
+              {{cookies?.length}} cookie settings
             </label>
             </span>
           </td>
@@ -829,7 +829,7 @@
         // Split the name
         const nameParts = storage.name.split(/\b(with\b.*)/);
         storage.frames.map(frame => {
-          frame.itemCount = frame.cookies.length + frame.localStorage.length + frame.sessionStorage.length + frame.indexedDB.length + frame.cacheStorage.length;
+          frame.itemCount = frame.cookies?.length + frame.localStorage?.length + frame.sessionStorage?.length + frame.indexedDB?.length + frame.cacheStorage?.length;
           frame.cookies.forEach(cookie => {
             cookie.expiresText = getCookieExpirationText(cookie.frameTimestamp, cookie.expires);
           });
@@ -845,16 +845,16 @@
         return {
           ...storage,
           namePage: nameParts[0],
-          nameSecondary: nameParts.length > 1 ? nameParts[1].split(',').join(', ') : '',
+          nameSecondary: nameParts?.length > 1 ? nameParts[1].split(',').join(', ') : '',
           frameCount: () => {
-            const count = storage.frames.length;
+            const count = storage.frames?.length;
             return `${count} ${count === 1 ? 'Frame' : 'Frames'}`;
           },
         };
       });
-      processedData.summary.totalNonCompliant = processedData.inventoryItems.filter(storage => storage.allCompliant === false).length;
-      processedData.summary.totalCompliant = processedData.inventoryItems.filter(storage => storage.allCompliant === true).length;
-      processedData.summary.totalFrames = processedData.inventoryItems.reduce((acc, storage) => acc + storage.frames.length, 0);
+      processedData.summary.totalNonCompliant = processedData.inventoryItems.filter(storage => storage.allCompliant === false)?.length;
+      processedData.summary.totalCompliant = processedData.inventoryItems.filter(storage => storage.allCompliant === true)?.length;
+      processedData.summary.totalFrames = processedData.inventoryItems.reduce((acc, storage) => acc + storage.frames?.length, 0);
 
 
       // ******************************************************
@@ -879,7 +879,7 @@
                   'fonts.gstatic.com',
                   'webanalytics.digiaiiris.com',
                 ];
-                const knownTrackingDomain = rootDomain.length > 1 && (trackingDomains.includes(rootDomain) || customTrackingDomains.includes(frameDomain.domain));
+                const knownTrackingDomain = rootDomain?.length > 1 && (trackingDomains.includes(rootDomain) || customTrackingDomains.includes(frameDomain.domain));
 
 
                 let certificateExpires = "-";
@@ -982,17 +982,17 @@
         ...compliance,
         instances: compliance.instances.map(instance => ({
           namePage: instance.name.split(/\b(with\b.*)/)[0],
-          nameSecondary: instance.name.split(/\b(with\b.*)/).length > 1 ? instance.name.split(/\b(with\b.*)/)[1].split(',').join(', ') : '',
+          nameSecondary: instance.name.split(/\b(with\b.*)/)?.length > 1 ? instance.name.split(/\b(with\b.*)/)[1].split(',').join(', ') : '',
           ...instance,
-          isSingular: compliance.instances.length === 1
+          isSingular: compliance.instances?.length === 1
         }))
       }));
 
-      processedData.summary.totalCookies = processedData.foundItemsUnique.filter(compliance => compliance.typeString === 'cookie').length;
-      processedData.summary.totalLocalStorage = processedData.foundItemsUnique.filter(compliance => compliance.typeString === 'localStorage').length;
-      processedData.summary.totalSessionStorage = processedData.foundItemsUnique.filter(compliance => compliance.typeString === 'sessionStorage').length;
-      processedData.summary.totalIndexedDB = processedData.foundItemsUnique.filter(compliance => compliance.typeString === 'indexedDB').length;
-      processedData.summary.totalCacheStorage = processedData.foundItemsUnique.filter(compliance => compliance.typeString === 'cacheStorage').length;
+      processedData.summary.totalCookies = processedData.foundItemsUnique.filter(compliance => compliance.typeString === 'cookie')?.length;
+      processedData.summary.totalLocalStorage = processedData.foundItemsUnique.filter(compliance => compliance.typeString === 'localStorage')?.length;
+      processedData.summary.totalSessionStorage = processedData.foundItemsUnique.filter(compliance => compliance.typeString === 'sessionStorage')?.length;
+      processedData.summary.totalIndexedDB = processedData.foundItemsUnique.filter(compliance => compliance.typeString === 'indexedDB')?.length;
+      processedData.summary.totalCacheStorage = processedData.foundItemsUnique.filter(compliance => compliance.typeString === 'cacheStorage')?.length;
 
       // ******************************************************
       // Site Settings
@@ -1031,7 +1031,7 @@
             }
             return nameMatch && typeMatch;
           });
-          siteSettingsCookie.matchingCompliancesCount = siteSettingsCookie.foundItemsUnique.length;
+          siteSettingsCookie.matchingCompliancesCount = siteSettingsCookie.foundItemsUnique?.length;
         });
       }
       processedData.siteSettings.requiredGroups.forEach(group => {
@@ -1042,10 +1042,10 @@
       });
 
       processedData.summary.siteSettingsZeroMatches = processedData.siteSettings.requiredGroups.reduce((total, group) => {
-        return total + group.cookies.filter(cookie => cookie.matchingCompliancesCount === 0).length;
+        return total + group.cookies.filter(cookie => cookie.matchingCompliancesCount === 0)?.length;
       }, 0);
       processedData.summary.siteSettingsZeroMatches += processedData.siteSettings.optionalGroups.reduce((total, group) => {
-        return total + group.cookies.filter(cookie => cookie.matchingCompliancesCount === 0).length;
+        return total + group.cookies.filter(cookie => cookie.matchingCompliancesCount === 0)?.length;
       }, 0);
 
 
