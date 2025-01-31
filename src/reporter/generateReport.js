@@ -3,6 +3,7 @@ import fs from 'fs';
 /**
  * Generates a compliance report from collected data and saves it to disk
  * @param {Object} config - Configuration object for the scan
+ * @param {string} config.name - Name used for organizing reports
  * @param {string} config.mainUrl - Main URL being scanned
  * @param {string} config.settingsDomainSubstitution - Domain substitution for settings
  * @param {string} config.apiUrl - API URL for fetching settings
@@ -15,18 +16,7 @@ import fs from 'fs';
  * @param {Array} foundItems - Array of compliance check results
  * @param {Array} siteSettingsFlat - Flattened array of site settings
  * @param {Object} timer - Timer instance with performance data
- * @returns {Object} Generated compliance report containing:
- *   - timeStamp: ISO timestamp of report generation
- *   - summary: Object with compliance statistics
- *   - config: Scan configuration
- *   - groupHashes: Cookie consent group identifiers
- *   - groupSettings: Cookie group settings
- *   - siteSettings: Raw site settings
- *   - urls: Scanned URLs
- *   - inventoryItems: Found storage items
- *   - foundItems: Compliance results
- *   - siteSettingsFlat: Flattened settings
- *   - timing: Performance timing data
+ * @returns {Object} Generated compliance report
  * @throws {Error} If writing report files fails
  */
 function generateReport(
@@ -46,9 +36,9 @@ function generateReport(
   const complianceReport = {
     timeStamp,
     summary: {
-      total: 0,
-      compliant: 0,
-      nonCompliant: 0,
+      total: foundItems.length,
+      compliant: foundItems.filter(item => item.compliant).length,
+      nonCompliant: foundItems.filter(item => !item.compliant).length,
       warnings: 0,
       urls: urls.length,
       failedUrls: urls.length - inventoryItems.length,
@@ -71,21 +61,19 @@ function generateReport(
     timing,
   };
 
-  // Calculate compliance statistics
-  for (const complianceIndex in foundItems) {
-    const compliance = foundItems[complianceIndex];
-    complianceReport.summary.total++;
-    if (compliance.compliant) {
-      complianceReport.summary.compliant++;
-    } else {
-      complianceReport.summary.nonCompliant++;
-    }
+  // Define report folder and history file paths
+  const reportDir = `./reports/json/${config.name}/`;
+  const historyFile = `${reportDir}history.json`;
+
+  // Ensure report directory exists
+  if (!fs.existsSync(reportDir)) {
+    fs.mkdirSync(reportDir, { recursive: true });
   }
 
-  // Load or initialize history
+  // Load or initialize history for this specific config.name
   let history;
   try {
-    history = JSON.parse(fs.readFileSync('./reports/json/history.json'));
+    history = JSON.parse(fs.readFileSync(historyFile, 'utf-8'));
   } catch (err) {
     if (err.code === 'ENOENT') {
       history = [];
@@ -94,9 +82,10 @@ function generateReport(
     }
   }
 
-  // Create history entry and save files
-  const filename = `report-${timeStamp}.json`;
-  const path = './reports/json/';
+  // Generate filename and save report
+  const filename = `report-${config.name}-${timeStamp}.json`;
+  const filePath = `${reportDir}${filename}`;
+
   const historyEntry = {
     timeStamp,
     summary: complianceReport.summary,
@@ -105,8 +94,23 @@ function generateReport(
 
   history.push(historyEntry);
 
-  fs.writeFileSync('./reports/json/history.json', JSON.stringify(history, null, 2));
-  fs.writeFileSync(path + filename, JSON.stringify(complianceReport, null, 2));
+  // Define report folder and history file paths
+  const jsonDir = `./reports/json/`;
+  const foldersFile = `${jsonDir}folders.json`;
+
+  // Check if the folder exists and update the folders.json
+  const folderData = fs.existsSync(foldersFile) ? JSON.parse(fs.readFileSync(foldersFile, 'utf-8')) : { folders: [] };
+  
+  // Add new folder if it's not already in the list
+  if (!folderData.folders.includes(config.name)) {
+    folderData.folders.push(config.name);
+  }
+
+  // Write the updated folder list to folders.json
+  fs.writeFileSync(foldersFile, JSON.stringify(folderData, null, 2));
+
+  fs.writeFileSync(historyFile, JSON.stringify(history, null, 2));
+  fs.writeFileSync(filePath, JSON.stringify(complianceReport, null, 2));
 
   return complianceReport;
 }

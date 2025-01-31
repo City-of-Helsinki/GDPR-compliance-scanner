@@ -3,6 +3,7 @@ const nodebug = { headless: true, pause: false }
 const debug = { headless: false, pause: true };
 
 const config = {
+  name: 'helfi_core',
   mainUrl: 'https://www.hel.fi/fi/',
   apiUrl: 'https://www.hel.fi/en/api/cookie-banner'+'?cacheBuster='+Date.now(),
   settingsDomainSubstitution: 'https://www.hel.fi/fi/',

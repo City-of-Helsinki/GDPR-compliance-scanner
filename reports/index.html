@@ -1,173 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="light dark" />
-  <title>GDPR Compliance Scanner Reports</title>
-  <script type="module"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.2.0/mustache.min.js"
-    integrity="sha384-9upMxX4rShCFaXmhPbMHtOF91mm4T+HZx+SdqC7vQsyPeTwqQbRsmA8BY3GjaK+L"
-    crossorigin="anonymous"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"
-    integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4"
-    crossorigin="anonymous"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"
-    integrity="sha384-8hHkOkbWN1TLWwet/jpbJ0zbx3FJDeYJgQ8dX1mRrv/vfCfHCqFSFZYCgaMML3z9"
-    crossorigin="anonymous"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.1/dist/chartjs-adapter-moment.min.js"
-    integrity="sha384-s5cwu7c1MxOfC90RGRDWeB53/7VpDTxXi0YxKJF5y9oKA99+UYxMk0qvlqso188s"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/reportFunctions.js"></script>
-</head>
-<body>
-  <main>
-  <h1>GDPR Compliance Scanner Reports</h1>
-  <canvas id="myLineChart" width="400" height="100"></canvas>
-  <div id="history"></div>
-  <script type="text/html" id="history-template">
-    <h2>Report History</h2>
-    {{#history.length}}
-    <table class="summary sortable-table">
-      <thead>
-        <tr>
-          <th class="sortable" data-sort="timeStampFormatted">Report</th>
-          <th class="sortable" data-sort="urls">URLs</th>
-          <th class="sortable" data-sort="total">Total Found</th>
-          <th class="sortable" data-sort="compliant">Compliant</th>
-          <th class="sortable" data-sort="nonCompliant">Non-compliant</th>
-          <th class="sortable" data-sort="timing">Elapsed time</th>
-          <th class="sortable" data-sort="siteSettingsFlat">Site Settings rules</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#history}}
-        <tr>
-          <td><a href="report.html?report={{filename}}">{{timeStampFormatted}}</a></td>
-          <td>{{summary.urls}}</td>
-          <td>{{summary.total}}</td>
-          <td>✅ {{summary.compliant}}</td>
-          <td>❌ {{summary.nonCompliant}}</td>
-          <td class="timing">{{summary.timing}}</td>
-          <td>{{summary.siteSettingsCount}}</td>
-        </tr>
-        {{/history}}
-      </tbody>
-    </table>
-    {{/history.length}}
-  </script>
-  <script type="module">
-    import mustache from  "https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.2.0/mustache.min.js";
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark" />
+    <title>GDPR Compliance Scanner Reports</title>
+    <script type="module"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.2.0/mustache.min.js"
+      integrity="sha384-9upMxX4rShCFaXmhPbMHtOF91mm4T+HZx+SdqC7vQsyPeTwqQbRsmA8BY3GjaK+L"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"
+      integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"
+      integrity="sha384-8hHkOkbWN1TLWwet/jpbJ0zbx3FJDeYJgQ8dX1mRrv/vfCfHCqFSFZYCgaMML3z9"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.1/dist/chartjs-adapter-moment.min.js"
+      integrity="sha384-s5cwu7c1MxOfC90RGRDWeB53/7VpDTxXi0YxKJF5y9oKA99+UYxMk0qvlqso188s"
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/reportFunctions.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>GDPR Compliance Scanner Reports</h1>
+      
+      <!-- Container for the repeated content -->
+      <div id="folders-container"></div>
 
-    // Wait for the page to load before running the script
-    document.addEventListener('DOMContentLoaded', () => {
+      <script type="text/html" id="history-template">
+        {{#history.length}}
+        <table class="summary sortable-table">
+          <thead>
+            <tr>
+              <th class="sortable" data-sort="timeStampFormatted">Report</th>
+              <th class="sortable" data-sort="urls">URLs</th>
+              <th class="sortable" data-sort="total">Total Found</th>
+              <th class="sortable" data-sort="compliant">Compliant</th>
+              <th class="sortable" data-sort="nonCompliant">Non-compliant</th>
+              <th class="sortable" data-sort="timing">Elapsed time</th>
+              <th class="sortable" data-sort="siteSettingsFlat">Site Settings rules</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#history}}
+            <tr>
+              <td><a href="report.html?folder={{folder}}&report={{filename}}">{{timeStampFormatted}}</a></td>
+              <td>{{summary.urls}}</td>
+              <td>{{summary.total}}</td>
+              <td>✅ {{summary.compliant}}</td>
+              <td>❌ {{summary.nonCompliant}}</td>
+              <td class="timing">{{summary.timing}}</td>
+              <td>{{summary.siteSettingsCount}}</td>
+            </tr>
+            {{/history}}
+          </tbody>
+        </table>
+        {{/history.length}}
+      </script>
 
+      <script type="module">
+        import mustache from "https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.2.0/mustache.min.js";
 
-      // Fetch the report history from history.json and print it out using mustache.js
-      fetch(`./json/history.json?_=${Date.now()}`)
-        .then(response => response.json())
-        .then(data => {
+        // Wait for the page to load before running the script
+        document.addEventListener('DOMContentLoaded', () => {
+          fetch('./json/folders.json')
+            .then(response => response.json())
+            .then(data => {
+              data?.folders.forEach(folder => {
+                // Create a new container for each folder's data
+                const folderContainer = document.createElement('div');
+                folderContainer.classList.add('folder-container');
+                
+                // Add a canvas for each folder
+                const canvas = document.createElement('canvas');
+                canvas.id = `myLineChart-${folder}`;
+                canvas.width = 400;
+                canvas.height = 100;
+                folderContainer.appendChild(canvas);
+                
+                // Add a history section for each folder
+                const historyDiv = document.createElement('div');
+                historyDiv.id = `history-${folder}`;
+                folderContainer.appendChild(historyDiv);
+                
+                // Add a new h2 element for each folder (instead of modifying the global one)
+                const siteNameHeading = document.createElement('h2');
+                siteNameHeading.classList.add('site-name');
+                siteNameHeading.textContent = `Report History: ${folder}`;
+                folderContainer.insertBefore(siteNameHeading, historyDiv);
 
-          const formatDate = (item) => {
-            const date = new Date(item.timeStamp);
-            return date.toLocaleString('fi-FI', {
-              year: 'numeric',
-              month: 'numeric',
-              day: 'numeric',
-              hour: '2-digit',
-              minute: '2-digit',
-              second: '2-digit',
-            }).replace(/klo /, '');
-          };
-          data.forEach(item => { item.timeStampFormatted = formatDate(item); });
+                // Fetch the report history from history.json for each folder and render it using Mustache.js
+                fetch(`./json/${folder}/history.json?_=${Date.now()}`)
+                  .then(response => response.json())
+                  .then(data => {
+                    const formatDate = (item) => {
+                      const date = new Date(item.timeStamp);
+                      return date.toLocaleString('fi-FI', {
+                        year: 'numeric',
+                        month: 'numeric',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit',
+                      }).replace(/klo /, '');
+                    };
+                    data.forEach(item => { item.timeStampFormatted = formatDate(item); });
 
-          // Render the table using Mustache.js
-          const template = document.getElementById('history-template').innerHTML;
-          const rendered = mustache.render(template, { history: data });
-          document.getElementById('history').innerHTML = rendered;
+                    // Include the folder name in the data object for Mustache
+                    const templateData = {
+                      history: data,
+                      folder: folder
+                    };
 
-          // Prepare data for the line chart
-          let labels;
-          const timeSteps = true;
-          if (timeSteps){
-            labels = data.map(formatDate);
-          }else{
-            labels = data.map(item => new Date(item.timeStamp));
-          }
-          const totalData = data.map(item => item.summary.total);
-          const nonCompliantData = data.map(item => item.summary.nonCompliant);
+                    // Render the history table using Mustache.js
+                    const template = document.getElementById('history-template').innerHTML;
+                    const rendered = mustache.render(template, templateData);
+                    historyDiv.innerHTML = rendered;
 
-          // Draw the line chart using Chart.js
-          const ctx = document.getElementById('myLineChart').getContext('2d');
-          const myLineChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-              labels: labels,
-              datasets: [
-                {
-                  label: 'Non-Compliant',
-                  data: nonCompliantData,
-                  cubicInterpolationMode: 'monotone',
-                  borderColor: 'rgb(255, 99, 132)',
-                  backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                  fill: true,
-                },
-                {
-                  label: 'Total',
-                  data: totalData,
-                  borderColor: 'rgb(192, 192, 192)',
-                  cubicInterpolationMode: 'monotone',
-                  backgroundColor: 'rgba(192, 192, 192, 0.2)',
-                  fill: true,
-                },
-              ]
-            },
-            options: {
-              responsive: true,
-              scales: {
-                x: {
-                  ...(
-                    timeSteps ? {} : {
-                      type: 'time',
-                      time: {
-                        tooltipFormat: 'DD.MM.YYYY [klo] HH.mm.ss',
-                        displayFormats: {
-                          millisecond: 'DD.MM.yyyy HH.mm.ss',
-                          second: 'DD.MM.yyyy HH.mm.ss',
-                          minute: 'DD.MM.yyyy HH.mm.ss',
-                          hour: 'DD.MM.yyyy HH.mm',
-                          day: 'DD.MM.yyyy',
-                        }
-                      },
+                    // Prepare data for the line chart
+                    let labels;
+                    const timeSteps = true;
+                    if (timeSteps) {
+                      labels = data.map(formatDate);
+                    } else {
+                      labels = data.map(item => new Date(item.timeStamp));
                     }
-                  ),
-                  // beginAtZero: true,
-                  title: {
-                    display: true,
-                    text: 'Timestamp'
-                  }
-                },
-                y: {
-                  beginAtZero: true,
-                  title: {
-                    display: true,
-                    text: 'Count'
-                  }
-                }
-              }
-            }
-          });
+                    const totalData = data.map(item => item.summary.total);
+                    const nonCompliantData = data.map(item => item.summary.nonCompliant);
 
-          initSortableTables();
-        })
-        .catch(error => console.error('Error loading history:', error));
-    });
+                    // Draw the line chart using Chart.js
+                    const ctx = document.getElementById(`myLineChart-${folder}`).getContext('2d');
+                    new Chart(ctx, {
+                      type: 'line',
+                      data: {
+                        labels: labels,
+                        datasets: [
+                          {
+                            label: 'Non-Compliant',
+                            data: nonCompliantData,
+                            cubicInterpolationMode: 'monotone',
+                            borderColor: 'rgb(255, 99, 132)',
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            fill: true,
+                          },
+                          {
+                            label: 'Total',
+                            data: totalData,
+                            borderColor: 'rgb(192, 192, 192)',
+                            cubicInterpolationMode: 'monotone',
+                            backgroundColor: 'rgba(192, 192, 192, 0.2)',
+                            fill: true,
+                          },
+                        ]
+                      },
+                      options: {
+                        responsive: true,
+                        scales: {
+                          x: {
+                            ...(
+                              timeSteps ? {} : {
+                                type: 'time',
+                                time: {
+                                  tooltipFormat: 'DD.MM.YYYY [klo] HH.mm.ss',
+                                  displayFormats: {
+                                    millisecond: 'DD.MM.yyyy HH.mm.ss',
+                                    second: 'DD.MM.yyyy HH.mm.ss',
+                                    minute: 'DD.MM.yyyy HH.mm.ss',
+                                    hour: 'DD.MM.yyyy HH.mm',
+                                    day: 'DD.MM.yyyy',
+                                  }
+                                },
+                              }
+                            ),
+                            title: {
+                              display: true,
+                              text: 'Timestamp'
+                            }
+                          },
+                          y: {
+                            beginAtZero: true,
+                            title: {
+                              display: true,
+                              text: 'Count'
+                            }
+                          }
+                        }
+                      }
+                    });
 
-  </script>
-  </main>
-</body>
+                    initSortableTables();
+                  })
+                  .catch(error => console.error('Error loading history:', error));
+
+                // Append the folder container to the main container
+                document.getElementById('folders-container').appendChild(folderContainer);
+              });
+            });
+        });
+      </script>
+    </main>
+  </body>
 </html>
