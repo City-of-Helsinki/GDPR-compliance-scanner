@@ -236,7 +236,7 @@
                   <tr class="details">
                     <td colspan="3">
                       <div class="details-wrapper">
-                        {{#cookies?.length}}
+                        {{#cookies.length}}
                         <h3>Cookies ({{cookies?.length}})</h3>
                         <table class="sortable-table">
                           <thead>
@@ -260,8 +260,8 @@
                             {{/cookies}}
                           </tbody>
                         </table>
-                        {{/cookies?.length}}
-                        {{#localStorage?.length}}
+                        {{/cookies.length}}
+                        {{#localStorage.length}}
                         <h3>Local Storage ({{localStorage?.length}})</h3>
                         <table class="sortable-table">
                           <thead>
@@ -281,8 +281,8 @@
                             {{/localStorage}}
                           </tbody>
                         </table>
-                        {{/localStorage?.length}}
-                        {{#sessionStorage?.length}}
+                        {{/localStorage.length}}
+                        {{#sessionStorage.length}}
                         <h3>Session Storage ({{sessionStorage?.length}})</h3>
                         <table class="sortable-table">
                           <thead>
@@ -302,8 +302,8 @@
                             {{/sessionStorage}}
                           </tbody>
                         </table>
-                        {{/sessionStorage?.length}}
-                        {{#indexedDB?.length}}
+                        {{/sessionStorage.length}}
+                        {{#indexedDB.length}}
                         <h3>IndexedDB ({{indexedDB?.length}})</h3>
                         <table class="sortable-table">
                           <thead>
@@ -323,8 +323,8 @@
                             {{/indexedDB}}
                           </tbody>
                         </table>
-                        {{/indexedDB?.length}}
-                        {{#cacheStorage?.length}}
+                        {{/indexedDB.length}}
+                        {{#cacheStorage.length}}
                         <h3>Cache Storage ({{cacheStorage?.length}})</h3>
                         <table class="sortable-table">
                           <thead>
@@ -344,8 +344,8 @@
                             {{/cacheStorage}}
                           </tbody>
                         </table>
-                        {{/cacheStorage?.length}}
-                        {{#frameDomains?.length}}
+                        {{/cacheStorage.length}}
+                        {{#frameDomains.length}}
                         <h3>Domains contacted by this frame ({{frameDomains?.length}})</h3>
                         <table class="sortable-table">
                           <thead>
@@ -363,7 +363,7 @@
                             {{/frameDomains}}
                           </tbody>
                         </table>
-                        {{/frameDomains?.length}}
+                        {{/frameDomains.length}}
                       </div>
                     </td>
                   </tr>
@@ -409,7 +409,7 @@
             <span class="details-label">
               <label>
                 <input type="checkbox" class="details-toggle"/>
-                {{#instances?.length}}{{instances?.length}} Pages{{/instances?.length}}
+                {{#instances.length}}{{instances?.length}} Pages{{/instances.length}}
               </label>
             </span>
           </td>
