@@ -10,6 +10,10 @@ main {
   margin-bottom: 50vh;
 }
 
+h1 {
+  margin-bottom: 3em;
+}
+
 .stats {
   display: flex;
   align-items: bottom;
@@ -234,11 +238,6 @@ table {
   overflow-wrap: anywhere;
 }
 
-h2 {
-  margin-block-start: 2em;
-  margin-block-end: 0.5em;
-}
-
 .timing {
   text-align: right;
 }
@@ -397,4 +396,41 @@ table.minimal {
 
 .expired__true {
   color: red;
+}
+
+.report-container:not(:last-of-type) {
+  border-bottom: 2px solid white;
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+}
+
+.report-container.expanded:not(:last-of-type) {
+  padding-bottom: 5rem;
+  margin-bottom: 5rem;
+}
+
+.report-content.hidden {
+  display: none;
+}
+
+.heading-container {
+  align-items: center;
+  display: flex;
+  gap: 1em;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+.load-more-button {
+  background: none;
+  cursor: pointer;
+  display: flex;
+  font-size: 1em;
+  margin-inline: auto;
+  margin-top: 1em;
 }
