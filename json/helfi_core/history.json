@@ -1,0 +1,16 @@
+[
+  {
+    "timeStamp": "2025-02-03T08:40:28.768Z",
+    "summary": {
+      "total": 148,
+      "compliant": 148,
+      "nonCompliant": 0,
+      "warnings": 0,
+      "urls": 39,
+      "failedUrls": 0,
+      "timing": "17.509s",
+      "siteSettingsFlat": 76
+    },
+    "filename": "report-helfi_core-2025-02-03T08:40:28.768Z.json"
+  }
+]

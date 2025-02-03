@@ -1,0 +1,16 @@
+[
+  {
+    "timeStamp": "2025-02-03T08:40:11.242Z",
+    "summary": {
+      "total": 16,
+      "compliant": 16,
+      "nonCompliant": 0,
+      "warnings": 0,
+      "urls": 6,
+      "failedUrls": 0,
+      "timing": "7.516s",
+      "siteSettingsFlat": 69
+    },
+    "filename": "report-avustukset-2025-02-03T08:40:11.242Z.json"
+  }
+]
