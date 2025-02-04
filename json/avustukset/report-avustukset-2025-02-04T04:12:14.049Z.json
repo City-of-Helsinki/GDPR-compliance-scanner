@@ -1,0 +1,5164 @@
+{
+  "timeStamp": "2025-02-04T04:12:14.049Z",
+  "summary": {
+    "total": 30,
+    "compliant": 15,
+    "nonCompliant": 15,
+    "warnings": 0,
+    "urls": 15,
+    "failedUrls": 0,
+    "timing": "10.542s",
+    "siteSettingsFlat": 68
+  },
+  "config": {
+    "mainUrl": "https://avustukset.test.hel.ninja/fi/avustukset",
+    "settingsDomainSubstitution": "https://avustukset.test.hel.ninja/fi/avustukset",
+    "apiUrl": "https://avustukset.test.hel.ninja/en/api/cookie-banner?cacheBuster=1738642323501",
+    "urls": [
+      {
+        "only": false,
+        "nameBase": "Frontpage",
+        "url": "https://avustukset.test.hel.ninja/fi/avustukset",
+        "actions": [],
+        "variants": [
+          "none",
+          "required",
+          "all"
+        ],
+        "headless": true,
+        "pause": false
+      },
+      {
+        "only": false,
+        "nameBase": "Search",
+        "url": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+        "actions": [],
+        "variants": [
+          "none",
+          "required",
+          "all"
+        ],
+        "headless": true,
+        "pause": false
+      },
+      {
+        "only": false,
+        "nameBase": "Single grant",
+        "url": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+        "actions": [],
+        "variants": [
+          "none",
+          "required",
+          "all"
+        ],
+        "headless": true,
+        "pause": false
+      },
+      {
+        "only": false,
+        "nameBase": "Single grant preview",
+        "url": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+        "actions": [],
+        "variants": [
+          "none",
+          "required",
+          "all"
+        ],
+        "headless": true,
+        "pause": false
+      },
+      {
+        "only": false,
+        "nameBase": "Accordion",
+        "url": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+        "actions": [],
+        "variants": [
+          "none",
+          "required",
+          "all"
+        ],
+        "headless": true,
+        "pause": false
+      }
+    ]
+  },
+  "groupHashes": {
+    "essential": {
+      "checksum": "057dfe65",
+      "timestamp": 1738642327010
+    },
+    "admin": {
+      "checksum": "8c7ea53c",
+      "timestamp": 1738642327010
+    },
+    "preferences": {
+      "checksum": "c02aa4b8",
+      "timestamp": 1738642327010
+    },
+    "statistics": {
+      "checksum": "fb4b10bf",
+      "timestamp": 1738642327010
+    },
+    "chat": {
+      "checksum": "84a62083",
+      "timestamp": 1738642327010
+    }
+  },
+  "groupSettings": [
+    {
+      "groupId": "essential",
+      "required": true,
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "host": "avustukset.hel.fi",
+          "storageType": 1,
+          "expiration": "100 days"
+        },
+        {
+          "name": "helfi-settings",
+          "host": "avustukset.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        }
+      ]
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "cookies": [
+        {
+          "name": "SSESS*",
+          "host": "avustukset.hel.fi",
+          "storageType": 1,
+          "expiration": "23 days"
+        },
+        {
+          "name": "Drupal.gin.sidebarExpanded.desktop",
+          "host": "avustukset.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "Drupal.gin.sidebarExpanded.mobile",
+          "host": "avustukset.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "Drupal.gin.sidebarWidth",
+          "host": "avustukset.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "Drupal.gin.darkmode",
+          "host": "avustukset.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "Drupal.toolbar.subtrees.*",
+          "host": "avustukset.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "Drupal.off-canvas.css.*",
+          "host": "avustukset.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "Drupal.toolbar.toolbarState",
+          "host": "avustukset.hel.fi",
+          "storageType": 3,
+          "expiration": "Session"
+        },
+        {
+          "name": "escapeAdminPath",
+          "host": "avustukset.hel.fi",
+          "storageType": 3,
+          "expiration": "Session"
+        },
+        {
+          "name": "editoria11yResultCount",
+          "host": "avustukset.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "ed11ySeen",
+          "host": "avustukset.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "Drupal.webform.*",
+          "host": "avustukset.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "Drupal.visitor.autologout_login",
+          "host": "avustukset.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        }
+      ]
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "cookies": [
+        {
+          "name": "iframe: ``",
+          "host": "app.powerbi.com",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "iframe: AI_buffer",
+          "host": "app.powerbi.com",
+          "storageType": 3,
+          "expiration": "Session"
+        },
+        {
+          "name": "iframe: AI_sentBuffer",
+          "host": "app.powerbi.com",
+          "storageType": 3,
+          "expiration": "Session"
+        },
+        {
+          "name": "iframe: ARRAffinitySameSite",
+          "host": "app.powerbi.com",
+          "storageType": 1,
+          "expiration": "Session"
+        },
+        {
+          "name": "iframe: GeocoderCache/objects",
+          "host": "app.powerbi.com",
+          "storageType": 4,
+          "expiration": "Session"
+        },
+        {
+          "name": "iframe: manifests.artifacts",
+          "host": "app.powerbi.com",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "iframe: manifests.extensions",
+          "host": "app.powerbi.com",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "iframe: manifests.products",
+          "host": "app.powerbi.com",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "iframe: manifests.tabs",
+          "host": "app.powerbi.com",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "iframe: WFESessionId",
+          "host": "app.powerbi.com",
+          "storageType": 1,
+          "expiration": "Session"
+        },
+        {
+          "name": "iframe: VISITOR_PRIVACY_METADATA",
+          "host": ".youtube.com",
+          "storageType": 1,
+          "expiration": "180 days"
+        },
+        {
+          "name": "iframe: iU5q-!O9@$",
+          "host": ".youtube.com",
+          "storageType": 3,
+          "expiration": "Session"
+        },
+        {
+          "name": "iframe: *-*",
+          "host": ".youtube.com",
+          "storageType": 3,
+          "expiration": "Session"
+        },
+        {
+          "name": "iframe: yt-remote-connected-devices",
+          "host": ".youtube.com",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "iframe: yt-remote-device-id",
+          "host": ".youtube.com",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "iframe: ytidb::LAST_RESULT_ENTRY_KEY",
+          "host": ".youtube.com",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "iframe: YtIdbMeta/databases",
+          "host": ".youtube.com",
+          "storageType": 4,
+          "expiration": "Session"
+        },
+        {
+          "name": "iframe: webpack-offline:809a41f5eacff34cc76f721d90508b4a24761dd8",
+          "host": "reittiopas.hsl.fi",
+          "storageType": 5,
+          "expiration": "Session"
+        },
+        {
+          "name": "iframe: lang",
+          "host": "reittiopas.hsl.fi",
+          "storageType": 1,
+          "expiration": "Session"
+        },
+        {
+          "name": "iframe: saved-searches",
+          "host": "reittiopas.hsl.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "iframe: saved-searches-updated-at",
+          "host": "reittiopas.hsl.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "iframe: COOKIE_SUPPORT",
+          "host": "helsinkikanava.fi",
+          "storageType": 1,
+          "expiration": "365 days"
+        },
+        {
+          "name": "iframe: JSESSIONID",
+          "host": "helsinkikanava.fi",
+          "storageType": 1,
+          "expiration": "Session"
+        },
+        {
+          "name": "iframe: GUEST_LANGUAGE_ID",
+          "host": "helsinkikanava.fi",
+          "storageType": 1,
+          "expiration": "365 days"
+        },
+        {
+          "name": "iframe: httpskartta.hel.fi.SWCulture",
+          "host": "kartta.hel.fi",
+          "storageType": 1,
+          "expiration": "1826 days"
+        },
+        {
+          "name": "iframe: cb-enabled",
+          "host": "kartta.hel.fi",
+          "storageType": 1,
+          "expiration": "400 days"
+        },
+        {
+          "name": "iframe: VISITOR_INFO1_LIVE",
+          "host": ".youtube.com",
+          "storageType": 1,
+          "expiration": "180 days"
+        },
+        {
+          "name": "iframe: __Secure-ROLLOUT_TOKEN",
+          "host": ".youtube.com",
+          "storageType": 1,
+          "expiration": "180 days"
+        },
+        {
+          "name": "iframe: rmpVolume",
+          "host": "www.helsinkikanava.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "iframe: test_cookie",
+          "host": ".doubleclick.net",
+          "storageType": 1,
+          "expiration": "15 minutes"
+        },
+        {
+          "name": "iframe: yt-remote-*",
+          "host": ".youtube.com",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "iframe: yt-remote-*",
+          "host": ".youtube.com",
+          "storageType": 3,
+          "expiration": "Session"
+        },
+        {
+          "name": "iframe: yt-player-*",
+          "host": ".youtube.com",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "iframe: __Secure-ENID",
+          "host": "www.google.com",
+          "storageType": 1,
+          "expiration": "396 days"
+        },
+        {
+          "name": "iframe: SOCS",
+          "host": "www.google.com",
+          "storageType": 1,
+          "expiration": "396 days"
+        },
+        {
+          "name": "iframe: AEC",
+          "host": "www.google.com",
+          "storageType": 1,
+          "expiration": "180 days"
+        }
+      ]
+    },
+    {
+      "groupId": "statistics",
+      "required": false,
+      "cookies": [
+        {
+          "name": "iframe: ai_session",
+          "host": "app.powerbi.com",
+          "storageType": 1,
+          "expiration": "30 minutes"
+        },
+        {
+          "name": "iframe: ai_user",
+          "host": "app.powerbi.com",
+          "storageType": 1,
+          "expiration": "365 days"
+        },
+        {
+          "name": "iframe: LogsDatabaseV2:V473f9200||/LogsRequestsStore",
+          "host": ".youtube.com",
+          "storageType": 4,
+          "expiration": "Session"
+        },
+        {
+          "name": "iframe: icareusDevice",
+          "host": "www.helsinkikanava.fi",
+          "storageType": 1,
+          "expiration": "Session"
+        },
+        {
+          "name": "nmstat",
+          "host": "avustukset.hel.fi",
+          "storageType": 1,
+          "expiration": "1000 days"
+        },
+        {
+          "name": "_pk_id.*",
+          "host": "avustukset.hel.fi",
+          "storageType": 1,
+          "expiration": "393 days"
+        },
+        {
+          "name": "_pk_ses.*",
+          "host": "avustukset.hel.fi",
+          "storageType": 1,
+          "expiration": "1 hour"
+        },
+        {
+          "name": "rnsbid",
+          "host": "avustukset.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "rnsbid_ts",
+          "host": "avustukset.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "rns_reaction_*",
+          "host": "avustukset.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "iframe: YSC",
+          "host": ".youtube.com",
+          "storageType": 1,
+          "expiration": "Session"
+        },
+        {
+          "name": "_pk_ref.*",
+          "host": "avustukset.hel.fi",
+          "storageType": 1,
+          "expiration": "182 days, 12 hours"
+        }
+      ]
+    },
+    {
+      "groupId": "chat",
+      "required": false,
+      "cookies": [
+        {
+          "name": "conversationToken",
+          "host": "coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "aiap-chat-app-v1-state",
+          "host": "avustukset.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "aiap-user",
+          "host": "avustukset.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "aiap-wbc-chat-app-button-state",
+          "host": "avustukset.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "user",
+          "host": "coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud",
+          "storageType": 2,
+          "expiration": "-"
+        }
+      ]
+    }
+  ],
+  "siteSettings": {
+    "languages": [
+      {
+        "code": "fi",
+        "name": "Finnish",
+        "direction": "ltr"
+      },
+      {
+        "code": "sv",
+        "name": "Swedish",
+        "direction": "ltr"
+      },
+      {
+        "code": "en",
+        "name": "English",
+        "direction": "ltr"
+      }
+    ],
+    "siteName": "avustukset.hel.fi",
+    "cookieName": "helfi-cookie-consents",
+    "monitorInterval": 500,
+    "fallbackLanguage": "en",
+    "requiredGroups": [
+      {
+        "groupId": "essential",
+        "title": {
+          "fi": "Välttämättömät toiminnalliset evästeet",
+          "sv": "Nödvändiga funktionella cookies",
+          "en": "Essential cookies"
+        },
+        "description": {
+          "fi": "Välttämättömät evästeet varmistavat, että sivusto toimii kunnolla. Välttämättömiin evästeisiin ei tarvita suostumusta. Nämä evästeet mahdollistavat perustoimintoja, kuten sivulla siirtymisen ja sivuston suojattujen alueiden käytön.",
+          "sv": "Nödvändiga kakor säkerställer att webbplatsen fungerar ordentligt. För nödvändiga kakor behövs inte samtycke. Dessa kakor möjliggör grundläggande funktioner såsom sidnavigering och åtkomst till skyddade områden på webbplatsen.",
+          "en": "Essential cookies ensure that the website functions correctly. Essential cookies do not require consent. These cookies enable basic functions, such as site navigation and access to protected areas of the website."
+        },
+        "cookies": [
+          {
+            "name": "helfi-cookie-consents",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "description": {
+              "fi": "Eväste tallentaa tiedon siitä, ovatko kävijät antaneet hyväksyntänsä tai kieltäytyneet evästeiden käytöstä.",
+              "sv": "Cookie möjliggör hantering av cookies på webbplatsen.",
+              "en": "Used by avustukset.hel.fi Drupal to store information about whether visitors have given or declined the use of cookie categories used on the avustukset.hel.fi site."
+            },
+            "expiration": {
+              "fi": "100 päivää",
+              "sv": "100 dagar",
+              "en": "100 days"
+            }
+          },
+          {
+            "name": "helfi-settings",
+            "host": "avustukset.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Sivusto käyttää tätä tietuetta tietojen tallentamiseen siitä, mitä poikkeusilmoituksia on suljettu ja mikä on avattavien sisältöalueiden tila.",
+              "sv": "Används av avustukset.hel.fi Drupal för att lagra information om stängda meddelanden och accordions' tillstånd.",
+              "en": "Used by avustukset.hel.fi Drupal to store information about closed announcements and accordions' state."
+            },
+            "expiration": "-"
+          }
+        ]
+      },
+      {
+        "groupId": "admin",
+        "title": {
+          "fi": "Sisällöntuottajien toiminnalliset evästeet",
+          "sv": "Redaktörernas funktionella cookies",
+          "en": "Editors' functional cookies"
+        },
+        "description": {
+          "fi": "Sisällöntuottajien välttämättömät toiminnalliset evästeet tallennetaan ainoastaan kirjautuneille sisällöntuottajille. Ne mahdollistavat sivuston muokkaustoiminnot.",
+          "sv": "Nödvändiga funktionella kakor för innehållsproducenter sparas endast hos inloggade innehållsproducenter. De möjliggör funktioner för redigering av webbplatsen.",
+          "en": "The essential functional cookies for content providers are only saved for content providers who are signed in. They enable the editing of the website."
+        },
+        "cookies": [
+          {
+            "name": "SSESS*",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "description": {
+              "fi": "Käytetään pitämään ylläpitäjä kirjautuneena vierailun ajan.",
+              "sv": "Används för att hålla administratören inloggad under besöket.",
+              "en": "The cookie is used to keep the administrator logged in during the visit."
+            },
+            "expiration": {
+              "fi": "23 päivää",
+              "sv": "23 dagar",
+              "en": "23 days"
+            }
+          },
+          {
+            "name": "Drupal.gin.sidebarExpanded.desktop",
+            "host": "avustukset.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Tallentaa tiedon sisällöntuottajan käyttöliittymän sivupalkin näkyvyydestä työpöytänäkymässä.",
+              "sv": "Lagrar om admin-sidopanelen är expanderad eller kollapsad på skrivbordet när du är inloggad som redaktör på avustukset.hel.fi.",
+              "en": "Stores whether the admin sidebar is expanded or collapsed on desktop when logged in as an editor on avustukset.hel.fi."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "Drupal.gin.sidebarExpanded.mobile",
+            "host": "avustukset.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Tallentaa tiedon sisällöntuottajan käyttöliittymän sivupalkin näkyvyydestä mobiilinäkymässä.",
+              "sv": "Lagrar om admin-sidopanelen är expanderad eller kollapsad på mobil när du är inloggad som redaktör på avustukset.hel.fi.",
+              "en": "Stores whether the admin sidebar is expanded or collapsed on mobile when logged in as an editor on avustukset.hel.fi."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "Drupal.gin.sidebarWidth",
+            "host": "avustukset.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Vaihda",
+              "sv": "Vaihda",
+              "en": "Vaihda"
+            },
+            "expiration": {
+              "fi": "-",
+              "sv": "-",
+              "en": "-"
+            }
+          },
+          {
+            "name": "Drupal.gin.darkmode",
+            "host": "avustukset.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Tallentaa tiedon sisällöntuottajan valitsemasta ”tumma tila”-asetuksesta.",
+              "sv": "Lagrar användarens mörkt läge-inställning i admin-temat när du är inloggad som redaktör på avustukset.hel.fi.",
+              "en": "Stores the user's dark mode preference in the admin theme when logged in as an editor on avustukset.hel.fi."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "Drupal.toolbar.subtrees.*",
+            "host": "avustukset.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Tallentaa sisällöntuottajan näkymissä alivalikoiden tilan (laajennettu tai kutistettu), jotta se säilyy yhdenmukaisena sivulatausten välillä.",
+              "sv": "Lagrar tillståndet för expanderade eller kollapsade undermenyer i Drupals admin-verktygsfält för en inloggad redaktör, vilket säkerställer konsekvens mellan sidladdningar.",
+              "en": "Stores the expanded or collapsed state of submenus in the Drupal admin toolbar for a logged-in editor, ensuring consistency across page loads."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "Drupal.off-canvas.css.*",
+            "host": "avustukset.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Tallentaa sisällöntuottajan käyttämän wysiwyg-editorin tyylit välimuistiin varmistaakseen viimeisimpien CSS-tyylien latauksen.",
+              "sv": "Lagrar cachelagrad CKEditor CSS i localStorage för en inloggad redaktör, med en nyckel som använder en cache-brytande fråga för att säkerställa att den senaste CSS-filen laddas.",
+              "en": "Stores cached CKEditor CSS in localStorage for a logged-in editor, using a key with a cache-busting query to ensure the latest CSS is loaded."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "Drupal.toolbar.toolbarState",
+            "host": "avustukset.hel.fi",
+            "storageType": 3,
+            "description": {
+              "fi": "Tallentaa sisällöntuottajan hallintatyökalupalkin orientaation, aktiivisen välilehden ja laajennustilan.",
+              "sv": "Lagrar tillståndet för admin-verktygsfältet för en inloggad redaktör, inklusive dess orientering, aktiva flik och expanderade tillstånd.",
+              "en": "Stores the state of the admin toolbar for a logged-in editor, including its orientation, active tab and state of expansion."
+            },
+            "expiration": {
+              "fi": "Sessio",
+              "sv": "Session",
+              "en": "Session"
+            }
+          },
+          {
+            "name": "escapeAdminPath",
+            "host": "avustukset.hel.fi",
+            "storageType": 3,
+            "description": {
+              "fi": "Tallentaa URL-osoitteen, jota käytetään ohjaamaan kirjautunut sisällöntuottaja hallintaliittymästä takaisin pääsivustolle.",
+              "sv": "Lagrar URL för att omdirigera en inloggad redaktör från admin-gränssnittet tillbaka till huvudsidan.",
+              "en": "Stores the URL to redirect a logged-in editor from the admin interface back to the main site."
+            },
+            "expiration": {
+              "fi": "Sessio",
+              "sv": "Session",
+              "en": "Session"
+            }
+          },
+          {
+            "name": "editoria11yResultCount",
+            "host": "avustukset.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Tallentaa löydettyjen saavutettavuusongelmien määrän sisällöntuottajalle, auttaen seuraamaan ja korjaamaan ne.",
+              "sv": "Spårar antalet tillgänglighetsproblem som hittats på specifika sidor för en inloggad redaktör, vilket hjälper till att övervaka och åtgärda dem.",
+              "en": "Tracks the number of accessibility issues found on specific pages for a logged-in editor, helping monitor and address them."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "ed11ySeen",
+            "host": "avustukset.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Tallentaa sisällöntuottajan näkemät saavutettavuusongelmat, jotta vältetään ongelmien kaksoisilmoitukset.",
+              "sv": "Spårar vilka tillgänglighetsproblem en inloggad redaktör redan har sett för att undvika dubbla aviseringar.",
+              "en": "Tracks which accessibility issues a logged-in editor has already seen to avoid duplicate notifications."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "Drupal.webform.*",
+            "host": "avustukset.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Vaihda",
+              "sv": "Vaihda",
+              "en": "Vaihda"
+            },
+            "expiration": {
+              "fi": "-",
+              "sv": "-",
+              "en": "-"
+            }
+          },
+          {
+            "name": "Drupal.visitor.autologout_login",
+            "host": "avustukset.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "vaihda",
+              "sv": "vaihda",
+              "en": "vaihda"
+            },
+            "expiration": {
+              "fi": "-",
+              "sv": "-",
+              "en": "-"
+            }
+          }
+        ]
+      }
+    ],
+    "optionalGroups": [
+      {
+        "groupId": "preferences",
+        "title": {
+          "fi": "Personointi",
+          "sv": "Preferens",
+          "en": "Preference"
+        },
+        "description": {
+          "fi": "Mieltymysevästeet mukauttavat sivuston ulkoasua ja toimintaa käyttäjän aiemman käytön perusteella.",
+          "sv": "Preferenscookies ändrar webbplatsens utseende och funktioner enligt användarens tidigare användning.",
+          "en": "Preference cookies modify the visuals and functions of the website based on the user's previous sessions."
+        },
+        "cookies": [
+          {
+            "name": "iframe: ``",
+            "host": "app.powerbi.com",
+            "storageType": 2,
+            "description": {
+              "fi": "Käytetään välimuistin hallintaan ja versionhallintaan, jotta Power BI voi tallentaa ja käsitellä paikallisesti tietoja, kuten tallennettuja asetuksia tai välimuistissa olevia lataustietoja, jotka nopeuttavat käyttäjän kokemusta ja vähentävät palvelinpuolen kuormitusta.",
+              "sv": "Används för att hantera cacheminnet och versionen, så att Power BI kan spara och hantera information lokalt, såsom sparade inställningar eller nedladdningsuppgifter i cacheminnet, som gör användarens upplevelse snabbare och minskar belastningen på serversidan.",
+              "en": "Used for cache management and version control, allowing Power BI to locally store and process data such as saved settings or cached download information, which enhances the user experience and reduces server-side load."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "iframe: AI_buffer",
+            "host": "app.powerbi.com",
+            "storageType": 3,
+            "description": {
+              "fi": "Käytetään käyttäjän toiminnan seuraamiseen ja tietojen väliaikaiseen tallentamiseen palvelinpuolen käsittelyä varten.",
+              "sv": "Används för att följa användarens aktivitet och tillfälligt spara uppgifter för serversidans behandling.",
+              "en": "Used to track user activity and temporarily store data for server-side processing."
+            },
+            "expiration": {
+              "fi": "Sessio",
+              "sv": "Session",
+              "en": "Session"
+            }
+          },
+          {
+            "name": "iframe: AI_sentBuffer",
+            "host": "app.powerbi.com",
+            "storageType": 3,
+            "description": {
+              "fi": "Tallentaa lähetyspuskuritiedot käyttäjän toiminnasta, joita käytetään Power BI:n suorituskyvyn analysoinnissa ja ongelmien diagnosoimisessa.",
+              "sv": "Sparar överföringsbuffertuppgifter om användarens aktiviteter, som används för att analysera Power BI:s prestanda och diagnostisera problem.",
+              "en": "Stores transmission buffer data on user activity, which is used for Power BI performance analysis and issue diagnostics."
+            },
+            "expiration": {
+              "fi": "Sessio",
+              "sv": "Session",
+              "en": "Session"
+            }
+          },
+          {
+            "name": "iframe: ARRAffinitySameSite",
+            "host": "app.powerbi.com",
+            "storageType": 1,
+            "description": {
+              "fi": "Käytetään Power BI -palvelimen kuormantasaajassa varmistamaan, että käyttäjä ohjataan aina samaan palvelininstanssiin nykyisen istunnon aikana.",
+              "sv": "Används i Power BI-serverns belastningsutjämnare för att säkerställa att användaren alltid styrs till samma serverinstans under en session.",
+              "en": "Used in the Power BI server load balancer to ensure that the user is always directed to the same server instance during the current session."
+            },
+            "expiration": {
+              "fi": "Sessio",
+              "sv": "Session",
+              "en": "Session"
+            }
+          },
+          {
+            "name": "iframe: GeocoderCache/objects",
+            "host": "app.powerbi.com",
+            "storageType": 4,
+            "description": {
+              "fi": "Tallentaa välimuistiin sijaintitietoja, kuten geokoodauskyselyitä, jotka nopeuttavat Power BI:n karttatoimintojen suorittamista.",
+              "sv": "Sparar positionsuppgifter i cacheminnet, till exempel geokodningsförfrågningar, som försnabbar Power BI:s kartfunktioner.",
+              "en": "Caches location data, such as geocoding queries, to speed up the performance of Power BI map features."
+            },
+            "expiration": {
+              "fi": "Sessio",
+              "sv": "Session",
+              "en": "Session"
+            }
+          },
+          {
+            "name": "iframe: manifests.artifacts",
+            "host": "app.powerbi.com",
+            "storageType": 2,
+            "description": {
+              "fi": "Käytetään Power BI -sisältöön liittyvien osien, kuten raporttien ja visualisointien, lataamisprosessin hallintaan ja nopeuttamiseen.",
+              "sv": "Används för att administrera och försnabba laddningsprocessen för delar som anknyter till Power BI-innehåll, såsom rapporter och visualiseringar.",
+              "en": "Used to manage and speed up the loading process of Power BI content components, such as reports and visualizations."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "iframe: manifests.extensions",
+            "host": "app.powerbi.com",
+            "storageType": 2,
+            "description": {
+              "fi": "Tallentaa Power BI -laajennuksista tietoja, joita käytetään käyttöliittymän mukauttamiseen tai lisäominaisuuksien tarjoamiseen.",
+              "sv": "Sparar information om Power BI-utvidgningar, som används för att anpassa användargränssnittet eller erbjuda tilläggsfunktioner.",
+              "en": "Stores data related to Power BI extensions, which are used to customize the user interface or provide additional features."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "iframe: manifests.products",
+            "host": "app.powerbi.com",
+            "storageType": 2,
+            "description": {
+              "fi": "Sisältää tietoja eri tuotteiden tai palveluiden manifestoista, joita Power BI käyttää näyttääkseen oikeanlaista sisältöä.",
+              "sv": "Innehåller information om olika produkters eller tjänsters manifest, som Power BI använder för att visa rätt sorts innehåll.",
+              "en": "Contains information about the manifests of different products or services, which Power BI uses to display the correct content."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "iframe: manifests.tabs",
+            "host": "app.powerbi.com",
+            "storageType": 2,
+            "description": {
+              "fi": "Käytetään hallinnoimaan ja esittämään erilaisia välilehtikohtaisia konfiguraatioita ja sisältöä Power BI -raporteissa.",
+              "sv": "Används för att administrera och visa olika flikspecifika konfigurationer och innehåll i Power BI-rapporter.",
+              "en": "Used to manage and display various tab-specific configurations and content in Power BI reports."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "iframe: WFESessionId",
+            "host": "app.powerbi.com",
+            "storageType": 1,
+            "description": {
+              "fi": "Käytetään yksittäisen käyttäjän istunnon tunnistamiseen palvelinpuolen käsittelyä ja Power BI -sisällön näyttämistä varten.",
+              "sv": "Används för att identifiera en enskild användares session för serversidans behandling och visning av Power BI-innehåll.",
+              "en": "Used to identify a single user's session for server-side processing and displaying Power BI content."
+            },
+            "expiration": {
+              "fi": "Sessio",
+              "sv": "Session",
+              "en": "Session"
+            }
+          },
+          {
+            "name": "iframe: VISITOR_PRIVACY_METADATA",
+            "host": ".youtube.com",
+            "storageType": 1,
+            "description": {
+              "fi": "Käytetään tallentamaan käyttäjän yksityisyysasetuksia, kuten mainos- ja sisältövalintoja, YouTube-videoupotuksen aikana.",
+              "sv": "Används för att spara användarens integritetsinställningar, såsom reklam- och innehållsval, under YouTube-videoinbäddning.",
+              "en": "Used to store the user's privacy settings, such as ad and content preferences, during a YouTube video embed."
+            },
+            "expiration": {
+              "fi": "180 päivää",
+              "sv": "180 dagar",
+              "en": "180 days"
+            }
+          },
+          {
+            "name": "iframe: iU5q-!O9@$",
+            "host": ".youtube.com",
+            "storageType": 3,
+            "description": {
+              "fi": "Käytetään tilapäiseen tietojen tallentamiseen istunnon aikana, esimerkiksi YouTube-toiston tai käyttäjän asetusten käsittelyyn.",
+              "sv": "Används för att tillfälligt spara uppgifter under en session, exempelvis för att hantera YouTube-uppspelning eller användarens inställningar.",
+              "en": "Used for temporarily storing data during a session, such as handling YouTube playback or user settings."
+            },
+            "expiration": {
+              "fi": "Sessio",
+              "sv": "Session",
+              "en": "Session"
+            }
+          },
+          {
+            "name": "iframe: *-*",
+            "host": ".youtube.com",
+            "storageType": 3,
+            "description": {
+              "fi": "Käytetään istuntokohtaisiin tietoihin, kuten käyttäjän katselutilanteen seurantaan ja Youtube-asetusten ylläpitoon.",
+              "sv": "Används för sessionsspecifika uppgifter, exempelvis för att följa användarens visningssituation och upprätthålla YouTube-inställningar.",
+              "en": "Used for session-specific data, such as tracking the user's viewing status and maintaining YouTube settings."
+            },
+            "expiration": {
+              "fi": "Sessio",
+              "sv": "Session",
+              "en": "Session"
+            }
+          },
+          {
+            "name": "iframe: yt-remote-connected-devices",
+            "host": ".youtube.com",
+            "storageType": 2,
+            "description": {
+              "fi": "Käytetään tallentamaan käyttäjän laitteiden tiedot, etäyhteyden tila ja istuntotiedot, jotta videoiden suoratoisto eri laitteisiin, kuten televisioon, sujuisi saumattomasti ja katselukokemus jatkuisi helposti laitteelta toiselle.",
+              "sv": "Används för att spara uppgifter om användarens apparater, distansförbindelsens status och sessionsuppgifter, så att strömning av videor på olika apparater, såsom en tv, går smidigt och visningsupplevelsen enkelt kan fortsätta fastän man byter apparat.",
+              "en": "Used to store user device information, remote connection status, and session data to ensure seamless video streaming to different devices, such as TVs, and to allow easy continuation of the viewing experience across devices."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "iframe: yt-remote-device-id",
+            "host": ".youtube.com",
+            "storageType": 2,
+            "description": {
+              "fi": "Käytetään tallentamaan käyttäjän laitteiden tiedot, etäyhteyden tila, ja istuntotiedot, jotta videoiden suoratoisto eri laitteisiin, kuten televisioon, sujuisi saumattomasti ja katselukokemus voitaisiin helposti jatkaa laitteelta toiselle.",
+              "sv": "Används för att spara uppgifter om användarens apparater, distansförbindelsens status och sessionsuppgifter, så att strömning av videor på olika apparater, såsom en tv, går smidigt och visningsupplevelsen enkelt kan fortsätta fastän man byter apparat.",
+              "en": "Used to store user device information, remote connection status, and session data to ensure seamless video streaming to different devices, such as TVs, and to easily continue the viewing experience from one device to another."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "iframe: ytidb::LAST_RESULT_ENTRY_KEY",
+            "host": ".youtube.com",
+            "storageType": 2,
+            "description": {
+              "fi": "Käytetään tallentamaan viimeisin hakutulos tai kysely YouTube-sisällöstä, joka nopeuttaa seuraavia hakuja.",
+              "sv": "Används för att spara senaste sökresultat eller förfrågan i YouTube-innehåll, vilket gör följande sökningar snabbare.",
+              "en": "Used to store the most recent search result or query for YouTube content, which speeds up subsequent searches."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "iframe: YtIdbMeta/databases",
+            "host": ".youtube.com",
+            "storageType": 4,
+            "description": {
+              "fi": "Tallentaa metatietoja YouTuben käyttämistä tietokannoista, jotta sovellus voi käyttää dataa nopeasti paikallisesti.",
+              "sv": "Sparar metainformation om databaser som YouTube använder, så att applikationen snabbt kan använda data lokalt.",
+              "en": "Stores metadata from the databases used by YouTube, allowing the application to access the data quickly locally."
+            },
+            "expiration": {
+              "fi": "Sessio",
+              "sv": "Session",
+              "en": "Session"
+            }
+          },
+          {
+            "name": "iframe: webpack-offline:809a41f5eacff34cc76f721d90508b4a24761dd8",
+            "host": "reittiopas.hsl.fi",
+            "storageType": 5,
+            "description": {
+              "fi": "Tämä välimuisti tallentaa reittioppaan resursseja, mikä mahdollistaa käytön huonommalla verkkoyhteydelläkin.",
+              "sv": "Detta cacheminne sparar reseplanerarens resurser, vilket möjliggör användning även med sämre internetuppkoppling.",
+              "en": "This cache stores route guide resources, enabling usage even with a poor internet connection."
+            },
+            "expiration": {
+              "fi": "Sessio",
+              "sv": "Session",
+              "en": "Session"
+            }
+          },
+          {
+            "name": "iframe: lang",
+            "host": "reittiopas.hsl.fi",
+            "storageType": 1,
+            "description": {
+              "fi": "Tämä keksi tallentaa käyttäjän laitteen kielen.",
+              "sv": "Den här kakan sparar språket på användarens enhet.",
+              "en": "This cookie stores the language of the user's device."
+            },
+            "expiration": {
+              "fi": "Sessio",
+              "sv": "Session",
+              "en": "Session"
+            }
+          },
+          {
+            "name": "iframe: saved-searches",
+            "host": "reittiopas.hsl.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Tämä tallentaa käyttäjän tallennetut haut, kuten reittien lähtö- ja päätepisteet sekä suositut reitit.",
+              "sv": "Den här lagrar användarens sparade sökningar, såsom start- och slutpunkter för rutter samt föredragna rutter.",
+              "en": "This stores the user's saved searches, such as route start and end points and preferred routes."
+            },
+            "expiration": {
+              "fi": "-",
+              "sv": "-",
+              "en": "-"
+            }
+          },
+          {
+            "name": "iframe: saved-searches-updated-at",
+            "host": "reittiopas.hsl.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Tämä tallentaa ajan, jolloin käyttäjän tallennetut haut päivitettiin viimeksi.",
+              "sv": "Den här sparar tiden då användarens sparade sökningar senast uppdaterades.",
+              "en": "This stores the time when the user's saved searches were last updated."
+            },
+            "expiration": {
+              "fi": "-",
+              "sv": "-",
+              "en": "-"
+            }
+          },
+          {
+            "name": "iframe: COOKIE_SUPPORT",
+            "host": "helsinkikanava.fi",
+            "storageType": 1,
+            "description": {
+              "fi": "Mahdollistaa evästeiden hallinnan sivustolla.",
+              "sv": "Kakan möjliggör hanteringen av kakor på webbplatsen.",
+              "en": "The cookie facilitates managing cookies on the website."
+            },
+            "expiration": {
+              "fi": "365 päivää",
+              "sv": "365 dagar",
+              "en": "365 days"
+            }
+          },
+          {
+            "name": "iframe: JSESSIONID",
+            "host": "helsinkikanava.fi",
+            "storageType": 1,
+            "description": {
+              "fi": "Sivuston pakollinen eväste mahdollistaa kävijän vierailun sivustolla.",
+              "sv": "Kakan är en obligatorisk kaka som gör det möjligt för besökaren att besöka webbplatsen.",
+              "en": "The cookie is an obligatory cookie that facilitates visiting the website."
+            },
+            "expiration": {
+              "fi": "Sessio",
+              "sv": "Session",
+              "en": "Session"
+            }
+          },
+          {
+            "name": "iframe: GUEST_LANGUAGE_ID",
+            "host": "helsinkikanava.fi",
+            "storageType": 1,
+            "description": {
+              "fi": "Liferay on luonut tämän evästeen, joka tallentaa kieliasetukset.",
+              "sv": "Denna cookie genereras av Liferay, dess funktion är att lagra språkinställningarna.",
+              "en": "This cookie is generated by the Liferay, its function is to store the language preferences."
+            },
+            "expiration": {
+              "fi": "365 päivää",
+              "sv": "365 dagar",
+              "en": "365 days"
+            }
+          },
+          {
+            "name": "iframe: httpskartta.hel.fi.SWCulture",
+            "host": "kartta.hel.fi",
+            "storageType": 1,
+            "description": {
+              "fi": "Kaupungin karttapalvelun evästeeseen tallennetaan kieli, jolla palvelua käytetään.",
+              "sv": "Kakan på stadens kaktjänst sparas det språk som användaren använder i tjänsten.",
+              "en": "The City's map service cookie saves the language in which the service is used."
+            },
+            "expiration": {
+              "fi": "1826 päivää",
+              "sv": "1826 dagar",
+              "en": "1826 days"
+            }
+          },
+          {
+            "name": "iframe: cb-enabled",
+            "host": "kartta.hel.fi",
+            "storageType": 1,
+            "description": {
+              "fi": "Kaupungin karttapalvelun evästeeseen tallennetaan tieto, onko käyttäjä hyväksynyt keksit.",
+              "sv": "Information om huruvida användaren har godkänt kakor lagras i stadens karttjänsts kaka.",
+              "en": "Information on whether the user has accepted cookies is stored in the city's map service cookie."
+            },
+            "expiration": {
+              "fi": "400 päivää",
+              "sv": "400 dagar",
+              "en": "400 days"
+            }
+          },
+          {
+            "name": "iframe: VISITOR_INFO1_LIVE",
+            "host": ".youtube.com",
+            "storageType": 1,
+            "description": {
+              "fi": "YouTuben eväste valitsee käyttäjän verkkoyhteyden nopeuden mukaan joko vanhan tai uuden videosoittimen.",
+              "sv": "YouTubes kaka väljer antingen den nya eller gamla videospelaren enligt förbindelsens hastighet.",
+              "en": "The YouTube cookie selects the old or new video player depending on the connection speed."
+            },
+            "expiration": {
+              "fi": "180 päivää",
+              "sv": "180 dagar",
+              "en": "180 days"
+            }
+          },
+          {
+            "name": "iframe: __Secure-ROLLOUT_TOKEN",
+            "host": ".youtube.com",
+            "storageType": 1,
+            "description": {
+              "fi": "Youtuben evästettä käytetään sisäisiin tarkoituksiin uusien ominaisuuksien tai päivitysten julkaisun hallintaan. Se auttaa YouTubea hallitsemaan, millä käyttäjillä on käytössä tietyt kokeelliset ominaisuudet tai kokoonpanot kehityksen ja käyttöönoton aikana.",
+              "sv": "YouTubes kaka används för interna syften för att hantera lanseringen av nya funktioner eller uppdateringar. Den hjälper YouTube att kontrollera vilka användare som använder vissa experimentella funktioner eller sammansättningar under utvecklingen och ibruktagandet.",
+              "en": "Cookie is used for internal purposes to manage the rollout of new features or updates. It helps YouTube control which users are included in certain experimental features or configurations during development and deployment."
+            },
+            "expiration": {
+              "fi": "180 päivää",
+              "sv": "180 dagar",
+              "en": "180 days"
+            }
+          },
+          {
+            "name": "iframe: rmpVolume",
+            "host": "www.helsinkikanava.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Helsinkikanava-videopalvelimen eväste. Käytetään tallentamaan käyttäjän tiedot siitä, onko videossa äänet päällä vai ei.",
+              "sv": "Kaka för videoservern Helsingforskanalen. Används för att spara användarens inställningar för om ljudet är aktiverat i videon eller inte.",
+              "en": "Helsinkikanava video server localStorage. Used to store the user's information about whether the sound is on or off in the video."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "iframe: test_cookie",
+            "host": ".doubleclick.net",
+            "storageType": 1,
+            "description": {
+              "fi": "Doubleclick.net-palvelu asettaa test_cookien Youtube-videon katselun yhteydessä. Sitä käytetään selvittämään, tukeeko käyttäjän selain evästeitä.",
+              "sv": "Tjänsten Doubleclick.net installerar test_cookie vid visning av en YouTube-video. Den används för att ta reda på om användarens webbläsare stöder kakor.",
+              "en": "The test_cookie is set by doubleclick.net when viewing youtube videos and is used to determine if the user’s browser supports cookies."
+            },
+            "expiration": {
+              "fi": "15 minuuttia",
+              "sv": "15 minuter",
+              "en": "15 minutes"
+            }
+          },
+          {
+            "name": "iframe: yt-remote-*",
+            "host": ".youtube.com",
+            "storageType": 2,
+            "description": {
+              "fi": "Tallentaa käyttäjän laitteiden tiedot, etäyhteyden tilan ja istuntotiedot, jotta videoiden suoratoisto eri laitteisiin, kuten televisioon, sujuisi saumattomasti ja katselukokemus jatkuisi helposti laitteelta toiselle.",
+              "sv": "Sparar uppgifter om användarens apparater, distansförbindelsens status och sessionsuppgifter, så att strömning av videor på olika apparater, såsom en tv, går smidigt och visningsupplevelsen enkelt kan fortsätta fastän man byter apparat.",
+              "en": "Used to store user device information, remote connection status, and session data to ensure seamless video streaming to different devices, such as TVs, and to easily continue the viewing experience across devices."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "iframe: yt-remote-*",
+            "host": ".youtube.com",
+            "storageType": 3,
+            "description": {
+              "fi": "Tallentaa käyttäjän laitteiden tiedot, etäyhteyden tilan ja istuntotiedot, jotta videoiden suoratoisto eri laitteisiin, kuten televisioon, sujuisi saumattomasti ja katselukokemus jatkuisi helposti laitteelta toiselle.",
+              "sv": "Sparar uppgifter om användarens apparater, distansförbindelsens status och sessionsuppgifter, så att strömning av videor på olika apparater, såsom en tv, går smidigt och visningsupplevelsen enkelt kan fortsätta fastän man byter apparat.",
+              "en": "Used to store user device information, remote connection status, and session data to ensure seamless video streaming to different devices, such as TVs, and to allow the viewing experience to be easily continued across devices."
+            },
+            "expiration": {
+              "fi": "Sessio",
+              "sv": "Session",
+              "en": "Session"
+            }
+          },
+          {
+            "name": "iframe: yt-player-*",
+            "host": ".youtube.com",
+            "storageType": 2,
+            "description": {
+              "fi": "Käytetään videotoiston laadun optimointiin. Tallentaa tiedon käyttäjän käytettävissä olevasta verkkokaistasta sekä selaimen tuottamista HTTP-otsikoista.",
+              "sv": "Används för att optimera kvaliteten på videouppspelning. Sparar information om vilket nätverksband användaren använder och de HTTP-rubriker som webbläsaren skapar.",
+              "en": "Used to store information about the user's available bandwidth and HTTP headers generated by the browser. This data is used to optimize video playback quality."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "iframe: __Secure-ENID",
+            "host": "www.google.com",
+            "storageType": 1,
+            "description": {
+              "fi": "Google käyttää tätä evästettä Google-haussa ja YouTubessa analytiikkaan. Peräisin upotetuista YouTube-videoista.",
+              "sv": "Google använder den här kakan i Google Sök och på YouTube för analys. Den kommer från inbäddade YouTube-videor.",
+              "en": "Google uses this cookie on Google Search and on YouTube, for analytics. Comes from embedded youtube videos."
+            },
+            "expiration": {
+              "fi": "396 päivää",
+              "sv": "396 dagar",
+              "en": "396 days"
+            }
+          },
+          {
+            "name": "iframe: SOCS",
+            "host": "www.google.com",
+            "storageType": 1,
+            "description": {
+              "fi": "Google käyttää evästettä tallentaakseen käyttäjän valinnan liittyen heidän evästeasetuksiinsa. Peräisin upotetuista YouTube-videoista.",
+              "sv": "Google använder kakan för att lagra en användares val gällande deras kaka-inställningar. Den kommer från inbäddade YouTube-videor.",
+              "en": "Google uses the cookie to store a user’s state regarding their cookies choices. Comes from embedded youtube videos."
+            },
+            "expiration": {
+              "fi": "396 päivää",
+              "sv": "396 dagar",
+              "en": "396 days"
+            }
+          },
+          {
+            "name": "iframe: AEC",
+            "host": "www.google.com",
+            "storageType": 1,
+            "description": {
+              "fi": "Evästettä käytetään roskapostin, petosten ja väärinkäytösten havaitsemiseen, jotta mainostajille ei veloitettaisi virheellisesti vilpillisten tai muuten virheellisten näyttöjen tai mainosten vuorovaikutusten vuoksi, ja jotta YouTube Partner Program -ohjelmassa olevat sisällöntuottajat saavat oikeudenmukaisen korvauksen.",
+              "sv": "Kakan används för att upptäcka spam, bedrägeri och missbruk, för att säkerställa att annonsörer inte debiteras felaktigt för bedrägliga eller annars ogiltiga visningar eller interaktioner med annonser, och att YouTube-skapare i YouTubes partnerprogram ersätts rättvist.",
+              "en": "The cookie is used to detect spam, fraud, and abuse to help ensure advertisers are not incorrectly charged for fraudulent or otherwise invalid impressions or interactions with ads, and that YouTube creators in the YouTube Partner Program are remunerated fairly."
+            },
+            "expiration": {
+              "fi": "180 päivää",
+              "sv": "180 dagar",
+              "en": "180 days"
+            }
+          }
+        ]
+      },
+      {
+        "groupId": "statistics",
+        "title": {
+          "fi": "Tilastointi",
+          "sv": "Statistik",
+          "en": "Statistics"
+        },
+        "description": {
+          "fi": "Tilastointievästeiden keräämää tietoa käytetään verkkosivuston kehittämiseen.",
+          "sv": "De uppgifter statistikkakorna samlar in används för att utveckla webbplatsen.",
+          "en": "The information collected by statistics cookies is used for developing the website."
+        },
+        "cookies": [
+          {
+            "name": "iframe: ai_session",
+            "host": "app.powerbi.com",
+            "storageType": 1,
+            "description": {
+              "fi": "Käytetään käyttäjän istuntotietojen seuraamiseen ja yksittäisten Power BI -istuntojen erottamiseen toisistaan. Tämä auttaa analysoimaan vierailujen määrää ja kestoa.",
+              "sv": "Används för att följa användarnas sessioner och skilja mellan enskilda Power BI-sessioner. Detta underlättar analysen av besökens antal och längd.",
+              "en": "Used to track the user's session data and differentiate individual Power BI sessions. This helps analyze the number and duration of visits."
+            },
+            "expiration": {
+              "fi": "30 minuuttia",
+              "sv": "30 minuter",
+              "en": "30 minutes"
+            }
+          },
+          {
+            "name": "iframe: ai_user",
+            "host": "app.powerbi.com",
+            "storageType": 1,
+            "description": {
+              "fi": "Tunnistaa käyttäjän yksilöllisesti, jotta toistuvat Power BI -vierailut voidaan yhdistää samaan käyttäjään pitkällä aikavälillä.",
+              "sv": "Identifierar en specifik användare, så att återkommande Power Bi-besök kan kopplas till samma användare över en längre tid.",
+              "en": "Identifies the user uniquely so that recurring Power BI visits can be associated with the same user over the long term."
+            },
+            "expiration": {
+              "fi": "365 päivää",
+              "sv": "365 dagar",
+              "en": "365 days"
+            }
+          },
+          {
+            "name": "iframe: LogsDatabaseV2:V473f9200||/LogsRequestsStore",
+            "host": ".youtube.com",
+            "storageType": 4,
+            "description": {
+              "fi": "Tallentaa lokitietoja, joita käytetään virheiden analysointiin ja käyttäjän Youtube-katselukokemuksen optimointiin.",
+              "sv": "Sparar logguppgifter som används för att analysera fel och optimera användarens YouTube-upplevelse.",
+              "en": "Stores log data used for error analysis and optimizing the user's YouTube viewing experience."
+            },
+            "expiration": {
+              "fi": "Sessio",
+              "sv": "Session",
+              "en": "Session"
+            }
+          },
+          {
+            "name": "iframe: icareusDevice",
+            "host": "www.helsinkikanava.fi",
+            "storageType": 1,
+            "description": {
+              "fi": "Helsinki-kanavan videopalvelimen eväste.",
+              "sv": "Helsinki-kanavas kaka gör det möjligt att göra videor till en del av innehållet på webbplatsen.",
+              "en": "The Helsinki Channel video server cookie facilitates including videos as part of the website's content."
+            },
+            "expiration": {
+              "fi": "Sessio",
+              "sv": "Session",
+              "en": "Session"
+            }
+          },
+          {
+            "name": "nmstat",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "description": {
+              "fi": "Siteimproven tilastointieväste kerää tietoa kävijän sivujen käytöstä.",
+              "sv": "Siteimproves kaka samlar information om hur webbplatsen används.",
+              "en": "The Siteimprove statistics cookie collects information about the use of the website."
+            },
+            "expiration": {
+              "fi": "1000 päivää",
+              "sv": "1000 dagar",
+              "en": "1000 days"
+            }
+          },
+          {
+            "name": "_pk_id.*",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "description": {
+              "fi": "Matomo-kävijäseurannan eväste kerää käyttäjätietoja, kuten käyttäjän uniikin kävijätiedon.",
+              "sv": "Matomo-statistiksystemets kaka samlar information om hur webbplatsen används.",
+              "en": "Matomo Analytics - used to store a few details about the user such as the unique visitor ID."
+            },
+            "expiration": {
+              "fi": "393 päivää",
+              "sv": "393 dagar",
+              "en": "393 days"
+            }
+          },
+          {
+            "name": "_pk_ses.*",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "description": {
+              "fi": "Matomo-kävijäseurannan eväste yhdistää istunnon aikana suoritetut toiminnot (esim. sivun katselut, lataukset ja tapahtumat) yksittäiseen vierailuun.",
+              "sv": "Kakan för Matomo-besökaruppföljningen kopplar ihop aktiviteter som skett under en session (t.ex. sidvisningar, nedladdningar och aktiviteter) med ett enskilt besök.",
+              "en": "Matomo Analytics - Used to link actions performed during the session (e.g., page views, downloads, events) to a unique visit, thereby allowing Matomo to accurately attribute these actions to a single session."
+            },
+            "expiration": {
+              "fi": "1 tunti",
+              "sv": "1 timme",
+              "en": "1 hour"
+            }
+          },
+          {
+            "name": "rnsbid",
+            "host": "avustukset.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Askem-reaktionappien toimintaan liittyvä tietue.",
+              "sv": "En post relaterad till driften av reaktionsknappen Askem",
+              "en": "A record related to the operation of the Askem react buttons."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "rnsbid_ts",
+            "host": "avustukset.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Askem-reaktionappien toimintaan liittyvä tietue.",
+              "sv": "En post relaterad till driften av reaktionsknappen Askem",
+              "en": "A record related to the operation of the Askem react buttons."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "rns_reaction_*",
+            "host": "avustukset.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Askem-reaktionappien toimintaan liittyvä tietue.",
+              "sv": "En post relaterad till driften av reaktionsknappen Askem",
+              "en": "A record related to the operation of the Askem react buttons."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "iframe: YSC",
+            "host": ".youtube.com",
+            "storageType": 1,
+            "description": {
+              "fi": "YouTuben eväste mahdollistaa videoiden upottamisen sivustolle.",
+              "sv": "YouTubes kaka gör det möjligt att göra videor till en del av innehållet på webbplatsen.",
+              "en": "The YouTube cookie facilitates including videos as part of the website's content."
+            },
+            "expiration": {
+              "fi": "Sessio",
+              "sv": "Session",
+              "en": "Session"
+            }
+          },
+          {
+            "name": "_pk_ref.*",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "description": {
+              "fi": "Matomon attribuutiotietoja siitä, miten käyttäjä alun perin saapui sivustolle (hakukoneen, sosiaalisen median linkin, ulkoisen verkkosivuston tai kampanja-URL:n kautta). Tiedon avulla liitetään käynnit tiettyihin liikenteen lähteisiin.",
+              "sv": "Matomos attributionsuppgifter om hur användaren ursprungligen kom till webbplatsen (via sökmotor, länk i sociala medier, extern webbplats eller kampanj-URL). Med hjälp av informationen kopplas besöken till vissa källor till trafik.",
+              "en": "The attribution data includes how a visitor initially arrived at the site, whether they came from a search engine, a social media link, an external website, or a campaign URL. Consequently, this information helps Matomo attribute visits to specific traffic sources."
+            },
+            "expiration": {
+              "fi": "182 päivää, 12 tuntia",
+              "sv": "182 dagar, 12 timmar",
+              "en": "182 days, 12 hours"
+            }
+          }
+        ]
+      },
+      {
+        "groupId": "chat",
+        "title": {
+          "fi": "Toiminnalliset chat-evästeet",
+          "sv": "Funktionella chattkakor",
+          "en": "Functional chat cookies"
+        },
+        "description": {
+          "fi": "Toiminnallisten chat-evästeiden avulla mahdollistetaan helfi-sivujen chattien toiminta. Jos aloitat chatin, hyväksyt sen käyttöön liittyvät toiminnalliset evästeet automaattisesti.  Evästeiden hyväksymiseen ei tällöin tarvita erillistä suostumusta. Toiminnallisia chat-evästeitä ladataan laitteellesi vain, jos käynnistät chatin.",
+          "sv": "Chattarna på webbplatsen avustukset.hel.fi  fungerar med hjälp av funktionella chattkakor. Om du inleder en chatt godkänner du automatiskt de nödvändiga funktionella kakorna.  Då behövs inget separat samtycke till kakor. Funktionella chattkakor laddas endast ner på din enhet om du inleder en chatt.",
+          "en": "The chats on the avustukset.hel.fi  website require functional chat cookies to function. By using a chat, you automatically accept the functional cookies it requires.  No separate cookie consent is needed. Functional chat cookies are only downloaded to your device if you start a chat."
+        },
+        "cookies": [
+          {
+            "name": "conversationToken",
+            "host": "coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud",
+            "storageType": 2,
+            "description": {
+              "fi": "Käytetään chat-sovellustoiminnallisuutta varten. Säilyttää chat-sovelluksen keskustelutunnisteen istunnnon tunnistamista ja tietojen hakemista varten.",
+              "sv": "Används för chattapplikationens funktionalitet. Lagrar konversationstoken för autentisering och åtkomst till dataändamål.",
+              "en": "Used for chat app functionality. Stores chat app conversation token for authentication and data access purposes."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "aiap-chat-app-v1-state",
+            "host": "avustukset.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Käytetään chat-sovelluksen toimintaan. Säilyttää chat-sovelluksen asetukset, jotka vaikuttavat sovelluksen toimintaan ja ulkoasuun.",
+              "sv": "Används för chattapplikationens funktion. Sparar chattapplikationens inställningar som påverkar applikationens funktion och utseende.",
+              "en": "Used for chat application functionality. Stores chat application settings and configuration data to control chat application behaviour and appearance."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "aiap-user",
+            "host": "avustukset.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Käytetään chat-sovelluksen toimintaan. Säilyttää käyttäjän suostumuksen chat-sovelluksen käyttöön.",
+              "sv": "Används för chattapplikationens funktion. Sparar användarens samtycke till användningen av chattapplikationen.",
+              "en": "Used for chat application functionality. Stores user consent for using the chat application."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "aiap-wbc-chat-app-button-state",
+            "host": "avustukset.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Käytetään chat-sovelluksen painikkeen toiminnassa. Säilyttää asetukset, jotka vaikuttavat painikkeen toimintaan ja ulkoasuun.",
+              "sv": "Används för chattapplikationsknappens funktion. Sparar de inställningar som påverkar knappens funktion och utseende.",
+              "en": "Used for chat application button functionality. Stores chat app button settings and configuration data to control chat application button behaviour and appearance."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "user",
+            "host": "coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud",
+            "storageType": 2,
+            "description": {
+              "fi": "Käytetään chat-sovelluksen toimintaan. Muistaa istunnon tiedot, joita tarvitaan chatkeskustelussa.",
+              "sv": "Används för chattapplikationens funktion. Kommer ihåg de uppgifter om sessionen som behövs i chattdiskussionen.",
+              "en": "Used for chat application functionality. Stores information about chat session that is used in the dialogue during the conversation. "
+            },
+            "expiration": "-"
+          }
+        ]
+      }
+    ],
+    "robotCookies": [
+      {
+        "name": "helfi_accordions_open",
+        "storageType": 1
+      },
+      {
+        "name": "cookiehub",
+        "storageType": 1
+      },
+      {
+        "name": "cookie-agreed-version",
+        "storageType": 1
+      },
+      {
+        "name": "cookie-agreed-categories",
+        "storageType": 1
+      },
+      {
+        "name": "cookie-agreed",
+        "storageType": 1
+      }
+    ],
+    "groupsWhitelistedForApi": [
+      "chat"
+    ],
+    "translations": {
+      "bannerAriaLabel": {
+        "fi": "Evästeasetukset",
+        "sv": "Inställningar för kakor",
+        "en": "Cookie settings"
+      },
+      "heading": {
+        "fi": "Evästeet {{siteName}}-sivustolla",
+        "sv": "Kakor på webbplatsen {{siteName}}",
+        "en": "Cookies on {{siteName}}"
+      },
+      "description": {
+        "fi": "Tämä sivusto käyttää välttämättömiä evästeitä sivun perustoimintojen ja suorituskyvyn varmistamiseksi. Lisäksi käytämme kohdennusevästeitä käyttäjäkokemuksen parantamiseksi, analytiikkaan ja yksilöidyn sisällön näyttämiseen.",
+        "sv": "Denna webbplats använder obligatoriska kakor för att säkerställa de grundläggande funktionerna och prestandan. Dessutom använder vi inriktningskakor för bättre användarupplevelse, analytik och individualiserat innehåll.",
+        "en": "This website uses required cookies to ensure the basic functionality and performance. In addition, we use targeting cookies to improve the user experience, perform analytics and display personalised content."
+      },
+      "showDetails": {
+        "fi": "Näytä yksityiskohdat",
+        "sv": "Visa detaljer",
+        "en": "Show details"
+      },
+      "hideDetails": {
+        "fi": "Piilota yksityiskohdat",
+        "sv": "Stänga detaljer",
+        "en": "Hide details"
+      },
+      "formHeading": {
+        "fi": "Tietoa sivustolla käytetyistä evästeistä",
+        "sv": "Information om kakor som används på webbplatsen",
+        "en": "About the cookies used on the website"
+      },
+      "formText": {
+        "fi": "Sivustolla käytetyt evästeet on luokiteltu käyttötarkoituksen mukaan. Alla voit lukea eri luokista ja sallia tai kieltää evästeiden käytön.",
+        "sv": "Kakorna som används på webbplatsen har klassificerats enligt användningsändamål. Du kan läsa om de olika klasserna och acceptera eller förbjuda användningen av kakor.",
+        "en": "The cookies used on the website have been classified according to their intended use. Below, you can read about the various categories and accept or reject the use of cookies."
+      },
+      "highlightedGroup": {
+        "fi": "Sinun on hyväksyttävä tämä kategoria, jotta voit näyttää valitsemasi sisällön.",
+        "sv": "Du måste acceptera den här kategorin för att visa innehållet du har valt.",
+        "en": "You need to accept this category to display the content you have selected."
+      },
+      "highlightedGroupAria": {
+        "fi": "Hyvä tietää kategorialle: {{title}}",
+        "sv": "Bra att veta för kategorin: {{title}}",
+        "en": "Good to know for category: {{title}}"
+      },
+      "showCookieSettings": {
+        "fi": "Näytä evästeasetukset",
+        "sv": "Visa kakinställningarna",
+        "en": "Show cookie settings"
+      },
+      "hideCookieSettings": {
+        "fi": "Piilota evästeasetukset",
+        "sv": "Stänga kakinställningarna",
+        "en": "Hide cookie settings"
+      },
+      "acceptedAt": {
+        "fi": "Olet hyväksynyt tämän kategorian: {{date}} klo {{time}}.",
+        "sv": "Du har accepterat denna kategori: {{date}} kl. {{time}}.",
+        "en": "You have accepted this category: {{date}} at {{time}}."
+      },
+      "tableHeadingsName": {
+        "fi": "Nimi",
+        "sv": "Namn",
+        "en": "Name"
+      },
+      "tableHeadingsHostName": {
+        "fi": "Evästeen asettaja",
+        "sv": "Den som lagrat kakan",
+        "en": "Cookie set by"
+      },
+      "tableHeadingsDescription": {
+        "fi": "Käyttötarkoitus",
+        "sv": "Användning",
+        "en": "Purpose of use"
+      },
+      "tableHeadingsExpiration": {
+        "fi": "Voimassaoloaika",
+        "sv": "Giltighetstid",
+        "en": "Period of validity"
+      },
+      "tableHeadingsType": {
+        "fi": "Tyyppi",
+        "sv": "Typ",
+        "en": "Type"
+      },
+      "approveAllConsents": {
+        "fi": "Hyväksy kaikki evästeet",
+        "sv": "Acceptera alla kakor",
+        "en": "Accept all cookies"
+      },
+      "approveRequiredAndSelectedConsents": {
+        "fi": "Hyväksy valitut evästeet",
+        "sv": "Acceptera valda kakor",
+        "en": "Accept selected cookies"
+      },
+      "approveOnlyRequiredConsents": {
+        "fi": "Hyväksy vain välttämättömät evästeet",
+        "sv": "Acceptera endast nödvändiga",
+        "en": "Accept required cookies only"
+      },
+      "settingsSaved": {
+        "fi": "Asetukset tallennettu!",
+        "sv": "Inställningar sparade!",
+        "en": "Settings saved!"
+      },
+      "notificationAriaLabel": {
+        "fi": "Ilmoitus",
+        "sv": "Meddelande",
+        "en": "Annoucement"
+      },
+      "storageType1": {
+        "fi": "Eväste",
+        "sv": "Kakan",
+        "en": "Cookie"
+      },
+      "storageType2": "localStorage",
+      "storageType3": "sessionStorage",
+      "storageType4": "IndexedDB",
+      "storageType5": "Cache Storage"
+    }
+  },
+  "urls": [
+    {
+      "name": "Frontpage with none accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/avustukset",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%7D%7D",
+          "domain": "avustukset.test.hel.ninja",
+          "path": "/",
+          "expires": 1747282327,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "Frontpage with required accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/avustukset",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+          "domain": "avustukset.test.hel.ninja",
+          "path": "/",
+          "expires": 1747282327,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [
+        "essential",
+        "admin"
+      ],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "Frontpage with all accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/avustukset",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22c02aa4b8%22%2C%22timestamp%22%3A1738642327010%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%22fb4b10bf%22%2C%22timestamp%22%3A1738642327010%7D%2C%22chat%22%3A%7B%22checksum%22%3A%2284a62083%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+          "domain": "avustukset.test.hel.ninja",
+          "path": "/",
+          "expires": 1747282327,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat"
+      ],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "Search with none accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%7D%7D",
+          "domain": "avustukset.test.hel.ninja",
+          "path": "/",
+          "expires": 1747282327,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "Search with required accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+          "domain": "avustukset.test.hel.ninja",
+          "path": "/",
+          "expires": 1747282327,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [
+        "essential",
+        "admin"
+      ],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "Search with all accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22c02aa4b8%22%2C%22timestamp%22%3A1738642327010%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%22fb4b10bf%22%2C%22timestamp%22%3A1738642327010%7D%2C%22chat%22%3A%7B%22checksum%22%3A%2284a62083%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+          "domain": "avustukset.test.hel.ninja",
+          "path": "/",
+          "expires": 1747282327,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat"
+      ],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "Single grant with none accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%7D%7D",
+          "domain": "avustukset.test.hel.ninja",
+          "path": "/",
+          "expires": 1747282327,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "Single grant with required accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+          "domain": "avustukset.test.hel.ninja",
+          "path": "/",
+          "expires": 1747282327,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [
+        "essential",
+        "admin"
+      ],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "Single grant with all accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22c02aa4b8%22%2C%22timestamp%22%3A1738642327010%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%22fb4b10bf%22%2C%22timestamp%22%3A1738642327010%7D%2C%22chat%22%3A%7B%22checksum%22%3A%2284a62083%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+          "domain": "avustukset.test.hel.ninja",
+          "path": "/",
+          "expires": 1747282327,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat"
+      ],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "Single grant preview with none accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%7D%7D",
+          "domain": "avustukset.test.hel.ninja",
+          "path": "/",
+          "expires": 1747282327,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "Single grant preview with required accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+          "domain": "avustukset.test.hel.ninja",
+          "path": "/",
+          "expires": 1747282327,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [
+        "essential",
+        "admin"
+      ],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "Single grant preview with all accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22c02aa4b8%22%2C%22timestamp%22%3A1738642327010%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%22fb4b10bf%22%2C%22timestamp%22%3A1738642327010%7D%2C%22chat%22%3A%7B%22checksum%22%3A%2284a62083%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+          "domain": "avustukset.test.hel.ninja",
+          "path": "/",
+          "expires": 1747282327,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat"
+      ],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "Accordion with none accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%7D%7D",
+          "domain": "avustukset.test.hel.ninja",
+          "path": "/",
+          "expires": 1747282327,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "Accordion with required accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+          "domain": "avustukset.test.hel.ninja",
+          "path": "/",
+          "expires": 1747282327,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [
+        "essential",
+        "admin"
+      ],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "Accordion with all accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22c02aa4b8%22%2C%22timestamp%22%3A1738642327010%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%22fb4b10bf%22%2C%22timestamp%22%3A1738642327010%7D%2C%22chat%22%3A%7B%22checksum%22%3A%2284a62083%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+          "domain": "avustukset.test.hel.ninja",
+          "path": "/",
+          "expires": 1747282327,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat"
+      ],
+      "headless": true,
+      "pause": false
+    }
+  ],
+  "inventoryItems": [
+    {
+      "name": "Frontpage with none accepted",
+      "groups": [],
+      "url": "https://avustukset.test.hel.ninja/fi/avustukset",
+      "frames": [
+        {
+          "frameUrl": "https://avustukset.test.hel.ninja/fi/avustukset",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%7D%7D",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": 1747282327,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1738642333,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "avustukset.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+              "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": -1,
+              "httpOnly": true,
+              "secure": true,
+              "sameSite": "None",
+              "frameTimestamp": 1738642333,
+              "compliance": {
+                "compliant": false,
+                "matchingSettings": []
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "avustukset.test.hel.ninja",
+              "hits": 65,
+              "certificate": {
+                "subjectName": "*.arodevtest.hel.fi",
+                "validFrom": 1725522231,
+                "validTo": 1757058231,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1738642333,
+          "compliant": false
+        }
+      ],
+      "allCompliant": false
+    },
+    {
+      "name": "Frontpage with required accepted",
+      "groups": [
+        "essential",
+        "admin"
+      ],
+      "url": "https://avustukset.test.hel.ninja/fi/avustukset",
+      "frames": [
+        {
+          "frameUrl": "https://avustukset.test.hel.ninja/fi/avustukset",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": 1747282327,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1738642333,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "avustukset.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+              "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": -1,
+              "httpOnly": true,
+              "secure": true,
+              "sameSite": "None",
+              "frameTimestamp": 1738642333,
+              "compliance": {
+                "compliant": false,
+                "matchingSettings": []
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "avustukset.test.hel.ninja",
+              "hits": 65,
+              "certificate": {
+                "subjectName": "*.arodevtest.hel.fi",
+                "validFrom": 1725522231,
+                "validTo": 1757058231,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1738642333,
+          "compliant": false
+        }
+      ],
+      "allCompliant": false
+    },
+    {
+      "name": "Frontpage with all accepted",
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat"
+      ],
+      "url": "https://avustukset.test.hel.ninja/fi/avustukset",
+      "frames": [
+        {
+          "frameUrl": "https://avustukset.test.hel.ninja/fi/avustukset",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22c02aa4b8%22%2C%22timestamp%22%3A1738642327010%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%22fb4b10bf%22%2C%22timestamp%22%3A1738642327010%7D%2C%22chat%22%3A%7B%22checksum%22%3A%2284a62083%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": 1747282327,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1738642333,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "avustukset.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+              "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": -1,
+              "httpOnly": true,
+              "secure": true,
+              "sameSite": "None",
+              "frameTimestamp": 1738642333,
+              "compliance": {
+                "compliant": false,
+                "matchingSettings": []
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "avustukset.test.hel.ninja",
+              "hits": 66,
+              "certificate": {
+                "subjectName": "*.arodevtest.hel.fi",
+                "validFrom": 1725522231,
+                "validTo": 1757058231,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1738642333,
+          "compliant": false
+        }
+      ],
+      "allCompliant": false
+    },
+    {
+      "name": "Search with none accepted",
+      "groups": [],
+      "url": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+      "frames": [
+        {
+          "frameUrl": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%7D%7D",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": 1747282327,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1738642333,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "avustukset.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+              "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": -1,
+              "httpOnly": true,
+              "secure": true,
+              "sameSite": "None",
+              "frameTimestamp": 1738642333,
+              "compliance": {
+                "compliant": false,
+                "matchingSettings": []
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "avustukset.test.hel.ninja",
+              "hits": 67,
+              "certificate": {
+                "subjectName": "*.arodevtest.hel.fi",
+                "validFrom": 1725522231,
+                "validTo": 1757058231,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1738642333,
+          "compliant": false
+        }
+      ],
+      "allCompliant": false
+    },
+    {
+      "name": "Search with required accepted",
+      "groups": [
+        "essential",
+        "admin"
+      ],
+      "url": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+      "frames": [
+        {
+          "frameUrl": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": 1747282327,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1738642333,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "avustukset.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+              "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": -1,
+              "httpOnly": true,
+              "secure": true,
+              "sameSite": "None",
+              "frameTimestamp": 1738642333,
+              "compliance": {
+                "compliant": false,
+                "matchingSettings": []
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "avustukset.test.hel.ninja",
+              "hits": 67,
+              "certificate": {
+                "subjectName": "*.arodevtest.hel.fi",
+                "validFrom": 1725522231,
+                "validTo": 1757058231,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1738642333,
+          "compliant": false
+        }
+      ],
+      "allCompliant": false
+    },
+    {
+      "name": "Search with all accepted",
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat"
+      ],
+      "url": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+      "frames": [
+        {
+          "frameUrl": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22c02aa4b8%22%2C%22timestamp%22%3A1738642327010%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%22fb4b10bf%22%2C%22timestamp%22%3A1738642327010%7D%2C%22chat%22%3A%7B%22checksum%22%3A%2284a62083%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": 1747282327,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1738642333,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "avustukset.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+              "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": -1,
+              "httpOnly": true,
+              "secure": true,
+              "sameSite": "None",
+              "frameTimestamp": 1738642333,
+              "compliance": {
+                "compliant": false,
+                "matchingSettings": []
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "avustukset.test.hel.ninja",
+              "hits": 67,
+              "certificate": {
+                "subjectName": "*.arodevtest.hel.fi",
+                "validFrom": 1725522231,
+                "validTo": 1757058231,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1738642333,
+          "compliant": false
+        }
+      ],
+      "allCompliant": false
+    },
+    {
+      "name": "Single grant with none accepted",
+      "groups": [],
+      "url": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+      "frames": [
+        {
+          "frameUrl": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%7D%7D",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": 1747282327,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1738642333,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "avustukset.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+              "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": -1,
+              "httpOnly": true,
+              "secure": true,
+              "sameSite": "None",
+              "frameTimestamp": 1738642333,
+              "compliance": {
+                "compliant": false,
+                "matchingSettings": []
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "avustukset.test.hel.ninja",
+              "hits": 67,
+              "certificate": {
+                "subjectName": "*.arodevtest.hel.fi",
+                "validFrom": 1725522231,
+                "validTo": 1757058231,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1738642333,
+          "compliant": false
+        }
+      ],
+      "allCompliant": false
+    },
+    {
+      "name": "Single grant with required accepted",
+      "groups": [
+        "essential",
+        "admin"
+      ],
+      "url": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+      "frames": [
+        {
+          "frameUrl": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": 1747282327,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1738642333,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "avustukset.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+              "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": -1,
+              "httpOnly": true,
+              "secure": true,
+              "sameSite": "None",
+              "frameTimestamp": 1738642333,
+              "compliance": {
+                "compliant": false,
+                "matchingSettings": []
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "avustukset.test.hel.ninja",
+              "hits": 65,
+              "certificate": {
+                "subjectName": "*.arodevtest.hel.fi",
+                "validFrom": 1725522231,
+                "validTo": 1757058231,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1738642333,
+          "compliant": false
+        }
+      ],
+      "allCompliant": false
+    },
+    {
+      "name": "Single grant with all accepted",
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat"
+      ],
+      "url": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+      "frames": [
+        {
+          "frameUrl": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22c02aa4b8%22%2C%22timestamp%22%3A1738642327010%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%22fb4b10bf%22%2C%22timestamp%22%3A1738642327010%7D%2C%22chat%22%3A%7B%22checksum%22%3A%2284a62083%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": 1747282327,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1738642333,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "avustukset.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+              "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": -1,
+              "httpOnly": true,
+              "secure": true,
+              "sameSite": "None",
+              "frameTimestamp": 1738642333,
+              "compliance": {
+                "compliant": false,
+                "matchingSettings": []
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "avustukset.test.hel.ninja",
+              "hits": 67,
+              "certificate": {
+                "subjectName": "*.arodevtest.hel.fi",
+                "validFrom": 1725522231,
+                "validTo": 1757058231,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1738642333,
+          "compliant": false
+        }
+      ],
+      "allCompliant": false
+    },
+    {
+      "name": "Single grant preview with none accepted",
+      "groups": [],
+      "url": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+      "frames": [
+        {
+          "frameUrl": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%7D%7D",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": 1747282327,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1738642333,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "avustukset.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+              "value": "a6c972037c558c3309b37b79b3569697",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": -1,
+              "httpOnly": true,
+              "secure": true,
+              "sameSite": "None",
+              "frameTimestamp": 1738642333,
+              "compliance": {
+                "compliant": false,
+                "matchingSettings": []
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "avustukset.test.hel.ninja",
+              "hits": 64,
+              "certificate": {
+                "subjectName": "*.arodevtest.hel.fi",
+                "validFrom": 1725522231,
+                "validTo": 1757058231,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1738642333,
+          "compliant": false
+        }
+      ],
+      "allCompliant": false
+    },
+    {
+      "name": "Single grant preview with required accepted",
+      "groups": [
+        "essential",
+        "admin"
+      ],
+      "url": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+      "frames": [
+        {
+          "frameUrl": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": 1747282327,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1738642333,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "avustukset.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+              "value": "a6c972037c558c3309b37b79b3569697",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": -1,
+              "httpOnly": true,
+              "secure": true,
+              "sameSite": "None",
+              "frameTimestamp": 1738642333,
+              "compliance": {
+                "compliant": false,
+                "matchingSettings": []
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "avustukset.test.hel.ninja",
+              "hits": 62,
+              "certificate": {
+                "subjectName": "*.arodevtest.hel.fi",
+                "validFrom": 1725522231,
+                "validTo": 1757058231,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1738642333,
+          "compliant": false
+        }
+      ],
+      "allCompliant": false
+    },
+    {
+      "name": "Single grant preview with all accepted",
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat"
+      ],
+      "url": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+      "frames": [
+        {
+          "frameUrl": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22c02aa4b8%22%2C%22timestamp%22%3A1738642327010%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%22fb4b10bf%22%2C%22timestamp%22%3A1738642327010%7D%2C%22chat%22%3A%7B%22checksum%22%3A%2284a62083%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": 1747282327,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1738642333,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "avustukset.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+              "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": -1,
+              "httpOnly": true,
+              "secure": true,
+              "sameSite": "None",
+              "frameTimestamp": 1738642333,
+              "compliance": {
+                "compliant": false,
+                "matchingSettings": []
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "avustukset.test.hel.ninja",
+              "hits": 62,
+              "certificate": {
+                "subjectName": "*.arodevtest.hel.fi",
+                "validFrom": 1725522231,
+                "validTo": 1757058231,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1738642333,
+          "compliant": false
+        }
+      ],
+      "allCompliant": false
+    },
+    {
+      "name": "Accordion with none accepted",
+      "groups": [],
+      "url": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+      "frames": [
+        {
+          "frameUrl": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%7D%7D",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": 1747282327,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1738642333,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "avustukset.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+              "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": -1,
+              "httpOnly": true,
+              "secure": true,
+              "sameSite": "None",
+              "frameTimestamp": 1738642333,
+              "compliance": {
+                "compliant": false,
+                "matchingSettings": []
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "avustukset.test.hel.ninja",
+              "hits": 69,
+              "certificate": {
+                "subjectName": "*.arodevtest.hel.fi",
+                "validFrom": 1725522231,
+                "validTo": 1757058231,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1738642333,
+          "compliant": false
+        }
+      ],
+      "allCompliant": false
+    },
+    {
+      "name": "Accordion with required accepted",
+      "groups": [
+        "essential",
+        "admin"
+      ],
+      "url": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+      "frames": [
+        {
+          "frameUrl": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": 1747282327,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1738642333,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "avustukset.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+              "value": "a6c972037c558c3309b37b79b3569697",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": -1,
+              "httpOnly": true,
+              "secure": true,
+              "sameSite": "None",
+              "frameTimestamp": 1738642333,
+              "compliance": {
+                "compliant": false,
+                "matchingSettings": []
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "avustukset.test.hel.ninja",
+              "hits": 69,
+              "certificate": {
+                "subjectName": "*.arodevtest.hel.fi",
+                "validFrom": 1725522231,
+                "validTo": 1757058231,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1738642333,
+          "compliant": false
+        }
+      ],
+      "allCompliant": false
+    },
+    {
+      "name": "Accordion with all accepted",
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat"
+      ],
+      "url": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+      "frames": [
+        {
+          "frameUrl": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22c02aa4b8%22%2C%22timestamp%22%3A1738642327010%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%22fb4b10bf%22%2C%22timestamp%22%3A1738642327010%7D%2C%22chat%22%3A%7B%22checksum%22%3A%2284a62083%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": 1747282327,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1738642333,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "avustukset.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+              "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+              "domain": "avustukset.test.hel.ninja",
+              "path": "/",
+              "expires": -1,
+              "httpOnly": true,
+              "secure": true,
+              "sameSite": "None",
+              "frameTimestamp": 1738642333,
+              "compliance": {
+                "compliant": false,
+                "matchingSettings": []
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "avustukset.test.hel.ninja",
+              "hits": 69,
+              "certificate": {
+                "subjectName": "*.arodevtest.hel.fi",
+                "validFrom": 1725522231,
+                "validTo": 1757058231,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1738642333,
+          "compliant": false
+        }
+      ],
+      "allCompliant": false
+    }
+  ],
+  "foundItems": [
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%7D%7D",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": 1747282327,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1738642333,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "avustukset.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [],
+      "name": "Frontpage with none accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/avustukset",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/avustukset",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "5eb38c3ed450cfe23fd68971c1d95e8e",
+      "item": {
+        "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+        "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": -1,
+        "httpOnly": true,
+        "secure": true,
+        "sameSite": "None",
+        "frameTimestamp": 1738642333,
+        "compliance": {
+          "compliant": false,
+          "matchingSettings": []
+        }
+      },
+      "groups": [],
+      "name": "Frontpage with none accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/avustukset",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/avustukset",
+      "compliant": false,
+      "complianceData": {
+        "compliant": false,
+        "matchingSettings": []
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": 1747282327,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1738642333,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "avustukset.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin"
+      ],
+      "name": "Frontpage with required accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/avustukset",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/avustukset",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "5eb38c3ed450cfe23fd68971c1d95e8e",
+      "item": {
+        "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+        "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": -1,
+        "httpOnly": true,
+        "secure": true,
+        "sameSite": "None",
+        "frameTimestamp": 1738642333,
+        "compliance": {
+          "compliant": false,
+          "matchingSettings": []
+        }
+      },
+      "groups": [
+        "essential",
+        "admin"
+      ],
+      "name": "Frontpage with required accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/avustukset",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/avustukset",
+      "compliant": false,
+      "complianceData": {
+        "compliant": false,
+        "matchingSettings": []
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22c02aa4b8%22%2C%22timestamp%22%3A1738642327010%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%22fb4b10bf%22%2C%22timestamp%22%3A1738642327010%7D%2C%22chat%22%3A%7B%22checksum%22%3A%2284a62083%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": 1747282327,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1738642333,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "avustukset.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat"
+      ],
+      "name": "Frontpage with all accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/avustukset",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/avustukset",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "5eb38c3ed450cfe23fd68971c1d95e8e",
+      "item": {
+        "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+        "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": -1,
+        "httpOnly": true,
+        "secure": true,
+        "sameSite": "None",
+        "frameTimestamp": 1738642333,
+        "compliance": {
+          "compliant": false,
+          "matchingSettings": []
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat"
+      ],
+      "name": "Frontpage with all accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/avustukset",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/avustukset",
+      "compliant": false,
+      "complianceData": {
+        "compliant": false,
+        "matchingSettings": []
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%7D%7D",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": 1747282327,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1738642333,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "avustukset.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [],
+      "name": "Search with none accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "5eb38c3ed450cfe23fd68971c1d95e8e",
+      "item": {
+        "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+        "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": -1,
+        "httpOnly": true,
+        "secure": true,
+        "sameSite": "None",
+        "frameTimestamp": 1738642333,
+        "compliance": {
+          "compliant": false,
+          "matchingSettings": []
+        }
+      },
+      "groups": [],
+      "name": "Search with none accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+      "compliant": false,
+      "complianceData": {
+        "compliant": false,
+        "matchingSettings": []
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": 1747282327,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1738642333,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "avustukset.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin"
+      ],
+      "name": "Search with required accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "5eb38c3ed450cfe23fd68971c1d95e8e",
+      "item": {
+        "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+        "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": -1,
+        "httpOnly": true,
+        "secure": true,
+        "sameSite": "None",
+        "frameTimestamp": 1738642333,
+        "compliance": {
+          "compliant": false,
+          "matchingSettings": []
+        }
+      },
+      "groups": [
+        "essential",
+        "admin"
+      ],
+      "name": "Search with required accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+      "compliant": false,
+      "complianceData": {
+        "compliant": false,
+        "matchingSettings": []
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22c02aa4b8%22%2C%22timestamp%22%3A1738642327010%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%22fb4b10bf%22%2C%22timestamp%22%3A1738642327010%7D%2C%22chat%22%3A%7B%22checksum%22%3A%2284a62083%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": 1747282327,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1738642333,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "avustukset.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat"
+      ],
+      "name": "Search with all accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "5eb38c3ed450cfe23fd68971c1d95e8e",
+      "item": {
+        "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+        "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": -1,
+        "httpOnly": true,
+        "secure": true,
+        "sameSite": "None",
+        "frameTimestamp": 1738642333,
+        "compliance": {
+          "compliant": false,
+          "matchingSettings": []
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat"
+      ],
+      "name": "Search with all accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/etsi-avustusta",
+      "compliant": false,
+      "complianceData": {
+        "compliant": false,
+        "matchingSettings": []
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%7D%7D",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": 1747282327,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1738642333,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "avustukset.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [],
+      "name": "Single grant with none accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "5eb38c3ed450cfe23fd68971c1d95e8e",
+      "item": {
+        "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+        "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": -1,
+        "httpOnly": true,
+        "secure": true,
+        "sameSite": "None",
+        "frameTimestamp": 1738642333,
+        "compliance": {
+          "compliant": false,
+          "matchingSettings": []
+        }
+      },
+      "groups": [],
+      "name": "Single grant with none accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+      "compliant": false,
+      "complianceData": {
+        "compliant": false,
+        "matchingSettings": []
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": 1747282327,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1738642333,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "avustukset.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin"
+      ],
+      "name": "Single grant with required accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "5eb38c3ed450cfe23fd68971c1d95e8e",
+      "item": {
+        "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+        "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": -1,
+        "httpOnly": true,
+        "secure": true,
+        "sameSite": "None",
+        "frameTimestamp": 1738642333,
+        "compliance": {
+          "compliant": false,
+          "matchingSettings": []
+        }
+      },
+      "groups": [
+        "essential",
+        "admin"
+      ],
+      "name": "Single grant with required accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+      "compliant": false,
+      "complianceData": {
+        "compliant": false,
+        "matchingSettings": []
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22c02aa4b8%22%2C%22timestamp%22%3A1738642327010%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%22fb4b10bf%22%2C%22timestamp%22%3A1738642327010%7D%2C%22chat%22%3A%7B%22checksum%22%3A%2284a62083%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": 1747282327,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1738642333,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "avustukset.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat"
+      ],
+      "name": "Single grant with all accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "5eb38c3ed450cfe23fd68971c1d95e8e",
+      "item": {
+        "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+        "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": -1,
+        "httpOnly": true,
+        "secure": true,
+        "sameSite": "None",
+        "frameTimestamp": 1738642333,
+        "compliance": {
+          "compliant": false,
+          "matchingSettings": []
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat"
+      ],
+      "name": "Single grant with all accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset",
+      "compliant": false,
+      "complianceData": {
+        "compliant": false,
+        "matchingSettings": []
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%7D%7D",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": 1747282327,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1738642333,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "avustukset.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [],
+      "name": "Single grant preview with none accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "5eb38c3ed450cfe23fd68971c1d95e8e",
+      "item": {
+        "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+        "value": "a6c972037c558c3309b37b79b3569697",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": -1,
+        "httpOnly": true,
+        "secure": true,
+        "sameSite": "None",
+        "frameTimestamp": 1738642333,
+        "compliance": {
+          "compliant": false,
+          "matchingSettings": []
+        }
+      },
+      "groups": [],
+      "name": "Single grant preview with none accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+      "compliant": false,
+      "complianceData": {
+        "compliant": false,
+        "matchingSettings": []
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": 1747282327,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1738642333,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "avustukset.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin"
+      ],
+      "name": "Single grant preview with required accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "5eb38c3ed450cfe23fd68971c1d95e8e",
+      "item": {
+        "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+        "value": "a6c972037c558c3309b37b79b3569697",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": -1,
+        "httpOnly": true,
+        "secure": true,
+        "sameSite": "None",
+        "frameTimestamp": 1738642333,
+        "compliance": {
+          "compliant": false,
+          "matchingSettings": []
+        }
+      },
+      "groups": [
+        "essential",
+        "admin"
+      ],
+      "name": "Single grant preview with required accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+      "compliant": false,
+      "complianceData": {
+        "compliant": false,
+        "matchingSettings": []
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22c02aa4b8%22%2C%22timestamp%22%3A1738642327010%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%22fb4b10bf%22%2C%22timestamp%22%3A1738642327010%7D%2C%22chat%22%3A%7B%22checksum%22%3A%2284a62083%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": 1747282327,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1738642333,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "avustukset.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat"
+      ],
+      "name": "Single grant preview with all accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "5eb38c3ed450cfe23fd68971c1d95e8e",
+      "item": {
+        "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+        "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": -1,
+        "httpOnly": true,
+        "secure": true,
+        "sameSite": "None",
+        "frameTimestamp": 1738642333,
+        "compliance": {
+          "compliant": false,
+          "matchingSettings": []
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat"
+      ],
+      "name": "Single grant preview with all accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta",
+      "compliant": false,
+      "complianceData": {
+        "compliant": false,
+        "matchingSettings": []
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%7D%7D",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": 1747282327,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1738642333,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "avustukset.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [],
+      "name": "Accordion with none accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "5eb38c3ed450cfe23fd68971c1d95e8e",
+      "item": {
+        "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+        "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": -1,
+        "httpOnly": true,
+        "secure": true,
+        "sameSite": "None",
+        "frameTimestamp": 1738642333,
+        "compliance": {
+          "compliant": false,
+          "matchingSettings": []
+        }
+      },
+      "groups": [],
+      "name": "Accordion with none accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+      "compliant": false,
+      "complianceData": {
+        "compliant": false,
+        "matchingSettings": []
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": 1747282327,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1738642333,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "avustukset.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin"
+      ],
+      "name": "Accordion with required accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "5eb38c3ed450cfe23fd68971c1d95e8e",
+      "item": {
+        "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+        "value": "a6c972037c558c3309b37b79b3569697",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": -1,
+        "httpOnly": true,
+        "secure": true,
+        "sameSite": "None",
+        "frameTimestamp": 1738642333,
+        "compliance": {
+          "compliant": false,
+          "matchingSettings": []
+        }
+      },
+      "groups": [
+        "essential",
+        "admin"
+      ],
+      "name": "Accordion with required accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+      "compliant": false,
+      "complianceData": {
+        "compliant": false,
+        "matchingSettings": []
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%22057dfe65%22%2C%22timestamp%22%3A1738642327010%7D%2C%22admin%22%3A%7B%22checksum%22%3A%228c7ea53c%22%2C%22timestamp%22%3A1738642327010%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22c02aa4b8%22%2C%22timestamp%22%3A1738642327010%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%22fb4b10bf%22%2C%22timestamp%22%3A1738642327010%7D%2C%22chat%22%3A%7B%22checksum%22%3A%2284a62083%22%2C%22timestamp%22%3A1738642327010%7D%7D%7D",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": 1747282327,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1738642333,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "avustukset.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat"
+      ],
+      "name": "Accordion with all accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "avustukset.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "5eb38c3ed450cfe23fd68971c1d95e8e",
+      "item": {
+        "name": "5eb38c3ed450cfe23fd68971c1d95e8e",
+        "value": "0fcbd0e95613dc0be43eb2d429bc8683",
+        "domain": "avustukset.test.hel.ninja",
+        "path": "/",
+        "expires": -1,
+        "httpOnly": true,
+        "secure": true,
+        "sameSite": "None",
+        "frameTimestamp": 1738642333,
+        "compliance": {
+          "compliant": false,
+          "matchingSettings": []
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat"
+      ],
+      "name": "Accordion with all accepted",
+      "url": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+      "frameUrl": "https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet",
+      "compliant": false,
+      "complianceData": {
+        "compliant": false,
+        "matchingSettings": []
+      }
+    }
+  ],
+  "siteSettingsFlat": [
+    {
+      "groupId": "essential",
+      "required": true,
+      "name": "helfi-cookie-consents",
+      "host": "avustukset.hel.fi",
+      "storageType": 1,
+      "expiration": "100 days",
+      "hostMatches": false,
+      "expiresMatches": true
+    },
+    {
+      "groupId": "essential",
+      "required": true,
+      "name": "helfi-settings",
+      "host": "avustukset.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "SSESS*",
+      "host": "avustukset.hel.fi",
+      "storageType": 1,
+      "expiration": "23 days"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "Drupal.gin.sidebarExpanded.desktop",
+      "host": "avustukset.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "Drupal.gin.sidebarExpanded.mobile",
+      "host": "avustukset.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "Drupal.gin.sidebarWidth",
+      "host": "avustukset.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "Drupal.gin.darkmode",
+      "host": "avustukset.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "Drupal.toolbar.subtrees.*",
+      "host": "avustukset.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "Drupal.off-canvas.css.*",
+      "host": "avustukset.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "Drupal.toolbar.toolbarState",
+      "host": "avustukset.hel.fi",
+      "storageType": 3,
+      "expiration": "Session"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "escapeAdminPath",
+      "host": "avustukset.hel.fi",
+      "storageType": 3,
+      "expiration": "Session"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "editoria11yResultCount",
+      "host": "avustukset.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "ed11ySeen",
+      "host": "avustukset.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "Drupal.webform.*",
+      "host": "avustukset.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "Drupal.visitor.autologout_login",
+      "host": "avustukset.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: ``",
+      "host": "app.powerbi.com",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: AI_buffer",
+      "host": "app.powerbi.com",
+      "storageType": 3,
+      "expiration": "Session"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: AI_sentBuffer",
+      "host": "app.powerbi.com",
+      "storageType": 3,
+      "expiration": "Session"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: ARRAffinitySameSite",
+      "host": "app.powerbi.com",
+      "storageType": 1,
+      "expiration": "Session"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: GeocoderCache/objects",
+      "host": "app.powerbi.com",
+      "storageType": 4,
+      "expiration": "Session"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: manifests.artifacts",
+      "host": "app.powerbi.com",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: manifests.extensions",
+      "host": "app.powerbi.com",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: manifests.products",
+      "host": "app.powerbi.com",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: manifests.tabs",
+      "host": "app.powerbi.com",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: WFESessionId",
+      "host": "app.powerbi.com",
+      "storageType": 1,
+      "expiration": "Session"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: VISITOR_PRIVACY_METADATA",
+      "host": ".youtube.com",
+      "storageType": 1,
+      "expiration": "180 days"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: iU5q-!O9@$",
+      "host": ".youtube.com",
+      "storageType": 3,
+      "expiration": "Session"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: *-*",
+      "host": ".youtube.com",
+      "storageType": 3,
+      "expiration": "Session"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: yt-remote-connected-devices",
+      "host": ".youtube.com",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: yt-remote-device-id",
+      "host": ".youtube.com",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: ytidb::LAST_RESULT_ENTRY_KEY",
+      "host": ".youtube.com",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: YtIdbMeta/databases",
+      "host": ".youtube.com",
+      "storageType": 4,
+      "expiration": "Session"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: webpack-offline:809a41f5eacff34cc76f721d90508b4a24761dd8",
+      "host": "reittiopas.hsl.fi",
+      "storageType": 5,
+      "expiration": "Session"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: lang",
+      "host": "reittiopas.hsl.fi",
+      "storageType": 1,
+      "expiration": "Session"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: saved-searches",
+      "host": "reittiopas.hsl.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: saved-searches-updated-at",
+      "host": "reittiopas.hsl.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: COOKIE_SUPPORT",
+      "host": "helsinkikanava.fi",
+      "storageType": 1,
+      "expiration": "365 days"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: JSESSIONID",
+      "host": "helsinkikanava.fi",
+      "storageType": 1,
+      "expiration": "Session"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: GUEST_LANGUAGE_ID",
+      "host": "helsinkikanava.fi",
+      "storageType": 1,
+      "expiration": "365 days"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: httpskartta.hel.fi.SWCulture",
+      "host": "kartta.hel.fi",
+      "storageType": 1,
+      "expiration": "1826 days"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: cb-enabled",
+      "host": "kartta.hel.fi",
+      "storageType": 1,
+      "expiration": "400 days"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: VISITOR_INFO1_LIVE",
+      "host": ".youtube.com",
+      "storageType": 1,
+      "expiration": "180 days"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: __Secure-ROLLOUT_TOKEN",
+      "host": ".youtube.com",
+      "storageType": 1,
+      "expiration": "180 days"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: rmpVolume",
+      "host": "www.helsinkikanava.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: test_cookie",
+      "host": ".doubleclick.net",
+      "storageType": 1,
+      "expiration": "15 minutes"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: yt-remote-*",
+      "host": ".youtube.com",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: yt-remote-*",
+      "host": ".youtube.com",
+      "storageType": 3,
+      "expiration": "Session"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: yt-player-*",
+      "host": ".youtube.com",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: __Secure-ENID",
+      "host": "www.google.com",
+      "storageType": 1,
+      "expiration": "396 days"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: SOCS",
+      "host": "www.google.com",
+      "storageType": 1,
+      "expiration": "396 days"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "iframe: AEC",
+      "host": "www.google.com",
+      "storageType": 1,
+      "expiration": "180 days"
+    },
+    {
+      "groupId": "statistics",
+      "required": false,
+      "name": "iframe: ai_session",
+      "host": "app.powerbi.com",
+      "storageType": 1,
+      "expiration": "30 minutes"
+    },
+    {
+      "groupId": "statistics",
+      "required": false,
+      "name": "iframe: ai_user",
+      "host": "app.powerbi.com",
+      "storageType": 1,
+      "expiration": "365 days"
+    },
+    {
+      "groupId": "statistics",
+      "required": false,
+      "name": "iframe: LogsDatabaseV2:V473f9200||/LogsRequestsStore",
+      "host": ".youtube.com",
+      "storageType": 4,
+      "expiration": "Session"
+    },
+    {
+      "groupId": "statistics",
+      "required": false,
+      "name": "iframe: icareusDevice",
+      "host": "www.helsinkikanava.fi",
+      "storageType": 1,
+      "expiration": "Session"
+    },
+    {
+      "groupId": "statistics",
+      "required": false,
+      "name": "nmstat",
+      "host": "avustukset.hel.fi",
+      "storageType": 1,
+      "expiration": "1000 days"
+    },
+    {
+      "groupId": "statistics",
+      "required": false,
+      "name": "_pk_id.*",
+      "host": "avustukset.hel.fi",
+      "storageType": 1,
+      "expiration": "393 days"
+    },
+    {
+      "groupId": "statistics",
+      "required": false,
+      "name": "_pk_ses.*",
+      "host": "avustukset.hel.fi",
+      "storageType": 1,
+      "expiration": "1 hour"
+    },
+    {
+      "groupId": "statistics",
+      "required": false,
+      "name": "rnsbid",
+      "host": "avustukset.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "statistics",
+      "required": false,
+      "name": "rnsbid_ts",
+      "host": "avustukset.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "statistics",
+      "required": false,
+      "name": "rns_reaction_*",
+      "host": "avustukset.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "statistics",
+      "required": false,
+      "name": "iframe: YSC",
+      "host": ".youtube.com",
+      "storageType": 1,
+      "expiration": "Session"
+    },
+    {
+      "groupId": "statistics",
+      "required": false,
+      "name": "_pk_ref.*",
+      "host": "avustukset.hel.fi",
+      "storageType": 1,
+      "expiration": "182 days, 12 hours"
+    },
+    {
+      "groupId": "chat",
+      "required": false,
+      "name": "conversationToken",
+      "host": "coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "chat",
+      "required": false,
+      "name": "aiap-chat-app-v1-state",
+      "host": "avustukset.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "chat",
+      "required": false,
+      "name": "aiap-user",
+      "host": "avustukset.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "chat",
+      "required": false,
+      "name": "aiap-wbc-chat-app-button-state",
+      "host": "avustukset.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "chat",
+      "required": false,
+      "name": "user",
+      "host": "coh-chat-app-prod.ow6i4n9pdzm.eu-de.codeengine.appdomain.cloud",
+      "storageType": 2,
+      "expiration": "-"
+    }
+  ],
+  "timing": {
+    "Processing time": {
+      "start": 250.3041,
+      "end": 10792.238976,
+      "elapsed": 10541.934876000001,
+      "formattedElapsed": "10.542s"
+    },
+    "Fetching tracking domains": {
+      "start": 250.381205,
+      "end": 499.408094,
+      "elapsed": 249.026889,
+      "formattedElapsed": "0.249s"
+    },
+    "Fetching checksums and siteSettings": {
+      "start": 291.915673,
+      "end": 5746.070198,
+      "elapsed": 5454.154525,
+      "formattedElapsed": "5.454s"
+    },
+    "URL generation": {
+      "start": 5746.170286,
+      "end": 5746.877326,
+      "elapsed": 0.7070400000002337,
+      "formattedElapsed": "0.001s"
+    },
+    "Data collection": {
+      "start": 5746.939823,
+      "end": 10792.154537,
+      "elapsed": 5045.214714000001,
+      "formattedElapsed": "5.045s"
+    },
+    " - \"Frontpage with none accepted\"": {
+      "start": 6066.285769,
+      "end": 10623.631942,
+      "elapsed": 4557.346173,
+      "formattedElapsed": "4.557s"
+    },
+    " - \"Frontpage with required accepted\"": {
+      "start": 6066.553322,
+      "end": 10620.282168,
+      "elapsed": 4553.728846,
+      "formattedElapsed": "4.554s"
+    },
+    " - \"Frontpage with all accepted\"": {
+      "start": 6066.572869,
+      "end": 10605.433199,
+      "elapsed": 4538.8603299999995,
+      "formattedElapsed": "4.539s"
+    },
+    " - \"Search with none accepted\"": {
+      "start": 6066.602164,
+      "end": 10635.16287,
+      "elapsed": 4568.560706,
+      "formattedElapsed": "4.569s"
+    },
+    " - \"Search with required accepted\"": {
+      "start": 6066.619376,
+      "end": 10699.063481,
+      "elapsed": 4632.444105,
+      "formattedElapsed": "4.632s"
+    },
+    " - \"Search with all accepted\"": {
+      "start": 6066.635186,
+      "end": 10651.70608,
+      "elapsed": 4585.0708939999995,
+      "formattedElapsed": "4.585s"
+    },
+    " - \"Single grant with none accepted\"": {
+      "start": 6066.644704,
+      "end": 10719.616578,
+      "elapsed": 4652.971873999999,
+      "formattedElapsed": "4.653s"
+    },
+    " - \"Single grant with required accepted\"": {
+      "start": 6066.654683,
+      "end": 10543.259406,
+      "elapsed": 4476.6047229999995,
+      "formattedElapsed": "4.477s"
+    },
+    " - \"Single grant with all accepted\"": {
+      "start": 6066.66394,
+      "end": 10730.654627,
+      "elapsed": 4663.9906869999995,
+      "formattedElapsed": "4.664s"
+    },
+    " - \"Single grant preview with none accepted\"": {
+      "start": 6066.675742,
+      "end": 10564.718314,
+      "elapsed": 4498.042571999999,
+      "formattedElapsed": "4.498s"
+    },
+    " - \"Single grant preview with required accepted\"": {
+      "start": 6066.685912,
+      "end": 10516.59723,
+      "elapsed": 4449.9113179999995,
+      "formattedElapsed": "4.450s"
+    },
+    " - \"Single grant preview with all accepted\"": {
+      "start": 6066.696031,
+      "end": 10414.860407,
+      "elapsed": 4348.164376,
+      "formattedElapsed": "4.348s"
+    },
+    " - \"Accordion with none accepted\"": {
+      "start": 6066.705469,
+      "end": 10669.60359,
+      "elapsed": 4602.898121,
+      "formattedElapsed": "4.603s"
+    },
+    " - \"Accordion with required accepted\"": {
+      "start": 6066.716679,
+      "end": 10757.776623,
+      "elapsed": 4691.059944,
+      "formattedElapsed": "4.691s"
+    },
+    " - \"Accordion with all accepted\"": {
+      "start": 6066.729283,
+      "end": 10707.361562,
+      "elapsed": 4640.632279,
+      "formattedElapsed": "4.641s"
+    },
+    "Compliance checking": {
+      "start": 10792.344153,
+      "end": 10798.925549,
+      "elapsed": 6.581395999999586,
+      "formattedElapsed": "0.007s"
+    }
+  }
+}
