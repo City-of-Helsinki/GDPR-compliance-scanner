@@ -124,5 +124,19 @@
       "siteSettingsFlat": 58
     },
     "filename": "report-avustukset-2025-02-11T04:12:09.073Z.json"
+  },
+  {
+    "timeStamp": "2025-02-12T04:12:15.735Z",
+    "summary": {
+      "total": 30,
+      "compliant": 15,
+      "nonCompliant": 15,
+      "warnings": 0,
+      "urls": 15,
+      "failedUrls": 0,
+      "timing": "8.875s",
+      "siteSettingsFlat": 58
+    },
+    "filename": "report-avustukset-2025-02-12T04:12:15.735Z.json"
   }
 ]
