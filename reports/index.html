@@ -161,16 +161,18 @@
                       });
                     }
 
+                    const chartData = [...data].reverse();
+
                     // Prepare data for the line chart
                     let labels;
                     const timeSteps = true;
                     if (timeSteps) {
-                      labels = data.map(formatDate);
+                      labels = chartData.map(formatDate);
                     } else {
-                      labels = data.map(item => new Date(item.timeStamp));
+                      labels = chartData.map(item => new Date(item.timeStamp));
                     }
-                    const totalData = data.map(item => item.summary.total);
-                    const nonCompliantData = data.map(item => item.summary.nonCompliant);
+                    const totalData = chartData.map(item => item.summary.total);
+                    const nonCompliantData = chartData.map(item => item.summary.nonCompliant);
 
                     // Draw the line chart using Chart.js
                     const ctx = document.getElementById(`myLineChart-${folder}`).getContext('2d');

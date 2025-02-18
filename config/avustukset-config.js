@@ -4,14 +4,14 @@ const debug = { headless: false, pause: true };
 
 const config = {
   name: 'avustukset',
-  mainUrl: 'https://avustukset.test.hel.ninja/fi/avustukset',
-  apiUrl: 'https://avustukset.test.hel.ninja/en/api/cookie-banner'+'?cacheBuster='+Date.now(),
-  settingsDomainSubstitution: 'https://avustukset.test.hel.ninja/fi/avustukset',
+  mainUrl: 'https://avustukset.hel.fi/fi/avustukset',
+  apiUrl: 'https://avustukset.hel.fi/en/api/cookie-banner'+'?cacheBuster='+Date.now(),
+  settingsDomainSubstitution: 'https://avustukset.hel./fi/avustukset',
   urls: [
     {
       only: false,
       nameBase: 'Frontpage',
-      url: 'https://avustukset.test.hel.ninja/fi/avustukset',
+      url: 'https://avustukset.hel.fi/fi/avustukset',
       actions: [],
       variants: [
         'none',
@@ -23,7 +23,7 @@ const config = {
     {
       only: false,
       nameBase: 'Search',
-      url: 'https://avustukset.test.hel.ninja/fi/etsi-avustusta',
+      url: 'https://avustukset.hel.fi/fi/etsi-avustusta',
       actions: [],
       variants: [
         'none',
@@ -35,7 +35,7 @@ const config = {
     {
       only: false,
       nameBase: 'Single grant',
-      url: 'https://avustukset.test.hel.ninja/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset',
+      url: 'https://avustukset.hel.fi/fi/tietoa-avustuksista/muut-avustukset/hyvinvoinnin-ja-terveyden-edistamisen-seka-sosiaali-terveys-ja-pelastustoimen-avustukset',
       actions: [],
       variants: [
         'none',
@@ -47,7 +47,7 @@ const config = {
     {
       only: false,
       nameBase: 'Single grant preview',
-      url: 'https://avustukset.test.hel.ninja/fi/tietoja-avustuksista/hyteed_yleis/tulosta',
+      url: 'https://avustukset.hel.fi/fi/tietoja-avustuksista/hyteed_yleis/tulosta',
       actions: [],
       variants: [
         'none',
@@ -59,7 +59,7 @@ const config = {
     {
       only: false,
       nameBase: 'Accordion',
-      url: 'https://avustukset.test.hel.ninja/fi/ohjeita-hakijalle/palvelun-kayttoohjeet',
+      url: 'https://avustukset.hel.fi/fi/ohjeita-hakijalle/palvelun-kayttoohjeet',
       actions: [],
       variants: [
         'none',
