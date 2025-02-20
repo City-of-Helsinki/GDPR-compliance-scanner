@@ -35,3 +35,6 @@ jobs:
         with:
           publish_dir: ./app/reports
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: debug curl
+        run: curl https://palvelukeskus.hel.fi/en/api/cookie-banner?cacheBuster=1740024787302
