@@ -1,0 +1,16 @@
+[
+  {
+    "timeStamp": "2025-02-20T07:41:46.030Z",
+    "summary": {
+      "total": 30,
+      "compliant": 30,
+      "nonCompliant": 0,
+      "warnings": 0,
+      "urls": 9,
+      "failedUrls": 0,
+      "timing": "7.076s",
+      "siteSettingsFlat": 84
+    },
+    "filename": "report-palvelukeskus-2025-02-20T07:41:46.030Z.json"
+  }
+]
