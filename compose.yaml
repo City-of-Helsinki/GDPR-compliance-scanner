@@ -1,7 +1,7 @@
 services:
   app:
     container_name: "helfi-gdpr-scanner-node"
-    image: mcr.microsoft.com/playwright:v1.50.0-noble
+    image: mcr.microsoft.com/playwright:v1.51.0-noble
     ipc: host
     entrypoint: tail -f /dev/null
     working_dir: /app
