@@ -284,8 +284,9 @@ async function collectDataFromPages(urls, timer) {
     try {
       result = await runOnUrlsOneByOne(true, url, timer);
     }
+    // eslint-disable-next-line no-unused-vars
     catch (error) {
-      console.log("added url to retry queue", url.url)
+      console.error("added url to retry queue", url.url)
       retry.push(url);
       continue;
     }
@@ -300,8 +301,9 @@ async function collectDataFromPages(urls, timer) {
       result = await runOnUrlsOneByOne(true, retry_url, timer);
       results.push(result)
     }
-    catch (error){
-      console.log("Retry failed", retry_url.url)
+    // eslint-disable-next-line no-unused-vars
+    catch (error) {
+      console.error("Retry failed", retry_url.url)
       continue;
     }
   }
