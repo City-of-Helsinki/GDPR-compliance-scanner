@@ -101,9 +101,9 @@ async function fetchDataFromPage(
           page.waitForLoadState('networkidle'),
           new Promise(resolve => setTimeout(resolve, 15000))
         ]);
-      // eslint-disable-next-line no-unused-vars
       } catch (error) {
         // If timeout occurs, continue execution
+        console.log('Waited until "networkidle" - error: ', error)
       }
 
     } else {
@@ -229,6 +229,39 @@ async function runOnUrlsConcurrently(headlessMode, urls, timer) {
 }
 
 /**
+ * Fetch the results one by one.
+ *
+ * @param headlessMode
+ * @param urlObject
+ * @param timer
+ * @returns {Promise<{name: void | string, groups: *}>}
+ */
+async function runOnUrlsOneByOne(headlessMode, urlObject, timer) {
+  // Launch the browser (set headless to false for debugging)
+  const browser = await chromium.launch({ headless: headlessMode });
+
+  const { name, groups, url, actions, cookies, pause, skipNetworkIdle, waitForNetworkIdle } = urlObject;
+
+  timer.start(` - "${name}"`);
+  const result = {
+    name,
+    groups,
+    ...await fetchDataFromPage(
+      browser,
+      url,
+      actions,
+      cookies, // Set specific cookies for the URL
+      pause,  // If true, pause for debugging
+      skipNetworkIdle,
+      waitForNetworkIdle
+    ),
+  };
+
+  timer.end(` - "${name}"`);
+  return result;
+}
+
+/**
  * Collects data from multiple pages, running both headless and non-headless modes
  * @param {Array<Object>} urls - Array of URL configurations to process
  * @param {Object} urls[].name - Name identifier for the URL
@@ -243,15 +276,43 @@ async function runOnUrlsConcurrently(headlessMode, urls, timer) {
  * @returns {Promise<Array<Object>>} Collected data from all pages
  */
 async function collectDataFromPages(urls, timer) {
+  const the_results = [];
+  const retry = [];
 
-  const headResults = await runOnUrlsConcurrently(false, urls, timer);
-  const headlessResults = await runOnUrlsConcurrently(true, urls, timer);
+  for await (const url of urls) {
 
-  const results = [...headResults, ...headlessResults];
+    // const result = await runOnUrlsOneByOne(true, url, timer);
+    let result;
+    try {
+      result = await runOnUrlsOneByOne(true, url, timer);
+    }
+    catch (error) {
+      console.log("added url to retry queue", url.url)
+      retry.push(url);
+      continue;
+    }
+
+    the_results.push(result);
+  }
+
+  for await (const retry_url of retry) {
+    let result;
+    try {
+      console.log("Retry ", retry_url.url)
+      result = await runOnUrlsOneByOne(true, retry_url, timer);
+    }
+    catch (error){
+      console.log("Retry failed", retry_url.url)
+      continue;
+    }
+
+    the_results.push(result)
+  }
+
+  const results = [...the_results];
 
   // Filter out any failed (null) results if necessary
   return results.filter(result => result !== null);
-};
-
+}
 
 export { collectDataFromPages };

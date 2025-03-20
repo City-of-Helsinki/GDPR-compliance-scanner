@@ -25,6 +25,11 @@ async function collectAllStorageFromPage(context, page, frameDomains) {
     const pageFrames = page.frames();
     const allStorageData = [];
 
+    // @todo Adding timeout here gives more consistent result,
+    // but there still is some difference.
+    // This still needs a better way to make sure all cookies are present.
+    await page.waitForTimeout(8000);
+
     for (const pageFrame of pageFrames) {
       const frameTimestamp = Math.floor(Date.now() / 1000);
       const [
