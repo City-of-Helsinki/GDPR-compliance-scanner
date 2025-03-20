@@ -276,12 +276,10 @@ async function runOnUrlsOneByOne(headlessMode, urlObject, timer) {
  * @returns {Promise<Array<Object>>} Collected data from all pages
  */
 async function collectDataFromPages(urls, timer) {
-  const the_results = [];
+  const results = [];
   const retry = [];
 
   for await (const url of urls) {
-
-    // const result = await runOnUrlsOneByOne(true, url, timer);
     let result;
     try {
       result = await runOnUrlsOneByOne(true, url, timer);
@@ -292,7 +290,7 @@ async function collectDataFromPages(urls, timer) {
       continue;
     }
 
-    the_results.push(result);
+    results.push(result);
   }
 
   for await (const retry_url of retry) {
@@ -300,16 +298,13 @@ async function collectDataFromPages(urls, timer) {
     try {
       console.log("Retry ", retry_url.url)
       result = await runOnUrlsOneByOne(true, retry_url, timer);
+      results.push(result)
     }
     catch (error){
       console.log("Retry failed", retry_url.url)
       continue;
     }
-
-    the_results.push(result)
   }
-
-  const results = [...the_results];
 
   // Filter out any failed (null) results if necessary
   return results.filter(result => result !== null);
