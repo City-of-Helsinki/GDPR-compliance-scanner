@@ -22,96 +22,6 @@ const config = {
     },
     {
       only: false,
-      nameBase: 'Rekry',
-      url: 'https://www.hel.fi/fi/avoimet-tyopaikat',
-      actions: [],
-      variants: [
-        'required',
-        'all',
-      ],
-      ...nodebug,
-    },
-    {
-      only: false,
-      nameBase: 'Sote',
-      url: 'https://www.hel.fi/fi/sosiaali-ja-terveyspalvelut',
-      actions: [],
-      variants: [
-        'required',
-        'all',
-      ],
-      ...nodebug,
-    },
-    {
-      only: false,
-      nameBase: 'Kasko',
-      url: 'https://www.hel.fi/fi/kasvatus-ja-koulutus',
-      actions: [],
-      variants: [
-        'required',
-        'all',
-      ],
-      ...nodebug,
-    },
-    {
-      only: false,
-      nameBase: 'Asuminen',
-      url: 'https://www.hel.fi/fi/asuminen',
-      actions: [],
-      variants: [
-        'required',
-        'all',
-      ],
-      ...nodebug,
-    },
-    {
-      only: false,
-      nameBase: 'Kymp',
-      url: 'https://www.hel.fi/fi/kaupunkiymparisto-ja-liikenne',
-      actions: [],
-      variants: [
-        'required',
-        'all',
-      ],
-      ...nodebug,
-    },
-    {
-      only: false,
-      nameBase: 'KuVa',
-      url: 'https://www.hel.fi/fi/kulttuuri-ja-vapaa-aika',
-      actions: [],
-      variants: [
-        'required',
-        'all',
-      ],
-      ...nodebug,
-    },
-    {
-      only: false,
-      nameBase: 'Elo',
-      url: 'https://www.hel.fi/fi/yritykset-ja-tyo',
-      actions: [],
-      variants: [
-        'required',
-        'all',
-      ],
-      ...nodebug,
-    },
-    {
-      only: false,
-      nameBase: 'Strategia',
-      url: 'https://www.hel.fi/fi/paatoksenteko-ja-hallinto',
-      actions: [],
-      variants: [
-        'required',
-        'all',
-      ],
-      ...nodebug,
-    },
-
-
-    {
-      only: false,
       nameBase: 'Siteimprove (Rekry)',
       url: 'https://www.hel.fi/fi/avoimet-tyopaikat',
       actions: [],
@@ -264,40 +174,6 @@ const config = {
       ],
       ...nodebug,
     },
-    {
-      only: false,
-      nameBase: '💬 Helsinki info ACE chat',
-      url: 'https://www.hel.fi/fi/',
-      actions: [],
-      variants: [
-        'required',
-        ['chat'],
-      ],
-      ...nodebug,
-    },
-    // {
-    //   only: false,
-    //   nameBase: '💬 Helsinki info ACE chat',
-    //   url: 'https://www.hel.fi/fi/',
-    //   actions: [
-    //     {
-    //       type: 'removeElement',
-    //       selector: '#block-surveys',
-    //     },
-    //     {
-    //       type: 'click',
-    //       selector: 'button:has-text("Kysy kaupungista!")',
-    //     },
-    //     {
-    //       type: 'waitForNetworkIdle',
-    //       timeout: 5000,
-    //     },
-    //   ],
-    //   variants: [
-    //     'none',
-    //   ],
-    //   ...nodebug,
-    // },
     {
       only: false,
       nameBase: 'Helfi settings (accordion)',
