@@ -15,38 +15,49 @@ const configFiles = fs.readdirSync(configDir).filter(file => file.endsWith('.js'
 (async () => {
   for (const file of configFiles) {
     const config = (await import(path.join(configDir, file))).config;
-    
+
     timer.start('Total time');
     timer.start('Processing time');
-    
+
     const trackingDomains = fetchTrackingDomains(timer);
-    
+
     console.log(`Starting 🍪 GDPR Compliance scan for ${file}...`);
     timer.start('Fetching checksums and siteSettings');
-    
-    const [hashesAndExpires, settings] = await Promise.all([
-      collectGroupHashes(config.mainUrl),
-      collectGroupSettings(config.apiUrl)
-    ]);
+
+    let hashesAndExpires = {};
+    let settings = {};
+
+    try {
+      [hashesAndExpires, settings] = await Promise.all([
+        collectGroupHashes(config.mainUrl),
+        collectGroupSettings(config.apiUrl)
+      ]);
+    }
+    // eslint-disable-next-line no-unused-vars
+    catch (error) {
+      console.log('skipping: ', config.apiUrl)
+      continue;
+    }
+
     const { groupHashes, expires } = hashesAndExpires;
     const { groupSettings, siteSettings } = settings;
-    
+
     timer.end('Fetching checksums and siteSettings');
     timer.start('URL generation');
-    
+
     let filteredUrlConfigs = config.urls.filter(urlConfig => urlConfig.only);
     if (filteredUrlConfigs.length === 0) {
       filteredUrlConfigs = config.urls;
     }
-    
+
     const urls = getUrlsToScan(filteredUrlConfigs, groupHashes, groupSettings, expires);
     timer.end('URL generation');
-    
+
     timer.start(`Data collection`);
     let inventoryItems = await collectDataFromPages(urls, timer);
     timer.end(`Data collection`);
     timer.end('Processing time');
-    
+
     timer.start(`Compliance checking`);
     const {
       foundItems,
@@ -60,7 +71,7 @@ const configFiles = fs.readdirSync(configDir).filter(file => file.endsWith('.js'
       config.settingsDomainSubstitution
     );
     timer.end(`Compliance checking`);
-    
+
     timer.start(`Report generation`);
     generateReport(
       {
@@ -77,9 +88,9 @@ const configFiles = fs.readdirSync(configDir).filter(file => file.endsWith('.js'
       timer,
     );
     timer.end(`Report generation`);
-    
+
     await trackingDomains;
-    
+
     timer.end('Total time');
   }
 })();

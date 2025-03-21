@@ -65,8 +65,9 @@ function checkItemCompliance(
   let matches;
 
   matches = siteSettingsFlat.filter(setting => {
-    const escapedSettingName = setting.name.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&').replace('\\*', '.*');
-    const nameMatches = new RegExp(`^${escapedSettingName}$`).test(itemId);
+    // This regex might get rid of the environment name in the cookie information.
+    const escapedSettingName = setting.name.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&').replace('\\*', '.*').replace('iframe: ', '');
+    const nameMatches = new RegExp(`^${escapedSettingName}$`).test(itemId)
     return nameMatches;
   });
 
