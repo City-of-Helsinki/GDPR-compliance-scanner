@@ -258,6 +258,10 @@ async function runOnUrlsOneByOne(headlessMode, urlObject, timer) {
   };
 
   timer.end(` - "${name}"`);
+
+  // Close the browser
+  await browser.close();
+
   return result;
 }
 
@@ -304,7 +308,6 @@ async function collectDataFromPages(urls, timer) {
     // eslint-disable-next-line no-unused-vars
     catch (error) {
       console.error("Retry failed", retry_url.url)
-      continue;
     }
   }
 
