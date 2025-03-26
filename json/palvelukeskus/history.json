@@ -124,5 +124,19 @@
       "siteSettingsFlat": 84
     },
     "filename": "report-palvelukeskus-2025-03-26T04:21:26.153Z.json"
+  },
+  {
+    "timeStamp": "2025-03-26T06:43:42.499Z",
+    "summary": {
+      "total": 40,
+      "compliant": 40,
+      "nonCompliant": 0,
+      "warnings": 0,
+      "urls": 9,
+      "failedUrls": 0,
+      "timing": "1m 44.73s",
+      "siteSettingsFlat": 84
+    },
+    "filename": "report-palvelukeskus-2025-03-26T06:43:42.499Z.json"
   }
 ]
