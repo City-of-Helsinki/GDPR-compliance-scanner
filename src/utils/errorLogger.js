@@ -10,7 +10,7 @@ class ErrorLogger {
    * Initializes log directory and file paths
    */
   constructor() {
-    this.logDir = './logs';
+    this.logDir = './reports/logs';
     this.logFile = path.join(this.logDir, 'scan-errors.log');
 
     this.ensureLogDirectory();

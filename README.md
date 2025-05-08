@@ -82,6 +82,7 @@ The generated reports include:
 * `/reports` - Generated HTML reports and assets
   * `/json` - Folder for all json reports
     * `/site_name` - Report data in JSON format
+  * `/logs` - Error logs of scans
 * `/src` - Source code
   * `/collectors` - Data collection modules
   * `/compliance` - Compliance checking logic
