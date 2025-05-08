@@ -398,6 +398,10 @@ table.minimal {
   color: red;
 }
 
+.reports-container {
+  margin-bottom: 4em;
+}
+
 .report-container:not(:last-of-type) {
   border-bottom: 2px solid white;
   padding-bottom: 2em;
@@ -433,4 +437,18 @@ table.minimal {
   font-size: 1em;
   margin-inline: auto;
   margin-top: 1em;
+}
+
+.log-entry {
+  border-bottom: 2px solid white;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  text-wrap: auto;
+  word-break: break-word;
+}
+
+.log-date {
+  color: red;
+  font-weight: bold;
+  font-size: 1.5em;
 }
