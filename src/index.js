@@ -35,6 +35,7 @@ const configFiles = fs.readdirSync(configDir).filter(file => file.endsWith('.js'
     }
     // eslint-disable-next-line no-unused-vars
     catch (error) {
+      console.error('Error:', error.message);
       console.log('skipping: ', config.apiUrl)
       continue;
     }
