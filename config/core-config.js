@@ -124,7 +124,7 @@ const config = {
     {
       only: false,
       nameBase: 'palvelukartta.hel.fi',
-      url: 'https://www.hel.fi/fi/sosiaali-ja-terveyspalvelut/terveydenhoito/kuntoutus-ja-terapiat/jalkaterapia/munkkiniemen-jalkaterapia',
+      url: 'https://www.hel.fi/fi/sosiaali-ja-terveyspalvelut/terveydenhoito/muita-terveyspalveluja/kuntoutus-ja-terapiat/jalkaterapia/munkkiniemen-jalkaterapia',
       actions: [
         {
           type: 'removeElement',
