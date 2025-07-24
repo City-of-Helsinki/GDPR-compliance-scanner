@@ -27,7 +27,6 @@ const GLOBAL_TIMEOUT = 20 * 60 * 1000;
       }
 
       const config = (await import(path.join(configDir, file))).config;
-      const configStartTime = Date.now();
 
       timer.start('Total time');
       timer.start('Processing time');
@@ -107,9 +106,6 @@ const GLOBAL_TIMEOUT = 20 * 60 * 1000;
       await trackingDomains;
 
       timer.end('Total time');
-
-      // eslint-disable-next-line no-console
-      console.log(`✅ Completed processing ${file} in ${((Date.now() - configStartTime) / 1000).toFixed(2)}s`);
     }
     catch (error) {
       console.error(`❌ Error processing ${file}:`, error.message);
@@ -125,8 +121,13 @@ const GLOBAL_TIMEOUT = 20 * 60 * 1000;
 
   // eslint-disable-next-line no-console
   console.log('All configurations processed');
+
+  const totalExecutionTime = ((Date.now() - startTime) / 1000).toFixed(2);
+  const totalExecutionMinutes = Math.floor(totalExecutionTime / 60);
+  const totalExecutionSeconds = (totalExecutionTime % 60).toFixed(2);
+
   // eslint-disable-next-line no-console
-  console.log(`Total execution time: ${((Date.now() - startTime) / 1000).toFixed(2)}s`);
+  console.log(`Total execution time: ${totalExecutionMinutes}m ${totalExecutionSeconds}s`);
 
   // Ensure the process exits cleanly.
   process.exit(0);
