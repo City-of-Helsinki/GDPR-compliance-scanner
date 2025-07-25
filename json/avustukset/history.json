@@ -670,5 +670,19 @@
       "siteSettingsFlat": 58
     },
     "filename": "report-avustukset-2025-07-24T07:59:19.696Z.json"
+  },
+  {
+    "timeStamp": "2025-07-25T04:26:20.958Z",
+    "summary": {
+      "total": 44,
+      "compliant": 44,
+      "nonCompliant": 0,
+      "warnings": 0,
+      "urls": 15,
+      "failedUrls": 0,
+      "timing": "2m 43.85s",
+      "siteSettingsFlat": 58
+    },
+    "filename": "report-avustukset-2025-07-25T04:26:20.958Z.json"
   }
 ]
