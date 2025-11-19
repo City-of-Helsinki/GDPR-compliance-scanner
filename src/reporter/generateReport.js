@@ -12,7 +12,7 @@ import fs from 'fs';
  * @param {Object} groupSettings - Settings for different cookie groups
  * @param {Object} siteSettings - Raw site settings data
  * @param {Array} urls - Array of URLs that were scanned
- * @param {Array} inventoryItems - Collection of storage items found during scanning
+ * @param {Object} inventoryItems - Collection of storage items found during scanning
  * @param {Array} foundItems - Array of compliance check results
  * @param {Array} siteSettingsFlat - Flattened array of site settings
  * @param {Object} timer - Timer instance with performance data
@@ -100,7 +100,7 @@ function generateReport(
 
   // Check if the folder exists and update the folders.json
   const folderData = fs.existsSync(foldersFile) ? JSON.parse(fs.readFileSync(foldersFile, 'utf-8')) : { folders: [] };
-  
+
   // Add new folder if it's not already in the list
   if (!folderData.folders.includes(config.name)) {
     folderData.folders.push(config.name);
