@@ -1510,5 +1510,19 @@
       "siteSettingsFlat": 102
     },
     "filename": "report-helfi_core-2025-11-22T04:19:48.419Z.json"
+  },
+  {
+    "timeStamp": "2025-11-23T04:26:47.849Z",
+    "summary": {
+      "total": 140,
+      "compliant": 137,
+      "nonCompliant": 3,
+      "warnings": 0,
+      "urls": 21,
+      "failedUrls": 0,
+      "timing": "4m 30.55s",
+      "siteSettingsFlat": 102
+    },
+    "filename": "report-helfi_core-2025-11-23T04:26:47.849Z.json"
   }
 ]
