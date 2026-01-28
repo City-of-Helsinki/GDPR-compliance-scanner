@@ -101,6 +101,10 @@ The report interface uses:
 
 Key UI components referenced from:
 
+## Updating the Playwright version
+
+Update the Playwright version to [package.json](package.json), [compose.yaml](compose.yaml) and [scanner.yml](.github/workflows/scanner.yml). You can check the latest version from [NPM's Playwright page](https://www.npmjs.com/package/@playwright/test).
+
 ## Licence
 
 [MIT License](LICENCE)
