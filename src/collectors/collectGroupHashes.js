@@ -15,7 +15,9 @@ async function collectGroupHashes(url) {
   try {
     // Launch the browser
     browser = await chromium.launch({ headless: true });
-    context = await browser.newContext();
+    context = await browser.newContext({
+      bypassCSP: true,
+    });
 
     // Set up the page
     const page = await context.newPage();
