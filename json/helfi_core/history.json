@@ -2028,5 +2028,19 @@
       "siteSettingsFlat": 106
     },
     "filename": "report-helfi_core-2026-02-26T04:51:12.488Z.json"
+  },
+  {
+    "timeStamp": "2026-02-27T04:49:02.354Z",
+    "summary": {
+      "total": 139,
+      "compliant": 139,
+      "nonCompliant": 0,
+      "warnings": 0,
+      "urls": 21,
+      "failedUrls": 0,
+      "timing": "4m 27.03s",
+      "siteSettingsFlat": 106
+    },
+    "filename": "report-helfi_core-2026-02-27T04:49:02.354Z.json"
   }
 ]
