@@ -13,6 +13,14 @@ The website should use HDS Cookie Banner
 * Checks compliance against HDS cookie banner site settings
 * Generates interactive HTML reports with charts and sortable tables
 
+## Requirements
+
+You need to have these applications installed to operate on all environments:
+
+- [Docker](https://github.com/druidfi/guidelines/blob/master/docs/docker.md)
+- [Stonehenge](https://github.com/druidfi/stonehenge)
+- For the new person: Your SSH public key needs to be added to servers
+
 ## Installation
 
 ```bash
