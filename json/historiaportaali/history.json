@@ -1,0 +1,16 @@
+[
+  {
+    "timeStamp": "2026-04-01T12:11:22.298Z",
+    "summary": {
+      "total": 20,
+      "compliant": 20,
+      "nonCompliant": 0,
+      "warnings": 0,
+      "urls": 12,
+      "failedUrls": 0,
+      "timing": "2m 8.67s",
+      "siteSettingsFlat": 30
+    },
+    "filename": "report-historiaportaali-2026-04-01T12:11:22.298Z.json"
+  }
+]
