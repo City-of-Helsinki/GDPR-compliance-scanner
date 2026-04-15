@@ -1,0 +1,4184 @@
+{
+  "timeStamp": "2026-04-15T05:16:35.674Z",
+  "summary": {
+    "total": 20,
+    "compliant": 20,
+    "nonCompliant": 0,
+    "warnings": 0,
+    "urls": 12,
+    "failedUrls": 0,
+    "timing": "2m 23.98s",
+    "siteSettingsFlat": 30
+  },
+  "config": {
+    "mainUrl": "https://historia.hel.fi/fi",
+    "settingsDomainSubstitution": "https://historia.hel./fi",
+    "apiUrl": "https://historia.hel.fi/en/api/cookie-banner?cacheBuster=1776230051693",
+    "urls": [
+      {
+        "only": false,
+        "nameBase": "Frontpage",
+        "url": "https://historia.hel.fi/fi",
+        "actions": [],
+        "variants": [
+          "none",
+          "required",
+          "all"
+        ],
+        "headless": true,
+        "pause": false
+      },
+      {
+        "only": false,
+        "nameBase": "Search",
+        "url": "https://historia.hel.fi/fi/haku",
+        "actions": [],
+        "variants": [
+          "none",
+          "required",
+          "all"
+        ],
+        "headless": true,
+        "pause": false
+      },
+      {
+        "only": false,
+        "nameBase": "School register search",
+        "url": "https://historia.hel.fi/fi/koulurekisteri",
+        "actions": [],
+        "variants": [
+          "none",
+          "required",
+          "all"
+        ],
+        "headless": true,
+        "pause": false
+      },
+      {
+        "only": false,
+        "nameBase": "School page",
+        "url": "https://historia.hel.fi/fi/koulurekisteri/a-kallgrens-handelsskola",
+        "actions": [],
+        "variants": [
+          "none",
+          "required",
+          "all"
+        ],
+        "headless": true,
+        "pause": false
+      }
+    ]
+  },
+  "groupHashes": {
+    "essential": {
+      "checksum": "33a5a09e",
+      "timestamp": 1776230054209
+    },
+    "admin": {
+      "checksum": "a3a1bc0e",
+      "timestamp": 1776230054209
+    },
+    "preferences": {
+      "checksum": "dbef4703",
+      "timestamp": 1776230054209
+    },
+    "statistics": {
+      "checksum": "2a405896",
+      "timestamp": 1776230054209
+    }
+  },
+  "groupSettings": [
+    {
+      "groupId": "essential",
+      "required": true,
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "host": "historia.hel.fi",
+          "storageType": 1,
+          "expiration": "100 days"
+        },
+        {
+          "name": "helfi-settings",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "ac71c42e1e3c30394169b7441b18f031",
+          "host": "www.hel.fi",
+          "storageType": 1,
+          "expiration": "Session"
+        }
+      ]
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "cookies": [
+        {
+          "name": "SSESS*",
+          "host": "historia.hel.fi",
+          "storageType": 1,
+          "expiration": "23 days"
+        },
+        {
+          "name": "Drupal.gin.sidebarExpanded.desktop",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "Drupal.gin.sidebarExpanded.mobile",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "Drupal.gin.sidebarWidth",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "Drupal.gin.darkmode",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "Drupal.toolbar.subtrees.*",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "Drupal.off-canvas.css.*",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "Drupal.toolbar.toolbarState",
+          "host": "historia.hel.fi",
+          "storageType": 3,
+          "expiration": "Session"
+        },
+        {
+          "name": "escapeAdminPath",
+          "host": "historia.hel.fi",
+          "storageType": 3,
+          "expiration": "Session"
+        },
+        {
+          "name": "editoria11yResultCount",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "ed11ySeen",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        }
+      ]
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "cookies": [
+        {
+          "name": "VISITOR_INFO1_LIVE",
+          "host": "youtube.com",
+          "storageType": 1,
+          "expiration": "180 days"
+        },
+        {
+          "name": "CONSENT",
+          "host": "youtube.com",
+          "storageType": 1,
+          "expiration": "5947 days, 15 hours"
+        },
+        {
+          "name": "t3D",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "tnsApp",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "tADe",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "tADu",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "tAE",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "tC",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "tMQ",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "tPL",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "tTDe",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "tTDu",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "tTE",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        },
+        {
+          "name": "tTf",
+          "host": "historia.hel.fi",
+          "storageType": 2,
+          "expiration": "-"
+        }
+      ]
+    },
+    {
+      "groupId": "statistics",
+      "required": false,
+      "cookies": [
+        {
+          "name": "_pk_id.*",
+          "host": "historia.hel.fi",
+          "storageType": 1,
+          "expiration": "393 days"
+        },
+        {
+          "name": "_pk_ses.*",
+          "host": "historia.hel.fi",
+          "storageType": 1,
+          "expiration": "1 hour"
+        }
+      ]
+    }
+  ],
+  "siteSettings": {
+    "languages": [
+      {
+        "code": "fi",
+        "name": "Finnish",
+        "direction": "ltr"
+      },
+      {
+        "code": "sv",
+        "name": "Swedish",
+        "direction": "ltr"
+      },
+      {
+        "code": "en",
+        "name": "English",
+        "direction": "ltr"
+      }
+    ],
+    "siteName": "historia.hel.fi",
+    "cookieName": "helfi-cookie-consents",
+    "monitorInterval": 500,
+    "remove": true,
+    "fallbackLanguage": "en",
+    "requiredGroups": [
+      {
+        "groupId": "essential",
+        "title": {
+          "fi": "Välttämättömät toiminnalliset evästeet",
+          "sv": "Nödvändiga funktionella cookies",
+          "en": "Essential cookies"
+        },
+        "description": {
+          "fi": "Välttämättömät evästeet varmistavat, että sivusto toimii kunnolla. Välttämättömiin evästeisiin ei tarvita suostumusta. Nämä evästeet mahdollistavat perustoimintoja, kuten sivulla siirtymisen ja sivuston suojattujen alueiden käytön.",
+          "sv": "Nödvändiga kakor säkerställer att webbplatsen fungerar ordentligt. För nödvändiga kakor behövs inte samtycke. Dessa kakor möjliggör grundläggande funktioner såsom sidnavigering och åtkomst till skyddade områden på webbplatsen.",
+          "en": "Essential cookies ensure that the website functions correctly. Essential cookies do not require consent. These cookies enable basic functions, such as site navigation and access to protected areas of the website."
+        },
+        "cookies": [
+          {
+            "name": "helfi-cookie-consents",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "description": {
+              "fi": "Sivusto käyttää tätä evästettä tietojen tallentamiseen siitä, ovatko kävijät antaneet hyväksyntänsä tai kieltäytyneet evästeiden käytöstä.",
+              "sv": "Cookie möjliggör hantering av cookies på webbplatsen.",
+              "en": "Used by change-me.hel.fi Drupal to store information about whether visitors have given or declined the use of cookie categories used on the historia.hel.fi site."
+            },
+            "expiration": {
+              "fi": "100 päivää",
+              "sv": "100 dagar",
+              "en": "100 days"
+            },
+            "ype": 1
+          },
+          {
+            "name": "helfi-settings",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Sivusto käyttää tätä tietuetta tietojen tallentamiseen siitä, mitä poikkeusilmoituksia on suljettu ja mikä on avattavien sisältöalueiden tila.",
+              "sv": "Används av historia.hel.fi Drupal för att lagra information om stängda meddelanden och accordions' tillstånd.",
+              "en": "Used by historia.hel.fi Drupal to store information about closed announcements and accordions' state."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "ac71c42e1e3c30394169b7441b18f031",
+            "host": "www.hel.fi",
+            "storageType": 1,
+            "description": {
+              "fi": "Käytetään www.hel.fi-palvelimen kuormantasaajassa varmistamaan, että käyttäjä ohjataan aina samaan palvelininstanssiin käynnissä olevan istunnon aikana.",
+              "sv": "Used in the www.hel.fi server load balancer to ensure that the user is always directed to the same server instance during the current session.",
+              "en": "Används i www.hel.fi-serverns belastningsutjämnare för att säkerställa att användaren alltid styrs till samma serverinstans under en pågående session."
+            },
+            "expiration": {
+              "fi": "Istunto",
+              "sv": "Session",
+              "en": "Session"
+            }
+          }
+        ]
+      },
+      {
+        "groupId": "admin",
+        "title": {
+          "fi": "Sisällöntuottajien toiminnalliset evästeet",
+          "sv": "Redaktörernas funktionella cookies",
+          "en": "Editors' functional cookies"
+        },
+        "description": {
+          "fi": "Sisällöntuottajien välttämättömät toiminnalliset evästeet tallennetaan ainoastaan kirjautuneille sisällöntuottajille. Ne mahdollistavat sivuston muokkaustoiminnot.",
+          "sv": "Nödvändiga funktionella kakor för innehållsproducenter sparas endast hos inloggade innehållsproducenter. De möjliggör funktioner för redigering av webbplatsen.",
+          "en": "The essential functional cookies for content providers are only saved for content providers who are signed in. They enable the editing of the website."
+        },
+        "cookies": [
+          {
+            "name": "SSESS*",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "description": {
+              "fi": "Sisällönhallintajärjestelmän toimintaan liittyvä eväste.",
+              "sv": "En cookie relaterad till driften av innehållshanteringssystemet.",
+              "en": "A cookie related to the operation of the content management system."
+            },
+            "expiration": {
+              "fi": "23 päivää",
+              "sv": "23 dagar",
+              "en": "23 days"
+            }
+          },
+          {
+            "name": "Drupal.gin.sidebarExpanded.desktop",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Tallentaa tiedon sisällöntuottajan käyttöliittymän sivupalkin näkyvyydestä työpöytänäkymässä.",
+              "sv": "Lagrar om admin-sidopanelen är expanderad eller kollapsad på skrivbordet när du är inloggad som redaktör på change-me.hel.fi.",
+              "en": "Stores whether the admin sidebar is expanded or collapsed on desktop when logged in as an editor on change-me.hel.fi."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "Drupal.gin.sidebarExpanded.mobile",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Tallentaa tiedon sisällöntuottajan käyttöliittymän sivupalkin näkyvyydestä mobiilinäkymässä.",
+              "sv": "Lagrar om admin-sidopanelen är expanderad eller kollapsad på mobil när du är inloggad som redaktör på change-me.hel.fi.",
+              "en": "Stores whether the admin sidebar is expanded or collapsed on mobile when logged in as an editor on change-me.hel.fi."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "Drupal.gin.sidebarWidth",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Tallentaa tiedon sisällöntuottajan käyttöliittymän sivupalkin leveydestä.",
+              "sv": "Lagrar admin-sidopanelens bredd för en inloggad redaktör på hel.fi.",
+              "en": "Stores the width of the admin sidebar for a logged-in editor on hel.fi."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "Drupal.gin.darkmode",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Tallentaa tiedon sisällöntuottajan valitsemasta \"tumma tila\"-asetuksesta.",
+              "sv": "Lagrar användarens mörkt läge-inställning i admin-temat när du är inloggad som redaktör på change-me.hel.fi.",
+              "en": "Stores the user's dark mode preference in the admin theme when logged in as an editor on change-me.hel.fi."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "Drupal.toolbar.subtrees.*",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Tallentaa sisällöntuottajan näkymissä alivalikoiden tilan (laajennettu tai kutistettu), jotta se säilyy yhdenmukaisena sivulatausten välillä.",
+              "sv": "Lagrar tillståndet för expanderade eller kollapsade undermenyer i Drupals admin-verktygsfält för en inloggad redaktör, vilket säkerställer konsekvens mellan sidladdningar.",
+              "en": "Stores the expanded or collapsed state of submenus in the Drupal admin toolbar for a logged-in editor, ensuring consistency across page loads."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "Drupal.off-canvas.css.*",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Tallentaa sisällöntuottajan käyttämän wysiwyg-editorin tyylit välimuistiin varmistaakseen viimeisimpien CSS-tyylien latauksen.",
+              "sv": "Lagrar cachelagrad CKEditor CSS i localStorage för en inloggad redaktör, med en nyckel som använder en cache-brytande fråga för att säkerställa att den senaste CSS-filen laddas.",
+              "en": "Stores cached CKEditor CSS in localStorage for a logged-in editor, using a key with a cache-busting query to ensure the latest CSS is loaded."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "Drupal.toolbar.toolbarState",
+            "host": "historia.hel.fi",
+            "storageType": 3,
+            "description": {
+              "fi": "Tallentaa sisällöntuottajan hallintatyökalupalkin orientaation, aktiivisen välilehden ja laajennustilan.",
+              "sv": "Lagrar tillståndet för admin-verktygsfältet för en inloggad redaktör, inklusive dess orientering, aktiva flik och expanderade tillstånd.",
+              "en": "Stores the state of the admin toolbar for a logged-in editor, including its orientation, active tab and state of expansion."
+            },
+            "expiration": {
+              "fi": "Istunto",
+              "sv": "Session",
+              "en": "Session"
+            }
+          },
+          {
+            "name": "escapeAdminPath",
+            "host": "historia.hel.fi",
+            "storageType": 3,
+            "description": {
+              "fi": "Tallentaa URL-osoitteen, jota käytetään ohjaamaan kirjautunut sisällöntuottaja hallintaliittymästä takaisin pääsivustolle.",
+              "sv": "Lagrar URL för att omdirigera en inloggad redaktör från admin-gränssnittet tillbaka till huvudsidan.",
+              "en": "Stores the URL to redirect a logged-in editor from the admin interface back to the main site."
+            },
+            "expiration": {
+              "fi": "Istunto",
+              "sv": "Session",
+              "en": "Session"
+            }
+          },
+          {
+            "name": "editoria11yResultCount",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Tallentaa löydettyjen saavutettavuusongelmien määrän sisällöntuottajalle, auttaen seuraamaan ja korjaamaan ne.",
+              "sv": "Spårar antalet tillgänglighetsproblem som hittats på specifika sidor för en inloggad redaktör, vilket hjälper till att övervaka och åtgärda dem.",
+              "en": "Tracks the number of accessibility issues found on specific pages for a logged-in editor, helping monitor and address them."
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "ed11ySeen",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Tallentaa sisällöntuottajan näkemät saavutettavuusongelmat, jotta vältetään ongelmien kaksoisilmoitukset.",
+              "sv": "Spårar vilka tillgänglighetsproblem en inloggad redaktör redan har sett för att undvika dubbla aviseringar.",
+              "en": "Tracks which accessibility issues a logged-in editor has already seen to avoid duplicate notifications."
+            },
+            "expiration": "-"
+          }
+        ]
+      }
+    ],
+    "optionalGroups": [
+      {
+        "groupId": "preferences",
+        "title": {
+          "fi": "Personointi",
+          "sv": "Preferens",
+          "en": "Preference"
+        },
+        "description": {
+          "fi": "Mieltymysevästeet mukauttavat sivuston ulkoasua ja toimintaa käyttäjän aiemman käytön perusteella.",
+          "sv": "Preferenscookies ändrar webbplatsens utseende och funktioner enligt användarens tidigare användning.",
+          "en": "Preference cookies modify the visuals and functions of the website based on the user's previous sessions."
+        },
+        "cookies": [
+          {
+            "name": "VISITOR_INFO1_LIVE",
+            "host": "youtube.com",
+            "storageType": 1,
+            "description": {
+              "fi": "YouTuben eväste valitsee yhteyden nopeuden mukaan, joko vanhan tai uuden videosoittimen.",
+              "sv": "YouTubes kaka väljer antingen den nya eller gamla videospelaren enligt förbindelsens hastighet.",
+              "en": "The YouTube cookie selects the old or new video player depending on the connection speed."
+            },
+            "expiration": {
+              "fi": "180 päivää",
+              "sv": "180 dagar",
+              "en": "180 days"
+            }
+          },
+          {
+            "name": "CONSENT",
+            "host": "youtube.com",
+            "storageType": 1,
+            "description": {
+              "fi": "Googlen eväste tallentaa kävijän evästehyväskynnän.",
+              "sv": "Används av Google för att lagra inställningar för användarens samtycke.",
+              "en": "Used by Google to store user consent preferences."
+            },
+            "expiration": {
+              "fi": "5947 päivää, 15 tuntia",
+              "sv": "5947 dagar, 15 timmar",
+              "en": "5947 days, 15 hours"
+            }
+          },
+          {
+            "name": "t3D",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Kuvagallerian toiminnallisuudet",
+              "sv": "Funktioner i bildgalleriet",
+              "en": "Image gallery functionalities"
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "tnsApp",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Kuvagallerian toiminnallisuudet: käyttäjän selainversio, mahdollistaa kuvagallerian toiminnallisuuden käyttäjän selainversioon",
+              "sv": "Funktioner i bildgalleri: användarens webbläsartyp, gör det möjligt för bildgalleriet att fungera på olika webbläsare",
+              "en": "Image gallery functionalities: user's browser version, makes it possible for the image gallery to work correctly un users browser"
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "tADe",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Kuvagallerian toiminnallisuus: animaation ajoitus",
+              "sv": "Funktioner i bildgalleri: animering",
+              "en": "Image gallery functionalities: animation"
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "tADu",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Kuvagallerian toiminnallisuus: animaation kesto",
+              "sv": "Funktioner i bildgalleri: tid för animering",
+              "en": "Image gallery functionalities: time for animation"
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "tAE",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Kuvagallerian toiminnallisuus: animaation lopetuksen asetus",
+              "sv": "Funktioner i bildgalleri: för att stoppa animering",
+              "en": "Image gallery functionalities: setting to stop animation"
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "tC",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Kuvagallerian toiminnallisuus: laskenta",
+              "sv": "Funktioner i bildgalleri: beräkning",
+              "en": "Image gallery functionalities: calculation"
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "tMQ",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Kuvagallerian toiminnallisuus",
+              "sv": "Funktioner i bildgalleri",
+              "en": "Image gallery functionalities"
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "tPL",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Kuvagallerian toiminnallisuus",
+              "sv": "Funktioner i bildgalleri",
+              "en": "Image gallery functionalities"
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "tTDe",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Kuvagallerian toiminnallisuus",
+              "sv": "Funktioner i bildgalleri",
+              "en": "Image gallery functionalities"
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "tTDu",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Kuvagallerian toiminnallisuus",
+              "sv": "Funktioner i bildgalleri",
+              "en": "Image gallery functionalities"
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "tTE",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Kuvagallerian toiminnallisuus",
+              "sv": "Funktioner i bildgalleri",
+              "en": "Image gallery functionalities"
+            },
+            "expiration": "-"
+          },
+          {
+            "name": "tTf",
+            "host": "historia.hel.fi",
+            "storageType": 2,
+            "description": {
+              "fi": "Kuvagallerian toiminnallisuus",
+              "sv": "Funktioner i bildgalleri",
+              "en": "Image gallery functionalities"
+            },
+            "expiration": "-"
+          }
+        ]
+      },
+      {
+        "groupId": "statistics",
+        "title": {
+          "fi": "Tilastointi",
+          "sv": "Statistik",
+          "en": "Statistics"
+        },
+        "description": {
+          "fi": "Tilastointievästeiden keräämää tietoa käytetään verkkosivuston kehittämiseen.",
+          "sv": "De uppgifter statistikkakorna samlar in används för att utveckla webbplatsen.",
+          "en": "The information collected by statistics cookies is used for developing the website."
+        },
+        "cookies": [
+          {
+            "name": "_pk_id.*",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "description": {
+              "fi": "Matomo-tilastointijärjestelmän eväste.",
+              "sv": "Matomo-statistiksystemets kaka samlar information om hur webbplatsen används.",
+              "en": "Matomo Analytics - used to store a few details about the user such as the unique visitor ID"
+            },
+            "expiration": {
+              "fi": "393 päivää",
+              "sv": "393 dagar",
+              "en": "393 days"
+            }
+          },
+          {
+            "name": "_pk_ses.*",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "description": {
+              "fi": "Matomo-kävijäseurannan eväste yhdistää istunnon aikana suoritetut toiminnot (esim. sivun katselut, lataukset ja tapahtumat) yksittäiseen vierailuun.",
+              "sv": "Kakan för Matomo-besökaruppföljningen kopplar ihop aktiviteter som skett under en session (t.ex. sidvisningar, nedladdningar och aktiviteter) med ett enskilt besök.",
+              "en": "Matomo Analytics - Used to link actions performed during the session (e.g., page views, downloads, events) to a unique visit, thereby allowing Matomo to accurately attribute these actions to a single session."
+            },
+            "expiration": {
+              "fi": "1 tunti",
+              "sv": "1 timme",
+              "en": "1 hour"
+            }
+          }
+        ]
+      }
+    ],
+    "robotCookies": [
+      {
+        "name": "helfi_accordions_open",
+        "storageType": 1
+      },
+      {
+        "name": "cookiehub",
+        "storageType": 1
+      },
+      {
+        "name": "cookie-agreed-version",
+        "storageType": 1
+      },
+      {
+        "name": "cookie-agreed-categories",
+        "storageType": 1
+      },
+      {
+        "name": "cookie-agreed",
+        "storageType": 1
+      }
+    ],
+    "groupsWhitelistedForApi": [
+      "chat"
+    ],
+    "translations": {
+      "bannerAriaLabel": {
+        "fi": "Evästeasetukset",
+        "sv": "Inställningar för kakor",
+        "en": "Cookie settings"
+      },
+      "heading": {
+        "fi": "Evästeet {{siteName}}-sivustolla",
+        "sv": "Kakor på webbplatsen {{siteName}}",
+        "en": "Cookies on {{siteName}}"
+      },
+      "description": {
+        "fi": "Tämä sivusto käyttää välttämättömiä evästeitä sivun perustoimintojen ja suorituskyvyn varmistamiseksi. Lisäksi käytämme kohdennusevästeitä käyttäjäkokemuksen parantamiseksi, analytiikkaan ja yksilöidyn sisällön näyttämiseen.",
+        "sv": "Denna webbplats använder obligatoriska kakor för att säkerställa de grundläggande funktionerna och prestandan. Dessutom använder vi inriktningskakor för bättre användarupplevelse, analytik och individualiserat innehåll.",
+        "en": "This website uses required cookies to ensure the basic functionality and performance. In addition, we use targeting cookies to improve the user experience, perform analytics and display personalised content."
+      },
+      "showDetails": {
+        "fi": "Näytä yksityiskohdat",
+        "sv": "Visa detaljer",
+        "en": "Show details"
+      },
+      "hideDetails": {
+        "fi": "Piilota yksityiskohdat",
+        "sv": "Stänga detaljer",
+        "en": "Hide details"
+      },
+      "formHeading": {
+        "fi": "Tietoa sivustolla käytetyistä evästeistä",
+        "sv": "Information om kakor som används på webbplatsen",
+        "en": "About the cookies used on the website"
+      },
+      "formText": {
+        "fi": "Sivustolla käytetyt evästeet on luokiteltu käyttötarkoituksen mukaan. Alla voit lukea eri luokista ja sallia tai kieltää evästeiden käytön.",
+        "sv": "Kakorna som används på webbplatsen har klassificerats enligt användningsändamål. Du kan läsa om de olika klasserna och acceptera eller förbjuda användningen av kakor.",
+        "en": "The cookies used on the website have been classified according to their intended use. Below, you can read about the various categories and accept or reject the use of cookies."
+      },
+      "highlightedGroup": {
+        "fi": "Sinun on hyväksyttävä tämä kategoria, jotta voit näyttää valitsemasi sisällön.",
+        "sv": "Du måste acceptera den här kategorin för att visa innehållet du har valt.",
+        "en": "You need to accept this category to display the content you have selected."
+      },
+      "highlightedGroupAria": {
+        "fi": "Hyvä tietää kategorialle: {{title}}",
+        "sv": "Bra att veta för kategorin: {{title}}",
+        "en": "Good to know for category: {{title}}"
+      },
+      "showCookieSettings": {
+        "fi": "Näytä evästeasetukset",
+        "sv": "Visa kakinställningarna",
+        "en": "Show cookie settings"
+      },
+      "hideCookieSettings": {
+        "fi": "Piilota evästeasetukset",
+        "sv": "Stänga kakinställningarna",
+        "en": "Hide cookie settings"
+      },
+      "acceptedAt": {
+        "fi": "Olet hyväksynyt tämän kategorian: {{date}} klo {{time}}.",
+        "sv": "Du har accepterat denna kategori: {{date}} kl. {{time}}.",
+        "en": "You have accepted this category: {{date}} at {{time}}."
+      },
+      "tableHeadingsName": {
+        "fi": "Nimi",
+        "sv": "Namn",
+        "en": "Name"
+      },
+      "tableHeadingsHostName": {
+        "fi": "Evästeen asettaja",
+        "sv": "Den som lagrat kakan",
+        "en": "Cookie set by"
+      },
+      "tableHeadingsDescription": {
+        "fi": "Käyttötarkoitus",
+        "sv": "Användning",
+        "en": "Purpose of use"
+      },
+      "tableHeadingsExpiration": {
+        "fi": "Voimassaoloaika",
+        "sv": "Giltighetstid",
+        "en": "Period of validity"
+      },
+      "tableHeadingsType": {
+        "fi": "Tyyppi",
+        "sv": "Typ",
+        "en": "Type"
+      },
+      "approveAllConsents": {
+        "fi": "Hyväksy kaikki evästeet",
+        "sv": "Acceptera alla kakor",
+        "en": "Accept all cookies"
+      },
+      "approveRequiredAndSelectedConsents": {
+        "fi": "Hyväksy valitut evästeet",
+        "sv": "Acceptera valda kakor",
+        "en": "Accept selected cookies"
+      },
+      "approveOnlyRequiredConsents": {
+        "fi": "Hyväksy vain välttämättömät evästeet",
+        "sv": "Acceptera endast nödvändiga",
+        "en": "Accept required cookies only"
+      },
+      "settingsSaved": {
+        "fi": "Asetukset tallennettu!",
+        "sv": "Inställningar sparade!",
+        "en": "Settings saved!"
+      },
+      "notificationAriaLabel": {
+        "fi": "Ilmoitus",
+        "sv": "Meddelande",
+        "en": "Annoucement"
+      },
+      "storageType1": {
+        "fi": "Eväste",
+        "sv": "Kakan",
+        "en": "Cookie"
+      },
+      "storageType2": "localStorage",
+      "storageType3": "sessionStorage",
+      "storageType4": "IndexedDB",
+      "storageType5": "Cache Storage"
+    }
+  },
+  "urls": [
+    {
+      "name": "Frontpage with none accepted",
+      "url": "https://historia.hel.fi/fi",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%7D%7D",
+          "domain": "historia.hel.fi",
+          "path": "/",
+          "expires": 1784870054,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "Frontpage with required accepted",
+      "url": "https://historia.hel.fi/fi",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+          "domain": "historia.hel.fi",
+          "path": "/",
+          "expires": 1784870054,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [
+        "essential",
+        "admin",
+        "essential",
+        "admin",
+        "essential",
+        "admin"
+      ],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "Frontpage with all accepted",
+      "url": "https://historia.hel.fi/fi",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22dbef4703%22%2C%22timestamp%22%3A1776230054209%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%222a405896%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+          "domain": "historia.hel.fi",
+          "path": "/",
+          "expires": 1784870054,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics"
+      ],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "Search with none accepted",
+      "url": "https://historia.hel.fi/fi/haku",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%7D%7D",
+          "domain": "historia.hel.fi",
+          "path": "/",
+          "expires": 1784870054,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "Search with required accepted",
+      "url": "https://historia.hel.fi/fi/haku",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+          "domain": "historia.hel.fi",
+          "path": "/",
+          "expires": 1784870054,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [
+        "essential",
+        "admin",
+        "essential",
+        "admin",
+        "essential",
+        "admin"
+      ],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "Search with all accepted",
+      "url": "https://historia.hel.fi/fi/haku",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22dbef4703%22%2C%22timestamp%22%3A1776230054209%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%222a405896%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+          "domain": "historia.hel.fi",
+          "path": "/",
+          "expires": 1784870054,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics"
+      ],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "School register search with none accepted",
+      "url": "https://historia.hel.fi/fi/koulurekisteri",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%7D%7D",
+          "domain": "historia.hel.fi",
+          "path": "/",
+          "expires": 1784870054,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "School register search with required accepted",
+      "url": "https://historia.hel.fi/fi/koulurekisteri",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+          "domain": "historia.hel.fi",
+          "path": "/",
+          "expires": 1784870054,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [
+        "essential",
+        "admin",
+        "essential",
+        "admin",
+        "essential",
+        "admin"
+      ],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "School register search with all accepted",
+      "url": "https://historia.hel.fi/fi/koulurekisteri",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22dbef4703%22%2C%22timestamp%22%3A1776230054209%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%222a405896%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+          "domain": "historia.hel.fi",
+          "path": "/",
+          "expires": 1784870054,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics"
+      ],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "School page with none accepted",
+      "url": "https://historia.hel.fi/fi/koulurekisteri/a-kallgrens-handelsskola",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%7D%7D",
+          "domain": "historia.hel.fi",
+          "path": "/",
+          "expires": 1784870054,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "School page with required accepted",
+      "url": "https://historia.hel.fi/fi/koulurekisteri/a-kallgrens-handelsskola",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+          "domain": "historia.hel.fi",
+          "path": "/",
+          "expires": 1784870054,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [
+        "essential",
+        "admin",
+        "essential",
+        "admin",
+        "essential",
+        "admin"
+      ],
+      "headless": true,
+      "pause": false
+    },
+    {
+      "name": "School page with all accepted",
+      "url": "https://historia.hel.fi/fi/koulurekisteri/a-kallgrens-handelsskola",
+      "actions": [],
+      "cookies": [
+        {
+          "name": "helfi-cookie-consents",
+          "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22dbef4703%22%2C%22timestamp%22%3A1776230054209%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%222a405896%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+          "domain": "historia.hel.fi",
+          "path": "/",
+          "expires": 1784870054,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Strict"
+        }
+      ],
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics"
+      ],
+      "headless": true,
+      "pause": false
+    }
+  ],
+  "inventoryItems": [
+    {
+      "name": "Frontpage with none accepted",
+      "groups": [],
+      "url": "https://historia.hel.fi/fi",
+      "frames": [
+        {
+          "frameUrl": "https://historia.hel.fi/fi",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%7D%7D",
+              "domain": "historia.hel.fi",
+              "path": "/",
+              "expires": 1784870054,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1776230065,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "historia.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "historia.hel.fi",
+              "hits": 39,
+              "certificate": {
+                "subjectName": "hel.fi",
+                "validFrom": 1758026938,
+                "validTo": 1789562938,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            },
+            {
+              "domain": "webanalytics.digiaiiris.com",
+              "hits": 6,
+              "certificate": null
+            },
+            {
+              "domain": "",
+              "hits": 1,
+              "certificate": null
+            }
+          ],
+          "frameTimestamp": 1776230065,
+          "compliant": true
+        }
+      ],
+      "allCompliant": true
+    },
+    {
+      "name": "Frontpage with required accepted",
+      "groups": [
+        "essential",
+        "admin",
+        "essential",
+        "admin",
+        "essential",
+        "admin"
+      ],
+      "url": "https://historia.hel.fi/fi",
+      "frames": [
+        {
+          "frameUrl": "https://historia.hel.fi/fi",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+              "domain": "historia.hel.fi",
+              "path": "/",
+              "expires": 1784870054,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1776230077,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "historia.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "historia.hel.fi",
+              "hits": 39,
+              "certificate": {
+                "subjectName": "hel.fi",
+                "validFrom": 1758026938,
+                "validTo": 1789562938,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            },
+            {
+              "domain": "webanalytics.digiaiiris.com",
+              "hits": 6,
+              "certificate": null
+            },
+            {
+              "domain": "",
+              "hits": 1,
+              "certificate": null
+            }
+          ],
+          "frameTimestamp": 1776230077,
+          "compliant": true
+        }
+      ],
+      "allCompliant": true
+    },
+    {
+      "name": "Frontpage with all accepted",
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics"
+      ],
+      "url": "https://historia.hel.fi/fi",
+      "frames": [
+        {
+          "frameUrl": "https://historia.hel.fi/fi",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22dbef4703%22%2C%22timestamp%22%3A1776230054209%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%222a405896%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+              "domain": "historia.hel.fi",
+              "path": "/",
+              "expires": 1784870054,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1776230089,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "historia.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "_pk_id.903.5937",
+              "value": "8c509cfcd60e4b21.1776230080.",
+              "domain": "historia.hel.fi",
+              "path": "/",
+              "expires": 1810185280,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Lax",
+              "frameTimestamp": 1776230089,
+              "expirationText": "393 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "statistics",
+                    "required": false,
+                    "name": "_pk_id.*",
+                    "host": "historia.hel.fi",
+                    "storageType": 1,
+                    "expiration": "393 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "_pk_ses.903.5937",
+              "value": "1",
+              "domain": "historia.hel.fi",
+              "path": "/",
+              "expires": 1776231879,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Lax",
+              "frameTimestamp": 1776230089,
+              "expirationText": "30 minutes",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "statistics",
+                    "required": false,
+                    "name": "_pk_ses.*",
+                    "host": "historia.hel.fi",
+                    "storageType": 1,
+                    "expiration": "1 hour",
+                    "hostMatches": false,
+                    "expiresMatches": false
+                  }
+                ]
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "historia.hel.fi",
+              "hits": 39,
+              "certificate": {
+                "subjectName": "hel.fi",
+                "validFrom": 1758026938,
+                "validTo": 1789562938,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            },
+            {
+              "domain": "webanalytics.digiaiiris.com",
+              "hits": 6,
+              "certificate": null
+            },
+            {
+              "domain": "",
+              "hits": 1,
+              "certificate": null
+            }
+          ],
+          "frameTimestamp": 1776230089,
+          "compliant": true
+        }
+      ],
+      "allCompliant": true
+    },
+    {
+      "name": "Search with none accepted",
+      "groups": [],
+      "url": "https://historia.hel.fi/fi/haku",
+      "frames": [
+        {
+          "frameUrl": "https://historia.hel.fi/fi/haku",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%7D%7D",
+              "domain": "historia.hel.fi",
+              "path": "/",
+              "expires": 1784870054,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1776230102,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "historia.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "historia.hel.fi",
+              "hits": 35,
+              "certificate": {
+                "subjectName": "hel.fi",
+                "validFrom": 1758026938,
+                "validTo": 1789562938,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            },
+            {
+              "domain": "webanalytics.digiaiiris.com",
+              "hits": 6,
+              "certificate": null
+            },
+            {
+              "domain": "",
+              "hits": 1,
+              "certificate": null
+            },
+            {
+              "domain": "helhist-elastic-proxy.api.hel.ninja",
+              "hits": 1,
+              "certificate": {
+                "subjectName": "hel.fi",
+                "validFrom": 1758026938,
+                "validTo": 1789562938,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1776230102,
+          "compliant": true
+        }
+      ],
+      "allCompliant": true
+    },
+    {
+      "name": "Search with required accepted",
+      "groups": [
+        "essential",
+        "admin",
+        "essential",
+        "admin",
+        "essential",
+        "admin"
+      ],
+      "url": "https://historia.hel.fi/fi/haku",
+      "frames": [
+        {
+          "frameUrl": "https://historia.hel.fi/fi/haku",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+              "domain": "historia.hel.fi",
+              "path": "/",
+              "expires": 1784870054,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1776230114,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "historia.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "historia.hel.fi",
+              "hits": 35,
+              "certificate": {
+                "subjectName": "hel.fi",
+                "validFrom": 1758026938,
+                "validTo": 1789562938,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            },
+            {
+              "domain": "webanalytics.digiaiiris.com",
+              "hits": 6,
+              "certificate": null
+            },
+            {
+              "domain": "",
+              "hits": 1,
+              "certificate": null
+            },
+            {
+              "domain": "helhist-elastic-proxy.api.hel.ninja",
+              "hits": 1,
+              "certificate": {
+                "subjectName": "hel.fi",
+                "validFrom": 1758026938,
+                "validTo": 1789562938,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1776230114,
+          "compliant": true
+        }
+      ],
+      "allCompliant": true
+    },
+    {
+      "name": "Search with all accepted",
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics"
+      ],
+      "url": "https://historia.hel.fi/fi/haku",
+      "frames": [
+        {
+          "frameUrl": "https://historia.hel.fi/fi/haku",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22dbef4703%22%2C%22timestamp%22%3A1776230054209%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%222a405896%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+              "domain": "historia.hel.fi",
+              "path": "/",
+              "expires": 1784870054,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1776230126,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "historia.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "_pk_id.903.5937",
+              "value": "65163442f026eaf0.1776230117.",
+              "domain": "historia.hel.fi",
+              "path": "/",
+              "expires": 1810185317,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Lax",
+              "frameTimestamp": 1776230126,
+              "expirationText": "393 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "statistics",
+                    "required": false,
+                    "name": "_pk_id.*",
+                    "host": "historia.hel.fi",
+                    "storageType": 1,
+                    "expiration": "393 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "_pk_ses.903.5937",
+              "value": "1",
+              "domain": "historia.hel.fi",
+              "path": "/",
+              "expires": 1776231916,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Lax",
+              "frameTimestamp": 1776230126,
+              "expirationText": "30 minutes",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "statistics",
+                    "required": false,
+                    "name": "_pk_ses.*",
+                    "host": "historia.hel.fi",
+                    "storageType": 1,
+                    "expiration": "1 hour",
+                    "hostMatches": false,
+                    "expiresMatches": false
+                  }
+                ]
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "historia.hel.fi",
+              "hits": 35,
+              "certificate": {
+                "subjectName": "hel.fi",
+                "validFrom": 1758026938,
+                "validTo": 1789562938,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            },
+            {
+              "domain": "webanalytics.digiaiiris.com",
+              "hits": 6,
+              "certificate": null
+            },
+            {
+              "domain": "",
+              "hits": 1,
+              "certificate": null
+            },
+            {
+              "domain": "helhist-elastic-proxy.api.hel.ninja",
+              "hits": 1,
+              "certificate": {
+                "subjectName": "hel.fi",
+                "validFrom": 1758026938,
+                "validTo": 1789562938,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1776230126,
+          "compliant": true
+        }
+      ],
+      "allCompliant": true
+    },
+    {
+      "name": "School register search with none accepted",
+      "groups": [],
+      "url": "https://historia.hel.fi/fi/koulurekisteri",
+      "frames": [
+        {
+          "frameUrl": "https://historia.hel.fi/fi/koulurekisteri",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%7D%7D",
+              "domain": "historia.hel.fi",
+              "path": "/",
+              "expires": 1784870054,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1776230138,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "historia.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "historia.hel.fi",
+              "hits": 24,
+              "certificate": {
+                "subjectName": "hel.fi",
+                "validFrom": 1758026938,
+                "validTo": 1789562938,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            },
+            {
+              "domain": "webanalytics.digiaiiris.com",
+              "hits": 6,
+              "certificate": null
+            },
+            {
+              "domain": "",
+              "hits": 1,
+              "certificate": null
+            },
+            {
+              "domain": "helhist-elastic-proxy.api.hel.ninja",
+              "hits": 1,
+              "certificate": {
+                "subjectName": "hel.fi",
+                "validFrom": 1758026938,
+                "validTo": 1789562938,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1776230138,
+          "compliant": true
+        }
+      ],
+      "allCompliant": true
+    },
+    {
+      "name": "School register search with required accepted",
+      "groups": [
+        "essential",
+        "admin",
+        "essential",
+        "admin",
+        "essential",
+        "admin"
+      ],
+      "url": "https://historia.hel.fi/fi/koulurekisteri",
+      "frames": [
+        {
+          "frameUrl": "https://historia.hel.fi/fi/koulurekisteri",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+              "domain": "historia.hel.fi",
+              "path": "/",
+              "expires": 1784870054,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1776230150,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "historia.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "historia.hel.fi",
+              "hits": 24,
+              "certificate": {
+                "subjectName": "hel.fi",
+                "validFrom": 1758026938,
+                "validTo": 1789562938,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            },
+            {
+              "domain": "webanalytics.digiaiiris.com",
+              "hits": 6,
+              "certificate": null
+            },
+            {
+              "domain": "",
+              "hits": 1,
+              "certificate": null
+            },
+            {
+              "domain": "helhist-elastic-proxy.api.hel.ninja",
+              "hits": 1,
+              "certificate": {
+                "subjectName": "hel.fi",
+                "validFrom": 1758026938,
+                "validTo": 1789562938,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1776230150,
+          "compliant": true
+        }
+      ],
+      "allCompliant": true
+    },
+    {
+      "name": "School register search with all accepted",
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics"
+      ],
+      "url": "https://historia.hel.fi/fi/koulurekisteri",
+      "frames": [
+        {
+          "frameUrl": "https://historia.hel.fi/fi/koulurekisteri",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22dbef4703%22%2C%22timestamp%22%3A1776230054209%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%222a405896%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+              "domain": "historia.hel.fi",
+              "path": "/",
+              "expires": 1784870054,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1776230161,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "historia.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "_pk_id.903.5937",
+              "value": "ab5fa614bc4a4463.1776230152.",
+              "domain": "historia.hel.fi",
+              "path": "/",
+              "expires": 1810185352,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Lax",
+              "frameTimestamp": 1776230161,
+              "expirationText": "393 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "statistics",
+                    "required": false,
+                    "name": "_pk_id.*",
+                    "host": "historia.hel.fi",
+                    "storageType": 1,
+                    "expiration": "393 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "_pk_ses.903.5937",
+              "value": "1",
+              "domain": "historia.hel.fi",
+              "path": "/",
+              "expires": 1776231952,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Lax",
+              "frameTimestamp": 1776230161,
+              "expirationText": "30 minutes",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "statistics",
+                    "required": false,
+                    "name": "_pk_ses.*",
+                    "host": "historia.hel.fi",
+                    "storageType": 1,
+                    "expiration": "1 hour",
+                    "hostMatches": false,
+                    "expiresMatches": false
+                  }
+                ]
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "historia.hel.fi",
+              "hits": 24,
+              "certificate": {
+                "subjectName": "hel.fi",
+                "validFrom": 1758026938,
+                "validTo": 1789562938,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            },
+            {
+              "domain": "webanalytics.digiaiiris.com",
+              "hits": 6,
+              "certificate": null
+            },
+            {
+              "domain": "",
+              "hits": 1,
+              "certificate": null
+            },
+            {
+              "domain": "helhist-elastic-proxy.api.hel.ninja",
+              "hits": 1,
+              "certificate": {
+                "subjectName": "hel.fi",
+                "validFrom": 1758026938,
+                "validTo": 1789562938,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            }
+          ],
+          "frameTimestamp": 1776230161,
+          "compliant": true
+        }
+      ],
+      "allCompliant": true
+    },
+    {
+      "name": "School page with none accepted",
+      "groups": [],
+      "url": "https://historia.hel.fi/fi/koulurekisteri/a-kallgrens-handelsskola",
+      "frames": [
+        {
+          "frameUrl": "https://historia.hel.fi/fi/koulurekisteri/a-kallgrens-handelsskola",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%7D%7D",
+              "domain": "historia.hel.fi",
+              "path": "/",
+              "expires": 1784870054,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1776230173,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "historia.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "historia.hel.fi",
+              "hits": 23,
+              "certificate": {
+                "subjectName": "hel.fi",
+                "validFrom": 1758026938,
+                "validTo": 1789562938,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            },
+            {
+              "domain": "server.arcgisonline.com",
+              "hits": 20,
+              "certificate": null
+            },
+            {
+              "domain": "",
+              "hits": 1,
+              "certificate": null
+            },
+            {
+              "domain": "webanalytics.digiaiiris.com",
+              "hits": 6,
+              "certificate": null
+            }
+          ],
+          "frameTimestamp": 1776230173,
+          "compliant": true
+        }
+      ],
+      "allCompliant": true
+    },
+    {
+      "name": "School page with required accepted",
+      "groups": [
+        "essential",
+        "admin",
+        "essential",
+        "admin",
+        "essential",
+        "admin"
+      ],
+      "url": "https://historia.hel.fi/fi/koulurekisteri/a-kallgrens-handelsskola",
+      "frames": [
+        {
+          "frameUrl": "https://historia.hel.fi/fi/koulurekisteri/a-kallgrens-handelsskola",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+              "domain": "historia.hel.fi",
+              "path": "/",
+              "expires": 1784870054,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1776230184,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "historia.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "historia.hel.fi",
+              "hits": 23,
+              "certificate": {
+                "subjectName": "hel.fi",
+                "validFrom": 1758026938,
+                "validTo": 1789562938,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            },
+            {
+              "domain": "webanalytics.digiaiiris.com",
+              "hits": 6,
+              "certificate": null
+            },
+            {
+              "domain": "server.arcgisonline.com",
+              "hits": 20,
+              "certificate": {
+                "subjectName": "*.arcgisonline.com",
+                "validFrom": 1758067200,
+                "validTo": 1792195199,
+                "issuer": "Amazon RSA 2048 M04",
+                "protocol": "TLS 1.3"
+              }
+            },
+            {
+              "domain": "",
+              "hits": 1,
+              "certificate": null
+            }
+          ],
+          "frameTimestamp": 1776230184,
+          "compliant": true
+        }
+      ],
+      "allCompliant": true
+    },
+    {
+      "name": "School page with all accepted",
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics"
+      ],
+      "url": "https://historia.hel.fi/fi/koulurekisteri/a-kallgrens-handelsskola",
+      "frames": [
+        {
+          "frameUrl": "https://historia.hel.fi/fi/koulurekisteri/a-kallgrens-handelsskola",
+          "cookies": [
+            {
+              "name": "helfi-cookie-consents",
+              "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22dbef4703%22%2C%22timestamp%22%3A1776230054209%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%222a405896%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+              "domain": "historia.hel.fi",
+              "path": "/",
+              "expires": 1784870054,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Strict",
+              "frameTimestamp": 1776230195,
+              "expirationText": "100 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "essential",
+                    "required": true,
+                    "name": "helfi-cookie-consents",
+                    "host": "historia.hel.fi",
+                    "storageType": 1,
+                    "expiration": "100 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "_pk_id.903.5937",
+              "value": "cea0ec87ce62c704.1776230187.",
+              "domain": "historia.hel.fi",
+              "path": "/",
+              "expires": 1810185387,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Lax",
+              "frameTimestamp": 1776230195,
+              "expirationText": "393 days",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "statistics",
+                    "required": false,
+                    "name": "_pk_id.*",
+                    "host": "historia.hel.fi",
+                    "storageType": 1,
+                    "expiration": "393 days",
+                    "hostMatches": false,
+                    "expiresMatches": true
+                  }
+                ]
+              }
+            },
+            {
+              "name": "_pk_ses.903.5937",
+              "value": "1",
+              "domain": "historia.hel.fi",
+              "path": "/",
+              "expires": 1776231986,
+              "httpOnly": false,
+              "secure": false,
+              "sameSite": "Lax",
+              "frameTimestamp": 1776230195,
+              "expirationText": "30 minutes",
+              "compliance": {
+                "compliant": true,
+                "matchingSettings": [
+                  {
+                    "groupId": "statistics",
+                    "required": false,
+                    "name": "_pk_ses.*",
+                    "host": "historia.hel.fi",
+                    "storageType": 1,
+                    "expiration": "1 hour",
+                    "hostMatches": false,
+                    "expiresMatches": false
+                  }
+                ]
+              }
+            }
+          ],
+          "localStorage": [],
+          "sessionStorage": [],
+          "indexedDB": [],
+          "cacheStorage": [],
+          "frameDomains": [
+            {
+              "domain": "historia.hel.fi",
+              "hits": 23,
+              "certificate": {
+                "subjectName": "hel.fi",
+                "validFrom": 1758026938,
+                "validTo": 1789562938,
+                "issuer": "Telia Server CA v3",
+                "protocol": "TLS 1.3"
+              }
+            },
+            {
+              "domain": "server.arcgisonline.com",
+              "hits": 20,
+              "certificate": {
+                "subjectName": "*.arcgisonline.com",
+                "validFrom": 1758067200,
+                "validTo": 1792195199,
+                "issuer": "Amazon RSA 2048 M04",
+                "protocol": "TLS 1.3"
+              }
+            },
+            {
+              "domain": "webanalytics.digiaiiris.com",
+              "hits": 6,
+              "certificate": null
+            },
+            {
+              "domain": "",
+              "hits": 1,
+              "certificate": null
+            }
+          ],
+          "frameTimestamp": 1776230195,
+          "compliant": true
+        }
+      ],
+      "allCompliant": true
+    }
+  ],
+  "foundItems": [
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%7D%7D",
+        "domain": "historia.hel.fi",
+        "path": "/",
+        "expires": 1784870054,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1776230065,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "historia.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [],
+      "name": "Frontpage with none accepted",
+      "url": "https://historia.hel.fi/fi",
+      "frameUrl": "https://historia.hel.fi/fi",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+        "domain": "historia.hel.fi",
+        "path": "/",
+        "expires": 1784870054,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1776230077,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "historia.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "essential",
+        "admin",
+        "essential",
+        "admin"
+      ],
+      "name": "Frontpage with required accepted",
+      "url": "https://historia.hel.fi/fi",
+      "frameUrl": "https://historia.hel.fi/fi",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22dbef4703%22%2C%22timestamp%22%3A1776230054209%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%222a405896%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+        "domain": "historia.hel.fi",
+        "path": "/",
+        "expires": 1784870054,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1776230089,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "historia.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics"
+      ],
+      "name": "Frontpage with all accepted",
+      "url": "https://historia.hel.fi/fi",
+      "frameUrl": "https://historia.hel.fi/fi",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "_pk_id.903.5937",
+      "item": {
+        "name": "_pk_id.903.5937",
+        "value": "8c509cfcd60e4b21.1776230080.",
+        "domain": "historia.hel.fi",
+        "path": "/",
+        "expires": 1810185280,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Lax",
+        "frameTimestamp": 1776230089,
+        "expirationText": "393 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "statistics",
+              "required": false,
+              "name": "_pk_id.*",
+              "host": "historia.hel.fi",
+              "storageType": 1,
+              "expiration": "393 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics"
+      ],
+      "name": "Frontpage with all accepted",
+      "url": "https://historia.hel.fi/fi",
+      "frameUrl": "https://historia.hel.fi/fi",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "statistics",
+            "required": false,
+            "name": "_pk_id.*",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "expiration": "393 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "_pk_ses.903.5937",
+      "item": {
+        "name": "_pk_ses.903.5937",
+        "value": "1",
+        "domain": "historia.hel.fi",
+        "path": "/",
+        "expires": 1776231879,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Lax",
+        "frameTimestamp": 1776230089,
+        "expirationText": "30 minutes",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "statistics",
+              "required": false,
+              "name": "_pk_ses.*",
+              "host": "historia.hel.fi",
+              "storageType": 1,
+              "expiration": "1 hour",
+              "hostMatches": false,
+              "expiresMatches": false
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics"
+      ],
+      "name": "Frontpage with all accepted",
+      "url": "https://historia.hel.fi/fi",
+      "frameUrl": "https://historia.hel.fi/fi",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "statistics",
+            "required": false,
+            "name": "_pk_ses.*",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "expiration": "1 hour",
+            "hostMatches": false,
+            "expiresMatches": false
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%7D%7D",
+        "domain": "historia.hel.fi",
+        "path": "/",
+        "expires": 1784870054,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1776230102,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "historia.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [],
+      "name": "Search with none accepted",
+      "url": "https://historia.hel.fi/fi/haku",
+      "frameUrl": "https://historia.hel.fi/fi/haku",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+        "domain": "historia.hel.fi",
+        "path": "/",
+        "expires": 1784870054,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1776230114,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "historia.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "essential",
+        "admin",
+        "essential",
+        "admin"
+      ],
+      "name": "Search with required accepted",
+      "url": "https://historia.hel.fi/fi/haku",
+      "frameUrl": "https://historia.hel.fi/fi/haku",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22dbef4703%22%2C%22timestamp%22%3A1776230054209%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%222a405896%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+        "domain": "historia.hel.fi",
+        "path": "/",
+        "expires": 1784870054,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1776230126,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "historia.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics"
+      ],
+      "name": "Search with all accepted",
+      "url": "https://historia.hel.fi/fi/haku",
+      "frameUrl": "https://historia.hel.fi/fi/haku",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "_pk_id.903.5937",
+      "item": {
+        "name": "_pk_id.903.5937",
+        "value": "65163442f026eaf0.1776230117.",
+        "domain": "historia.hel.fi",
+        "path": "/",
+        "expires": 1810185317,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Lax",
+        "frameTimestamp": 1776230126,
+        "expirationText": "393 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "statistics",
+              "required": false,
+              "name": "_pk_id.*",
+              "host": "historia.hel.fi",
+              "storageType": 1,
+              "expiration": "393 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics"
+      ],
+      "name": "Search with all accepted",
+      "url": "https://historia.hel.fi/fi/haku",
+      "frameUrl": "https://historia.hel.fi/fi/haku",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "statistics",
+            "required": false,
+            "name": "_pk_id.*",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "expiration": "393 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "_pk_ses.903.5937",
+      "item": {
+        "name": "_pk_ses.903.5937",
+        "value": "1",
+        "domain": "historia.hel.fi",
+        "path": "/",
+        "expires": 1776231916,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Lax",
+        "frameTimestamp": 1776230126,
+        "expirationText": "30 minutes",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "statistics",
+              "required": false,
+              "name": "_pk_ses.*",
+              "host": "historia.hel.fi",
+              "storageType": 1,
+              "expiration": "1 hour",
+              "hostMatches": false,
+              "expiresMatches": false
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics"
+      ],
+      "name": "Search with all accepted",
+      "url": "https://historia.hel.fi/fi/haku",
+      "frameUrl": "https://historia.hel.fi/fi/haku",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "statistics",
+            "required": false,
+            "name": "_pk_ses.*",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "expiration": "1 hour",
+            "hostMatches": false,
+            "expiresMatches": false
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%7D%7D",
+        "domain": "historia.hel.fi",
+        "path": "/",
+        "expires": 1784870054,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1776230138,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "historia.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [],
+      "name": "School register search with none accepted",
+      "url": "https://historia.hel.fi/fi/koulurekisteri",
+      "frameUrl": "https://historia.hel.fi/fi/koulurekisteri",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+        "domain": "historia.hel.fi",
+        "path": "/",
+        "expires": 1784870054,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1776230150,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "historia.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "essential",
+        "admin",
+        "essential",
+        "admin"
+      ],
+      "name": "School register search with required accepted",
+      "url": "https://historia.hel.fi/fi/koulurekisteri",
+      "frameUrl": "https://historia.hel.fi/fi/koulurekisteri",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22dbef4703%22%2C%22timestamp%22%3A1776230054209%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%222a405896%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+        "domain": "historia.hel.fi",
+        "path": "/",
+        "expires": 1784870054,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1776230161,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "historia.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics"
+      ],
+      "name": "School register search with all accepted",
+      "url": "https://historia.hel.fi/fi/koulurekisteri",
+      "frameUrl": "https://historia.hel.fi/fi/koulurekisteri",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "_pk_id.903.5937",
+      "item": {
+        "name": "_pk_id.903.5937",
+        "value": "ab5fa614bc4a4463.1776230152.",
+        "domain": "historia.hel.fi",
+        "path": "/",
+        "expires": 1810185352,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Lax",
+        "frameTimestamp": 1776230161,
+        "expirationText": "393 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "statistics",
+              "required": false,
+              "name": "_pk_id.*",
+              "host": "historia.hel.fi",
+              "storageType": 1,
+              "expiration": "393 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics"
+      ],
+      "name": "School register search with all accepted",
+      "url": "https://historia.hel.fi/fi/koulurekisteri",
+      "frameUrl": "https://historia.hel.fi/fi/koulurekisteri",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "statistics",
+            "required": false,
+            "name": "_pk_id.*",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "expiration": "393 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "_pk_ses.903.5937",
+      "item": {
+        "name": "_pk_ses.903.5937",
+        "value": "1",
+        "domain": "historia.hel.fi",
+        "path": "/",
+        "expires": 1776231952,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Lax",
+        "frameTimestamp": 1776230161,
+        "expirationText": "30 minutes",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "statistics",
+              "required": false,
+              "name": "_pk_ses.*",
+              "host": "historia.hel.fi",
+              "storageType": 1,
+              "expiration": "1 hour",
+              "hostMatches": false,
+              "expiresMatches": false
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics"
+      ],
+      "name": "School register search with all accepted",
+      "url": "https://historia.hel.fi/fi/koulurekisteri",
+      "frameUrl": "https://historia.hel.fi/fi/koulurekisteri",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "statistics",
+            "required": false,
+            "name": "_pk_ses.*",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "expiration": "1 hour",
+            "hostMatches": false,
+            "expiresMatches": false
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%7D%7D",
+        "domain": "historia.hel.fi",
+        "path": "/",
+        "expires": 1784870054,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1776230173,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "historia.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [],
+      "name": "School page with none accepted",
+      "url": "https://historia.hel.fi/fi/koulurekisteri/a-kallgrens-handelsskola",
+      "frameUrl": "https://historia.hel.fi/fi/koulurekisteri/a-kallgrens-handelsskola",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+        "domain": "historia.hel.fi",
+        "path": "/",
+        "expires": 1784870054,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1776230184,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "historia.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "essential",
+        "admin",
+        "essential",
+        "admin"
+      ],
+      "name": "School page with required accepted",
+      "url": "https://historia.hel.fi/fi/koulurekisteri/a-kallgrens-handelsskola",
+      "frameUrl": "https://historia.hel.fi/fi/koulurekisteri/a-kallgrens-handelsskola",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "helfi-cookie-consents",
+      "item": {
+        "name": "helfi-cookie-consents",
+        "value": "%7B%22groups%22%3A%7B%22essential%22%3A%7B%22checksum%22%3A%2233a5a09e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22admin%22%3A%7B%22checksum%22%3A%22a3a1bc0e%22%2C%22timestamp%22%3A1776230054209%7D%2C%22preferences%22%3A%7B%22checksum%22%3A%22dbef4703%22%2C%22timestamp%22%3A1776230054209%7D%2C%22statistics%22%3A%7B%22checksum%22%3A%222a405896%22%2C%22timestamp%22%3A1776230054209%7D%7D%7D",
+        "domain": "historia.hel.fi",
+        "path": "/",
+        "expires": 1784870054,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Strict",
+        "frameTimestamp": 1776230195,
+        "expirationText": "100 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "essential",
+              "required": true,
+              "name": "helfi-cookie-consents",
+              "host": "historia.hel.fi",
+              "storageType": 1,
+              "expiration": "100 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics"
+      ],
+      "name": "School page with all accepted",
+      "url": "https://historia.hel.fi/fi/koulurekisteri/a-kallgrens-handelsskola",
+      "frameUrl": "https://historia.hel.fi/fi/koulurekisteri/a-kallgrens-handelsskola",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "essential",
+            "required": true,
+            "name": "helfi-cookie-consents",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "expiration": "100 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "_pk_id.903.5937",
+      "item": {
+        "name": "_pk_id.903.5937",
+        "value": "cea0ec87ce62c704.1776230187.",
+        "domain": "historia.hel.fi",
+        "path": "/",
+        "expires": 1810185387,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Lax",
+        "frameTimestamp": 1776230195,
+        "expirationText": "393 days",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "statistics",
+              "required": false,
+              "name": "_pk_id.*",
+              "host": "historia.hel.fi",
+              "storageType": 1,
+              "expiration": "393 days",
+              "hostMatches": false,
+              "expiresMatches": true
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics"
+      ],
+      "name": "School page with all accepted",
+      "url": "https://historia.hel.fi/fi/koulurekisteri/a-kallgrens-handelsskola",
+      "frameUrl": "https://historia.hel.fi/fi/koulurekisteri/a-kallgrens-handelsskola",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "statistics",
+            "required": false,
+            "name": "_pk_id.*",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "expiration": "393 days",
+            "hostMatches": false,
+            "expiresMatches": true
+          }
+        ]
+      }
+    },
+    {
+      "storageType": 1,
+      "itemId": "_pk_ses.903.5937",
+      "item": {
+        "name": "_pk_ses.903.5937",
+        "value": "1",
+        "domain": "historia.hel.fi",
+        "path": "/",
+        "expires": 1776231986,
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Lax",
+        "frameTimestamp": 1776230195,
+        "expirationText": "30 minutes",
+        "compliance": {
+          "compliant": true,
+          "matchingSettings": [
+            {
+              "groupId": "statistics",
+              "required": false,
+              "name": "_pk_ses.*",
+              "host": "historia.hel.fi",
+              "storageType": 1,
+              "expiration": "1 hour",
+              "hostMatches": false,
+              "expiresMatches": false
+            }
+          ]
+        }
+      },
+      "groups": [
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics",
+        "chat",
+        "essential",
+        "admin",
+        "preferences",
+        "statistics"
+      ],
+      "name": "School page with all accepted",
+      "url": "https://historia.hel.fi/fi/koulurekisteri/a-kallgrens-handelsskola",
+      "frameUrl": "https://historia.hel.fi/fi/koulurekisteri/a-kallgrens-handelsskola",
+      "compliant": true,
+      "complianceData": {
+        "compliant": true,
+        "matchingSettings": [
+          {
+            "groupId": "statistics",
+            "required": false,
+            "name": "_pk_ses.*",
+            "host": "historia.hel.fi",
+            "storageType": 1,
+            "expiration": "1 hour",
+            "hostMatches": false,
+            "expiresMatches": false
+          }
+        ]
+      }
+    }
+  ],
+  "siteSettingsFlat": [
+    {
+      "groupId": "essential",
+      "required": true,
+      "name": "helfi-cookie-consents",
+      "host": "historia.hel.fi",
+      "storageType": 1,
+      "expiration": "100 days",
+      "hostMatches": false,
+      "expiresMatches": true
+    },
+    {
+      "groupId": "essential",
+      "required": true,
+      "name": "helfi-settings",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "essential",
+      "required": true,
+      "name": "ac71c42e1e3c30394169b7441b18f031",
+      "host": "www.hel.fi",
+      "storageType": 1,
+      "expiration": "Session"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "SSESS*",
+      "host": "historia.hel.fi",
+      "storageType": 1,
+      "expiration": "23 days"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "Drupal.gin.sidebarExpanded.desktop",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "Drupal.gin.sidebarExpanded.mobile",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "Drupal.gin.sidebarWidth",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "Drupal.gin.darkmode",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "Drupal.toolbar.subtrees.*",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "Drupal.off-canvas.css.*",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "Drupal.toolbar.toolbarState",
+      "host": "historia.hel.fi",
+      "storageType": 3,
+      "expiration": "Session"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "escapeAdminPath",
+      "host": "historia.hel.fi",
+      "storageType": 3,
+      "expiration": "Session"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "editoria11yResultCount",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "admin",
+      "required": true,
+      "name": "ed11ySeen",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "VISITOR_INFO1_LIVE",
+      "host": "youtube.com",
+      "storageType": 1,
+      "expiration": "180 days"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "CONSENT",
+      "host": "youtube.com",
+      "storageType": 1,
+      "expiration": "5947 days, 15 hours"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "t3D",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "tnsApp",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "tADe",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "tADu",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "tAE",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "tC",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "tMQ",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "tPL",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "tTDe",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "tTDu",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "tTE",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "preferences",
+      "required": false,
+      "name": "tTf",
+      "host": "historia.hel.fi",
+      "storageType": 2,
+      "expiration": "-"
+    },
+    {
+      "groupId": "statistics",
+      "required": false,
+      "name": "_pk_id.*",
+      "host": "historia.hel.fi",
+      "storageType": 1,
+      "expiration": "393 days",
+      "hostMatches": false,
+      "expiresMatches": true
+    },
+    {
+      "groupId": "statistics",
+      "required": false,
+      "name": "_pk_ses.*",
+      "host": "historia.hel.fi",
+      "storageType": 1,
+      "expiration": "1 hour",
+      "hostMatches": false,
+      "expiresMatches": false
+    }
+  ],
+  "timing": {
+    "Processing time": {
+      "start": 476819.878042,
+      "end": 620798.815207,
+      "elapsed": 143978.937165,
+      "formattedElapsed": "2m 23.98s"
+    },
+    "Fetching tracking domains": {
+      "start": 476819.878974,
+      "end": 476986.992308,
+      "elapsed": 167.1133339999942,
+      "formattedElapsed": "0.167s"
+    },
+    "Fetching checksums and siteSettings": {
+      "start": 476826.596519,
+      "end": 479944.232734,
+      "elapsed": 3117.636215000006,
+      "formattedElapsed": "3.118s"
+    },
+    "URL generation": {
+      "start": 479944.296093,
+      "end": 479947.360444,
+      "elapsed": 3.0643510000081733,
+      "formattedElapsed": "0.003s"
+    },
+    "Data collection": {
+      "start": 479947.382315,
+      "end": 620798.761417,
+      "elapsed": 140851.37910199998,
+      "formattedElapsed": "2m 20.85s"
+    },
+    " - \"Frontpage with none accepted\"": {
+      "start": 479995.724288,
+      "end": 491023.043834,
+      "elapsed": 11027.319545999984,
+      "formattedElapsed": "11.027s"
+    },
+    " - \"Frontpage with required accepted\"": {
+      "start": 491101.309803,
+      "end": 502817.943434,
+      "elapsed": 11716.633631000004,
+      "formattedElapsed": "11.717s"
+    },
+    " - \"Frontpage with all accepted\"": {
+      "start": 502904.32942,
+      "end": 514551.343673,
+      "elapsed": 11647.014252999972,
+      "formattedElapsed": "11.647s"
+    },
+    " - \"Search with none accepted\"": {
+      "start": 514634.153104,
+      "end": 527319.961129,
+      "elapsed": 12685.808024999918,
+      "formattedElapsed": "12.686s"
+    },
+    " - \"Search with required accepted\"": {
+      "start": 527398.659385,
+      "end": 539673.396808,
+      "elapsed": 12274.737423000042,
+      "formattedElapsed": "12.275s"
+    },
+    " - \"Search with all accepted\"": {
+      "start": 539755.429028,
+      "end": 551606.218555,
+      "elapsed": 11850.789527000044,
+      "formattedElapsed": "11.851s"
+    },
+    " - \"Single grant with none accepted\"": {
+      "start": 73845.313127,
+      "end": 86187.450953,
+      "elapsed": 12342.137826000006,
+      "formattedElapsed": "12.342s"
+    },
+    " - \"Single grant with required accepted\"": {
+      "start": 86264.790606,
+      "end": 97649.53576,
+      "elapsed": 11384.745154000004,
+      "formattedElapsed": "11.385s"
+    },
+    " - \"Single grant with all accepted\"": {
+      "start": 97726.587753,
+      "end": 109860.628159,
+      "elapsed": 12134.040406,
+      "formattedElapsed": "12.134s"
+    },
+    " - \"Single grant preview with none accepted\"": {
+      "start": 109933.686061,
+      "end": 121817.117093,
+      "elapsed": 11883.431031999993,
+      "formattedElapsed": "11.883s"
+    },
+    " - \"Single grant preview with required accepted\"": {
+      "start": 121893.142373,
+      "end": 133166.553788,
+      "elapsed": 11273.411414999995,
+      "formattedElapsed": "11.273s"
+    },
+    " - \"Single grant preview with all accepted\"": {
+      "start": 133241.945685,
+      "end": 144993.305578,
+      "elapsed": 11751.359892999986,
+      "formattedElapsed": "11.751s"
+    },
+    " - \"Accordion with none accepted\"": {
+      "start": 145070.804579,
+      "end": 156140.318829,
+      "elapsed": 11069.514250000007,
+      "formattedElapsed": "11.070s"
+    },
+    " - \"Accordion with required accepted\"": {
+      "start": 156214.938018,
+      "end": 167393.259589,
+      "elapsed": 11178.321571000008,
+      "formattedElapsed": "11.178s"
+    },
+    " - \"Accordion with all accepted\"": {
+      "start": 167471.515148,
+      "end": 179424.4147,
+      "elapsed": 11952.899551999988,
+      "formattedElapsed": "11.953s"
+    },
+    "Compliance checking": {
+      "start": 620798.826508,
+      "end": 620800.259539,
+      "elapsed": 1.433030999964103,
+      "formattedElapsed": "0.001s"
+    },
+    " - \"Siteimprove (Rekry) with required accepted\"": {
+      "start": 217660.953555,
+      "end": 229892.899307,
+      "elapsed": 12231.945752000029,
+      "formattedElapsed": "12.232s"
+    },
+    " - \"Siteimprove (Rekry) with all accepted\"": {
+      "start": 229974.358901,
+      "end": 242066.299092,
+      "elapsed": 12091.940191000002,
+      "formattedElapsed": "12.092s"
+    },
+    " - \"Helsinkikanava with required accepted\"": {
+      "start": 242146.693969,
+      "end": 254926.241642,
+      "elapsed": 12779.547672999994,
+      "formattedElapsed": "12.780s"
+    },
+    " - \"Helsinkikanava with essential,admin,preferences,statistics accepted\"": {
+      "start": 255004.662235,
+      "end": 273018.058437,
+      "elapsed": 18013.396202000033,
+      "formattedElapsed": "18.013s"
+    },
+    " - \"Youtube with required accepted\"": {
+      "start": 273096.928071,
+      "end": 284171.311766,
+      "elapsed": 11074.383695000026,
+      "formattedElapsed": "11.074s"
+    },
+    " - \"Youtube with essential,admin,preferences,statistics accepted\"": {
+      "start": 284253.275773,
+      "end": 297825.385896,
+      "elapsed": 13572.11012300005,
+      "formattedElapsed": "13.572s"
+    },
+    " - \"ReactAndShare with required accepted\"": {
+      "start": 297896.195601,
+      "end": 311159.632108,
+      "elapsed": 13263.436507000006,
+      "formattedElapsed": "13.263s"
+    },
+    " - \"ReactAndShare with essential,admin,preferences,statistics accepted\"": {
+      "start": 311235.090917,
+      "end": 324167.106348,
+      "elapsed": 12932.015430999978,
+      "formattedElapsed": "12.932s"
+    },
+    " - \"PowerBI with required accepted\"": {
+      "start": 324249.244645,
+      "end": 335393.844655,
+      "elapsed": 11144.600009999995,
+      "formattedElapsed": "11.145s"
+    },
+    " - \"PowerBI with essential,admin,preferences,statistics accepted\"": {
+      "start": 335471.938853,
+      "end": 353823.842417,
+      "elapsed": 18351.90356399998,
+      "formattedElapsed": "18.352s"
+    },
+    " - \"Cycling Routes with essential,admin,preferences,statistics accepted\"": {
+      "start": 353908.023413,
+      "end": 370291.430715,
+      "elapsed": 16383.407302000036,
+      "formattedElapsed": "16.383s"
+    },
+    " - \"kartta.hel.fi with required accepted\"": {
+      "start": 370368.412414,
+      "end": 382077.428392,
+      "elapsed": 11709.015977999952,
+      "formattedElapsed": "11.709s"
+    },
+    " - \"kartta.hel.fi with essential,admin,preferences,statistics accepted\"": {
+      "start": 382158.457876,
+      "end": 401253.471589,
+      "elapsed": 19095.01371300005,
+      "formattedElapsed": "19.095s"
+    },
+    " - \"palvelukartta.hel.fi with required accepted\"": {
+      "start": 401337.866691,
+      "end": 422354.673499,
+      "elapsed": 21016.806808000023,
+      "formattedElapsed": "21.017s"
+    },
+    " - \"palvelukartta.hel.fi with essential,admin,preferences,statistics accepted\"": {
+      "start": 422437.806968,
+      "end": 436028.474668,
+      "elapsed": 13590.66769999999,
+      "formattedElapsed": "13.591s"
+    },
+    " - \"💬 Sotebot Hester Watson chat inactive with required accepted\"": {
+      "start": 436115.272757,
+      "end": 451313.446415,
+      "elapsed": 15198.173658000014,
+      "formattedElapsed": "15.198s"
+    },
+    " - \"💬 Sotebot Hester Watson chat active with chat accepted\"": {
+      "start": 451392.66053,
+      "end": 464685.164426,
+      "elapsed": 13292.50389599998,
+      "formattedElapsed": "13.293s"
+    },
+    " - \"Helfi settings (accordion) with required accepted\"": {
+      "start": 464766.373669,
+      "end": 475755.32718,
+      "elapsed": 10988.953511000029,
+      "formattedElapsed": "10.989s"
+    },
+    " - \"School register search with none accepted\"": {
+      "start": 551685.236127,
+      "end": 563443.52032,
+      "elapsed": 11758.284193000058,
+      "formattedElapsed": "11.758s"
+    },
+    " - \"School register search with required accepted\"": {
+      "start": 563519.412821,
+      "end": 575211.781564,
+      "elapsed": 11692.36874299997,
+      "formattedElapsed": "11.692s"
+    },
+    " - \"School register search with all accepted\"": {
+      "start": 575293.940927,
+      "end": 587040.376731,
+      "elapsed": 11746.435804000008,
+      "formattedElapsed": "11.746s"
+    },
+    " - \"School page with none accepted\"": {
+      "start": 587117.660413,
+      "end": 598878.351465,
+      "elapsed": 11760.691051999922,
+      "formattedElapsed": "11.761s"
+    },
+    " - \"School page with required accepted\"": {
+      "start": 598958.374764,
+      "end": 609955.424315,
+      "elapsed": 10997.049551000004,
+      "formattedElapsed": "10.997s"
+    },
+    " - \"School page with all accepted\"": {
+      "start": 610038.481417,
+      "end": 620767.837666,
+      "elapsed": 10729.356249000062,
+      "formattedElapsed": "10.729s"
+    }
+  }
+}
