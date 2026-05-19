@@ -9,6 +9,15 @@ services:
       - .:/app:delegated
     networks:
       - internal
+  server:
+    container_name: "helfi-gdpr-scanner-server"
+    image: mcr.microsoft.com/playwright:v1.59.0-noble
+    working_dir: /app
+    command: node src/server/server.js
+    volumes:
+      - .:/app:delegated
+    networks:
+      - internal
   nginx:
     container_name: "helfi-gdpr-scanner-nginx"
     image: nginx:alpine
@@ -18,6 +27,8 @@ services:
     networks:
       - stonehenge-network
       - internal
+    depends_on:
+      - server
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.nginx.entrypoints=https"

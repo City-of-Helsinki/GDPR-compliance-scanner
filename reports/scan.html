@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark" />
+    <title>One-off GDPR Compliance Scan</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+      .back-link {
+        display: inline-block;
+        margin-bottom: 2em;
+      }
+
+      .mode-badge {
+        display: inline-block;
+        padding: 0.15em 0.65em;
+        border-radius: 1em;
+        font-size: 0.55em;
+        font-weight: bold;
+        vertical-align: middle;
+        margin-left: 0.4em;
+        letter-spacing: 0.03em;
+      }
+      .mode-local  { background: #2a9d2a; color: #fff; }
+      .mode-github { background: light-dark(#444, #888); color: #fff; }
+
+      .scan-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+        max-width: 640px;
+        margin-bottom: 3em;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4em;
+      }
+
+      .form-group label {
+        font-weight: bold;
+      }
+
+      .form-group input[type="url"] {
+        font-size: 1em;
+        padding: 0.5em 0.7em;
+        border-radius: 0.3em;
+        border: 1px solid light-dark(#aaa, #555);
+        background: light-dark(#fff, #1e1e1e);
+        color: inherit;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .variants-group {
+        display: flex;
+        gap: 1.5em;
+        flex-wrap: wrap;
+      }
+
+      .variant-label {
+        display: flex;
+        align-items: center;
+        gap: 0.4em;
+        cursor: pointer;
+        font-size: 1em;
+      }
+
+      .variant-label input[type="checkbox"] {
+        width: 1.1em;
+        height: 1.1em;
+        cursor: pointer;
+      }
+
+      .submit-btn {
+        align-self: flex-start;
+        padding: 0.6em 1.6em;
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 0.3em;
+        border: 1px solid light-dark(#888, #555);
+        background: light-dark(#f0f0f0, #2a2a2a);
+        color: inherit;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .submit-btn:hover:not(:disabled) {
+        background: light-dark(#e0e0e0, #3a3a3a);
+      }
+
+      .submit-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      /* Loader */
+      .loader {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        margin-bottom: 1.5em;
+      }
+
+      .spinner {
+        width: 28px;
+        height: 28px;
+        border: 3px solid light-dark(rgba(0,0,0,0.12), rgba(255,255,255,0.12));
+        border-left-color: light-dark(#333, #ddd);
+        border-radius: 50%;
+        flex-shrink: 0;
+        animation: spin 0.9s linear infinite;
+      }
+
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+
+      .loader-text {
+        font-style: italic;
+        color: light-dark(#555, #aaa);
+      }
+
+      /* Progress log */
+      .progress-log {
+        margin-bottom: 2em;
+      }
+
+      .progress-log h3 {
+        margin-bottom: 0.5em;
+      }
+
+      .progress-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4em;
+      }
+
+      .progress-list li {
+        color: light-dark(#444, #bbb);
+        font-size: 0.95em;
+      }
+
+      .progress-list li::before {
+        content: "→ ";
+        color: light-dark(#888, #666);
+      }
+
+      /* GitHub instructions panel */
+      .instructions-panel {
+        max-width: 640px;
+        border: 1px solid light-dark(rgba(0,0,0,0.15), rgba(255,255,255,0.15));
+        border-radius: 0.5em;
+        padding: 1.5em;
+        margin-bottom: 2em;
+      }
+
+      .instructions-panel h2 {
+        margin-top: 0;
+        margin-bottom: 0.5em;
+      }
+
+      .instructions-panel > p {
+        margin-top: 0;
+        margin-bottom: 1.5em;
+        color: light-dark(#444, #bbb);
+      }
+
+      .instruction-fields {
+        display: flex;
+        flex-direction: column;
+        gap: 0.9em;
+        margin-bottom: 1.5em;
+      }
+
+      .instruction-field {
+        display: grid;
+        grid-template-columns: 9em 1fr auto;
+        align-items: center;
+        gap: 0.6em;
+      }
+
+      .instruction-field .field-label {
+        font-weight: bold;
+        font-size: 0.9em;
+        color: light-dark(#555, #aaa);
+      }
+
+      .instruction-field code {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+      }
+
+      .copy-btn {
+        padding: 0.2em 0.7em;
+        font-size: 0.85em;
+        cursor: pointer;
+        border-radius: 0.3em;
+        border: 1px solid light-dark(#aaa, #555);
+        background: light-dark(#f4f4f4, #2a2a2a);
+        color: inherit;
+        white-space: nowrap;
+      }
+
+      .copy-btn:hover { background: light-dark(#e8e8e8, #3a3a3a); }
+      .copy-btn.copied { color: #2a9d2a; }
+
+      .instructions-panel .hint {
+        margin-top: 1.2em;
+        font-size: 0.9em;
+        color: light-dark(#555, #aaa);
+      }
+
+      /* Summary box */
+      .summary-box {
+        display: flex;
+        gap: 2em;
+        flex-wrap: wrap;
+        margin-bottom: 2em;
+        padding: 1em 1.5em;
+        border: 1px solid light-dark(rgba(0,0,0,0.15), rgba(255,255,255,0.15));
+        border-radius: 0.5em;
+        max-width: 480px;
+      }
+
+      .summary-stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.2em;
+      }
+
+      .summary-stat .stat-value {
+        font-size: 2em;
+        font-weight: bold;
+        line-height: 1;
+      }
+
+      .summary-stat .stat-label {
+        font-size: 0.8em;
+        color: light-dark(#666, #999);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .stat-compliant    { color: #2a9d2a; }
+      .stat-noncompliant { color: #d63031; }
+
+      /* Results table */
+      #results-section h2 { margin-bottom: 1em; }
+
+      .results-table-wrapper { overflow-x: auto; }
+
+      .results-table { font-size: 0.9em; }
+
+      .results-table th {
+        background: light-dark(#f4f4f4, #2a2a2a);
+        text-align: left;
+        white-space: nowrap;
+      }
+
+      .results-table td.status-cell {
+        text-align: center;
+        font-size: 1.1em;
+      }
+
+      .results-table tr.row-noncompliant {
+        background: light-dark(rgba(255,0,0,0.04), rgba(255,0,0,0.08));
+      }
+
+      .type-badge { white-space: nowrap; }
+
+      .variant-tag {
+        font-size: 0.85em;
+        padding: 0.1em 0.4em;
+        border-radius: 0.3em;
+        background: light-dark(#e8e8e8, #333);
+        white-space: nowrap;
+      }
+
+      .error-box {
+        padding: 1em 1.2em;
+        border-radius: 0.4em;
+        border: 1px solid #c0392b;
+        background: light-dark(rgba(192,57,43,0.08), rgba(192,57,43,0.15));
+        color: #c0392b;
+        max-width: 640px;
+        margin-bottom: 2em;
+      }
+
+      .error-box strong { display: block; margin-bottom: 0.3em; }
+
+      .hidden { display: none !important; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a href="index.html" class="back-link">← Back to Reports</a>
+      <h1>One-off GDPR Compliance Scan <span id="mode-badge" class="mode-badge"></span></h1>
+
+      <form id="scan-form" class="scan-form" novalidate>
+        <div class="form-group">
+          <label for="pageUrl">Page URL</label>
+          <input type="url" id="pageUrl" placeholder="https://www.hel.fi/fi/" required autocomplete="url">
+        </div>
+
+        <div class="form-group">
+          <label for="apiUrl">API URL <span class="secondary">(cookie-banner settings endpoint)</span></label>
+          <input type="url" id="apiUrl" placeholder="https://..." required autocomplete="url">
+        </div>
+
+        <div class="form-group">
+          <label>Variants to scan</label>
+          <div class="variants-group">
+            <label class="variant-label">
+              <input type="checkbox" name="variant" value="none"> none
+            </label>
+            <label class="variant-label">
+              <input type="checkbox" name="variant" value="required" checked> required
+            </label>
+            <label class="variant-label">
+              <input type="checkbox" name="variant" value="all" checked> all
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submit-btn">Start Scan</button>
+      </form>
+
+      <!-- Local mode: loader + progress -->
+      <div id="loader" class="loader hidden">
+        <div class="spinner"></div>
+        <span class="loader-text" id="loader-text">Initialising scan…</span>
+      </div>
+
+      <div id="progress-section" class="progress-log hidden">
+        <h3>Progress</h3>
+        <ul class="progress-list" id="progress-list"></ul>
+      </div>
+
+      <!-- Local mode: error -->
+      <div id="error-box" class="error-box hidden">
+        <strong>Scan failed</strong>
+        <span id="error-message"></span>
+      </div>
+
+      <!-- GitHub Pages mode: instructions panel -->
+      <div id="github-instructions" class="instructions-panel hidden">
+        <h2>Run on GitHub Actions</h2>
+        <p>
+          This page can't run the scanner directly. Open the GitHub Actions workflow,
+          paste the values below, and click <strong>Run workflow</strong>.
+          The report will appear on the <a href="index.html">reports index</a> once the run finishes (~10 min).
+        </p>
+
+        <div class="instruction-fields">
+          <div class="instruction-field">
+            <span class="field-label">Page URL</span>
+            <code id="inst-pageUrl"></code>
+            <button class="copy-btn" data-copy="inst-pageUrl">Copy</button>
+          </div>
+          <div class="instruction-field">
+            <span class="field-label">API URL</span>
+            <code id="inst-apiUrl"></code>
+            <button class="copy-btn" data-copy="inst-apiUrl">Copy</button>
+          </div>
+          <div class="instruction-field">
+            <span class="field-label">Variants</span>
+            <code id="inst-variants"></code>
+            <button class="copy-btn" data-copy="inst-variants">Copy</button>
+          </div>
+        </div>
+
+        <a id="github-actions-link"
+           href="https://github.com/City-of-Helsinki/GDPR-compliance-scanner/actions/workflows/one-off-scan.yml"
+           target="_blank"
+           class="submit-btn">
+          Open GitHub Actions →
+        </a>
+
+        <p class="hint">
+          Results land in the <strong>one-off-scan</strong> folder on the reports index after the workflow deploys to gh-pages.
+        </p>
+      </div>
+
+      <!-- Local mode: results -->
+      <div id="results-section" class="hidden">
+        <h2>Scan Results</h2>
+        <div class="summary-box" id="summary-box"></div>
+        <div class="results-table-wrapper">
+          <table class="results-table sortable-table" id="results-table">
+            <thead>
+              <tr>
+                <th class="sortable" data-sort="compliant">Status</th>
+                <th class="sortable" data-sort="itemId">Name / Key</th>
+                <th class="sortable" data-sort="storageType">Type</th>
+                <th class="sortable" data-sort="variant">Variant</th>
+                <th class="sortable" data-sort="frameUrl">Frame URL</th>
+              </tr>
+            </thead>
+            <tbody id="results-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <script src="js/reportFunctions.js"></script>
+      <script>
+        const STORAGE_TYPE_NAMES = {
+          1: { label: 'Cookie',         cls: 'type__cookie' },
+          2: { label: 'localStorage',   cls: 'type__localStorage' },
+          3: { label: 'sessionStorage', cls: 'type__sessionStorage' },
+          4: { label: 'indexedDB',      cls: 'type__indexedDB' },
+          5: { label: 'cacheStorage',   cls: 'type__cacheStorage' },
+        };
+
+        // ─── Mode detection ────────────────────────────────────────────────────────
+        // Probe /api/scan: Express returns application/json (400); static nginx returns text/html.
+        let isLocal = false;
+
+        const modeBadge = document.getElementById('mode-badge');
+        modeBadge.textContent = '…';
+
+        const modeReady = fetch('/api/scan')
+          .then(res => {
+            isLocal = (res.headers.get('content-type') || '').includes('application/json');
+          })
+          .catch(() => { isLocal = false; })
+          .finally(() => {
+            modeBadge.textContent = isLocal ? 'local' : 'GitHub Actions';
+            modeBadge.classList.add(isLocal ? 'mode-local' : 'mode-github');
+          });
+
+        // ─── Element refs ──────────────────────────────────────────────────────────
+        const form         = document.getElementById('scan-form');
+        const submitBtn    = document.getElementById('submit-btn');
+        const loader       = document.getElementById('loader');
+        const loaderText   = document.getElementById('loader-text');
+        const progressSec  = document.getElementById('progress-section');
+        const progressList = document.getElementById('progress-list');
+        const errorBox     = document.getElementById('error-box');
+        const errorMsg     = document.getElementById('error-message');
+        const resultsSec   = document.getElementById('results-section');
+        const summaryBox   = document.getElementById('summary-box');
+        const resultsBody  = document.getElementById('results-body');
+        const ghPanel      = document.getElementById('github-instructions');
+
+        // ─── UI helpers ────────────────────────────────────────────────────────────
+        function resetUI() {
+          loader.classList.add('hidden');
+          progressSec.classList.add('hidden');
+          errorBox.classList.add('hidden');
+          resultsSec.classList.add('hidden');
+          ghPanel.classList.add('hidden');
+          progressList.innerHTML = '';
+          resultsBody.innerHTML = '';
+          summaryBox.innerHTML = '';
+          errorMsg.textContent = '';
+        }
+
+        function addProgress(message) {
+          progressSec.classList.remove('hidden');
+          loaderText.textContent = message;
+          const li = document.createElement('li');
+          li.textContent = message;
+          progressList.appendChild(li);
+          li.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function showError(message) {
+          loader.classList.add('hidden');
+          errorBox.classList.remove('hidden');
+          errorMsg.textContent = message;
+          submitBtn.disabled = false;
+        }
+
+        function escapeHtml(str) {
+          if (!str) return '';
+          return String(str)
+            .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        // ─── Copy buttons ──────────────────────────────────────────────────────────
+        document.addEventListener('click', (e) => {
+          const btn = e.target.closest('[data-copy]');
+          if (!btn) return;
+          const text = document.getElementById(btn.dataset.copy)?.textContent ?? '';
+          navigator.clipboard.writeText(text).then(() => {
+            btn.textContent = 'Copied!';
+            btn.classList.add('copied');
+            setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1500);
+          });
+        });
+
+        // ─── GitHub Pages mode ─────────────────────────────────────────────────────
+        function showGithubInstructions(pageUrl, apiUrl, variants) {
+          document.getElementById('inst-pageUrl').textContent  = pageUrl;
+          document.getElementById('inst-apiUrl').textContent   = apiUrl;
+          document.getElementById('inst-variants').textContent = variants.join(',');
+          ghPanel.classList.remove('hidden');
+        }
+
+        // ─── Local mode (SSE) ──────────────────────────────────────────────────────
+        function renderSummary(summary) {
+          summaryBox.innerHTML = `
+            <div class="summary-stat">
+              <span class="stat-value">${summary.total}</span>
+              <span class="stat-label">Total Found</span>
+            </div>
+            <div class="summary-stat">
+              <span class="stat-value stat-compliant">✅ ${summary.compliant}</span>
+              <span class="stat-label">Compliant</span>
+            </div>
+            <div class="summary-stat">
+              <span class="stat-value stat-noncompliant">❌ ${summary.nonCompliant}</span>
+              <span class="stat-label">Non-compliant</span>
+            </div>
+          `;
+        }
+
+        function renderResults(foundItems) {
+          const sorted = [...foundItems].sort((a, b) => {
+            if (a.compliant === b.compliant) return 0;
+            return a.compliant ? 1 : -1;
+          });
+
+          sorted.forEach(item => {
+            const tr = document.createElement('tr');
+            if (!item.compliant) tr.classList.add('row-noncompliant');
+            const typeInfo = STORAGE_TYPE_NAMES[item.storageType] || { label: String(item.storageType), cls: '' };
+            const shortFrame = item.frameUrl
+              ? item.frameUrl.replace(/^https?:\/\//, '').substring(0, 60)
+              : '—';
+            tr.innerHTML = `
+              <td class="status-cell">${item.compliant ? '✅' : '❌'}</td>
+              <td class="wrap"><code>${escapeHtml(item.itemId)}</code></td>
+              <td class="type-badge"><span class="${typeInfo.cls}">${typeInfo.label}</span></td>
+              <td><span class="variant-tag">${escapeHtml(item.name || '')}</span></td>
+              <td class="wrap secondary" title="${escapeHtml(item.frameUrl || '')}">${escapeHtml(shortFrame)}</td>
+            `;
+            resultsBody.appendChild(tr);
+          });
+        }
+
+        function runLocalScan(pageUrl, apiUrl, variants) {
+          const params = new URLSearchParams({ pageUrl, apiUrl, variants: variants.join(',') });
+          const evtSource = new EventSource(`/api/scan?${params}`);
+
+          evtSource.onmessage = (event) => {
+            let data;
+            try { data = JSON.parse(event.data); } catch { return; }
+
+            if (data.type === 'status') {
+              addProgress(data.message);
+            } else if (data.type === 'result') {
+              renderSummary(data.summary);
+              renderResults(data.foundItems);
+              resultsSec.classList.remove('hidden');
+              initSortableTables();
+            } else if (data.type === 'error') {
+              showError(data.message);
+              evtSource.close();
+            } else if (data.type === 'done') {
+              loader.classList.add('hidden');
+              submitBtn.disabled = false;
+              evtSource.close();
+            }
+          };
+
+          evtSource.onerror = () => {
+            if (resultsSec.classList.contains('hidden')) {
+              showError('Connection to the scanner was lost. Check the server logs for details.');
+            } else {
+              loader.classList.add('hidden');
+              submitBtn.disabled = false;
+            }
+            evtSource.close();
+          };
+        }
+
+        // ─── Form submit ───────────────────────────────────────────────────────────
+        form.addEventListener('submit', async (e) => {
+          await modeReady;
+          e.preventDefault();
+
+          const pageUrl  = document.getElementById('pageUrl').value.trim();
+          const apiUrl   = document.getElementById('apiUrl').value.trim();
+          const variants = [...document.querySelectorAll('input[name="variant"]:checked')].map(el => el.value);
+
+          if (!pageUrl || !apiUrl) { alert('Please fill in both URL fields.'); return; }
+          if (variants.length === 0) { alert('Please select at least one variant.'); return; }
+
+          resetUI();
+
+          if (isLocal) {
+            submitBtn.disabled = true;
+            loader.classList.remove('hidden');
+            loaderText.textContent = 'Starting scan…';
+            runLocalScan(pageUrl, apiUrl, variants);
+          } else {
+            showGithubInstructions(pageUrl, apiUrl, variants);
+          }
+        });
+      </script>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+name: One-off GDPR Compliance Scan
+
+on:
+  workflow_dispatch:
+    inputs:
+      pageUrl:
+        description: 'Page URL to scan'
+        required: true
+        type: string
+      apiUrl:
+        description: 'Cookie banner API URL'
+        required: true
+        type: string
+      variants:
+        description: 'Variants to scan (comma-separated: none, required, all)'
+        required: true
+        default: 'required,all'
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.59.0-noble
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: gh-pages
+          path: reports
+          sparse-checkout: json
+
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          path: app
+
+      - name: Setup
+        working-directory: app
+        run: npm install
+
+      - name: Copy previous reports
+        run: |
+          mkdir -p app/reports/json
+          if [ -d reports/json ]; then
+            cp -r reports/json/. app/reports/json/
+          fi
+
+      - name: Create one-off scan config
+        working-directory: app
+        env:
+          PAGE_URL: ${{ inputs.pageUrl }}
+          API_URL: ${{ inputs.apiUrl }}
+          VARIANTS: ${{ inputs.variants }}
+          SCAN_NAME: one-off-scan
+        run: |
+          rm -f config/*.js
+          node src/utils/createOneOffConfig.js
+
+      - name: Run scanner
+        working-directory: app
+        run: xvfb-run npm start
+
+      - name: Deploy results
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
+        with:
+          publish_dir: ./app/reports
+          github_token: ${{ secrets.GITHUB_TOKEN }}
