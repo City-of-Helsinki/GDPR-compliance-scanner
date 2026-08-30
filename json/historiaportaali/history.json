@@ -824,5 +824,19 @@
       "siteSettingsFlat": 30
     },
     "filename": "report-historiaportaali-2026-08-29T04:32:25.312Z.json"
+  },
+  {
+    "timeStamp": "2026-08-30T04:32:43.397Z",
+    "summary": {
+      "total": 20,
+      "compliant": 20,
+      "nonCompliant": 0,
+      "warnings": 0,
+      "urls": 12,
+      "failedUrls": 0,
+      "timing": "2m 9.37s",
+      "siteSettingsFlat": 30
+    },
+    "filename": "report-historiaportaali-2026-08-30T04:32:43.397Z.json"
   }
 ]
