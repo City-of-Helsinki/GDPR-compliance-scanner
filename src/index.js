@@ -17,6 +17,7 @@ const GLOBAL_TIMEOUT = 20 * 60 * 1000;
 
 (async () => {
   const startTime = Date.now();
+  let hasErrors = false;
 
   for (const file of configFiles) {
     try {
@@ -47,6 +48,7 @@ const GLOBAL_TIMEOUT = 20 * 60 * 1000;
         ]);
       }
       catch (error) {
+        hasErrors = true;
         console.error('Error:', error.message);
         // eslint-disable-next-line no-console
         console.log('Skipping: ', config.apiUrl)
@@ -108,6 +110,7 @@ const GLOBAL_TIMEOUT = 20 * 60 * 1000;
       timer.end('Total time');
     }
     catch (error) {
+      hasErrors = true;
       console.error(`❌ Error processing ${file}:`, error.message);
       if (error.stack) {
         console.error(error.stack);
@@ -129,8 +132,8 @@ const GLOBAL_TIMEOUT = 20 * 60 * 1000;
   // eslint-disable-next-line no-console
   console.log(`Total execution time: ${totalExecutionMinutes}m ${totalExecutionSeconds}s`);
 
-  // Ensure the process exits cleanly.
-  process.exit(0);
+  // Fail the run when any configuration errored.
+  process.exit(hasErrors ? 1 : 0);
 })().catch(error => {
   console.error('Fatal error in main process:', error);
   process.exit(1);
