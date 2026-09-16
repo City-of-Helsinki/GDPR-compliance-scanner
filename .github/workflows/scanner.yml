@@ -21,7 +21,11 @@ jobs:
 
       - name: Setup
         working-directory: app
-        run: npm install
+        run: npm ci
+
+      - name: Install browser
+        working-directory: app
+        run: npx playwright install --with-deps chromium
 
       - name: Copy previous reports
         run: cp -r reports/json app/reports
