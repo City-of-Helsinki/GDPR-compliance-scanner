@@ -7,21 +7,25 @@ jobs:
   scan:
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.62.1-noble
+      image: mcr.microsoft.com/playwright:v1.63.0-noble
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/checkout@v7
         with:
           ref: gh-pages
           path: reports
           sparse-checkout: json
 
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/checkout@v7
         with:
           path: app
 
       - name: Setup
         working-directory: app
-        run: npm install
+        run: npm ci
+
+      - name: Install browser
+        working-directory: app
+        run: npx playwright install --with-deps chromium
 
       - name: Copy previous reports
         run: cp -r reports/json app/reports
@@ -31,7 +35,7 @@ jobs:
         run: xvfb-run npm start
 
       - name: Deploy results
-        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4.0.0
+        uses: peaceiris/actions-gh-pages@v4
         with:
           publish_dir: ./app/reports
           github_token: ${{ secrets.GITHUB_TOKEN }}

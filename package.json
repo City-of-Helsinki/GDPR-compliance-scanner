@@ -12,11 +12,21 @@
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
+  "@comment dependencies": [
+    "The following packages were updated manually.",
+    "Remove this section once the dependencies have been updated in their respective upstream packages.",
+    {
+      "qs": "^6.16.0, dependency of express and body-parser; no fixed express 4.x or body-parser 1.x release exists (GHSA-x5fp-wj9c-mxmx, GHSA-4mjr-xmp4-gh2g)"
+    }
+  ],
+  "overrides": {
+    "qs": "^6.16.0"
+  },
   "dependencies": {
-    "@playwright/test": "^1.62.1",
+    "@playwright/test": "^1.63",
     "chalk": "^5.3.0",
     "express": "^4.21.1",
-    "express-rate-limit": "^7.4.1",
+    "express-rate-limit": "^8.7.0",
     "helmet": "^8.0.0",
     "json-colorizer": "^3.0.1",
     "perf_hooks": "^0.0.1"

@@ -32,6 +32,9 @@ async function collectAllStorageFromPage(context, page, frameDomains) {
 
     for (const pageFrame of pageFrames) {
       const frameTimestamp = Math.floor(Date.now() / 1000);
+      // Skip storage for frames without a real URL.
+      const hasOrigin = pageFrame.url().startsWith('http');
+
       const [
         frameCookies,
         frameLocalStorage,
@@ -40,10 +43,10 @@ async function collectAllStorageFromPage(context, page, frameDomains) {
         frameCacheStorage,
       ] = await Promise.all([
         collectCookies(context, pageFrame, frameTimestamp),
-        collectLocalStorage(context, pageFrame),
-        collectSessionStorage(context, pageFrame),
-        collectIndexedDB(context, pageFrame),
-        collectCacheStorage(context, pageFrame),
+        hasOrigin ? collectLocalStorage(context, pageFrame) : null,
+        hasOrigin ? collectSessionStorage(context, pageFrame) : null,
+        hasOrigin ? collectIndexedDB(context, pageFrame) : [],
+        hasOrigin ? collectCacheStorage(context, pageFrame) : null,
       ]);
 
       const frameDomain = frameDomains.get(pageFrame);
