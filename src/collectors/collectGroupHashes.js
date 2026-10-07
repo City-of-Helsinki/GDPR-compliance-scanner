@@ -25,7 +25,7 @@ async function collectGroupHashes(url) {
     // Go to the URL
     await page.goto(url);
 
-    // Check if page has loaded window.hds.cookieConsent, if it hasn't, wait for it
+    // Wait until the HDS cookie consent component has initialized
     await page.waitForFunction('window.hds.cookieConsent');
 
     // Accept all cookies
@@ -37,19 +37,32 @@ async function collectGroupHashes(url) {
         .click();
     });
 
-    // Wait for network to be idle after reloading
-    await page.waitForLoadState('networkidle');
+    // Wait until the cookie consent state has actually been persisted.
+    const timeout = 10000;
+    const pollInterval = 100;
+    const startedAt = Date.now();
 
-    // Get "helfi-cookie-consents" cookie from the context
-    const cookies = await context.cookies();
-    const helfiCookie = cookies.find(cookie => cookie.name === 'helfi-cookie-consents');
-    const helfiCookieConsents = helfiCookie ? decodeURIComponent(helfiCookie.value) : null;
-    const expires = helfiCookie?.expires;
+    let helfiCookie;
+    while (Date.now() - startedAt < timeout) {
+      const cookies = await context.cookies();
 
-    if (!helfiCookieConsents) {
-      throw new Error('helfi-cookie-consents cookie not found');
+      helfiCookie = cookies.find(cookie => cookie.name === 'helfi-cookie-consents');
+      if (helfiCookie) {
+        break;
+      }
+
+      await page.waitForTimeout(pollInterval);
     }
 
+    if (!helfiCookie) {
+      throw new Error(`helfi-cookie-consents cookie not found after ${timeout}ms`);
+    }
+
+    // Decode cookie value
+    const helfiCookieConsents = decodeURIComponent(helfiCookie.value);
+    const expires = helfiCookie.expires;
+
+    // Parse consent data
     const helfiCookieConsentsObject = JSON.parse(helfiCookieConsents);
     const groupHashes = helfiCookieConsentsObject.groups;
 
