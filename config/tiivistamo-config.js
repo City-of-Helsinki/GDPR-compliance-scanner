@@ -5,7 +5,7 @@ const debug = { headless: false, pause: true };
 const config = {
   name: 'tiivistamo',
   mainUrl: 'https://tiivistamo.fi/',
-  apiUrl: 'https://tiivistamo.fi//wp-json/helfi-cookie-consent/v1/settings'+'?cacheBuster='+Date.now(),
+  apiUrl: 'https://tiivistamo.fi/wp-json/helfi-cookie-consent/v1/settings'+'?cacheBuster='+Date.now(),
   settingsDomainSubstitution: 'https://tiivistamo.fi/',
   urls: [
     {
