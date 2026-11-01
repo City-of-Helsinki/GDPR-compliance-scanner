@@ -4030,5 +4030,19 @@
       "siteSettingsFlat": 58
     },
     "filename": "report-avustukset-2026-10-31T04:17:09.652Z.json"
+  },
+  {
+    "timeStamp": "2026-11-01T04:18:36.183Z",
+    "summary": {
+      "total": 40,
+      "compliant": 40,
+      "nonCompliant": 0,
+      "warnings": 0,
+      "urls": 15,
+      "failedUrls": 0,
+      "timing": "2m 35.17s",
+      "siteSettingsFlat": 58
+    },
+    "filename": "report-avustukset-2026-11-01T04:18:36.183Z.json"
   }
 ]
